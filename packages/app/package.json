@@ -1,5 +1,5 @@
 {
-  "name": "@shiba-ui/mobile",
+  "name": "@shiba-ui/app",
   "version": "1.0.0",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -17,6 +17,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@expo/vector-icons": "^15.0.2",
     "@shiba-ui/shared": "*",
     "react": "^19.0.0",
     "react-native": "^0.82.0"
