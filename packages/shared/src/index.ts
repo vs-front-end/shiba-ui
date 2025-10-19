@@ -1,9 +1,5 @@
-// Constants
 export * from './constants/colors';
 export * from './constants/fonts';
-
-// Types
-// export * from './types';
-
-// Utils
-// export * from './utils';
+export * from './types/icon';
+export * from './theme/theme';
+export * from './utils/helpers';  
