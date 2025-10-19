@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["packages/*/src/**/*"],
+  "include": ["packages/*/src/**/*", "packages/*/.storybook/**/*", "types/**/*"],
   "exclude": ["node_modules", "dist"]
 }
