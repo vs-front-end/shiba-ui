@@ -16,7 +16,7 @@ const webpackFinalFn = async (config: Configuration) => {
 
   config.module = config.module || {};
   config.module.rules = config.module.rules || [];
-  
+
   config.module.rules.push({
     test: /\.(js|jsx)$/,
     include: /node_modules\/@expo\/vector-icons/,
@@ -24,9 +24,7 @@ const webpackFinalFn = async (config: Configuration) => {
       {
         loader: 'babel-loader',
         options: {
-          presets: [
-            '@babel/preset-react',
-          ],
+          presets: ['@babel/preset-react'],
         },
       },
     ],
@@ -49,7 +47,7 @@ const webpackFinalFn = async (config: Configuration) => {
 };
 
 const config: StorybookConfig = {
-  stories: ['../../packages/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['../../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-docs',
     {
