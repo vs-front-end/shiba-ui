@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react-vite';
+import type { Preview } from '@storybook/react-webpack5';
 
 const preview: Preview = {
   tags: ['autodocs', '!dev'],
