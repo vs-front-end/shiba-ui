@@ -9,7 +9,7 @@ export const Icon = ({ icon, size, color, isHidden }: IIcon) => {
 
   return (
     <Feather
-      name={icon as any}
+      name={icon}
       size={size}
       color={getThemeApp(color || 'content', theme)}
     />
