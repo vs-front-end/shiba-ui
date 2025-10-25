@@ -52,9 +52,7 @@ const config: StorybookConfig = {
     '@storybook/addon-docs',
     {
       name: '@storybook/addon-react-native-web',
-      options: {
-        modulesToTranspile: ['@expo/vector-icons'],
-      },
+      options: { modulesToTranspile: ['@expo/vector-icons'] },
     },
   ],
   framework: { name: '@storybook/react-webpack5', options: {} },

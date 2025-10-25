@@ -1,11 +1,20 @@
 import { create } from 'storybook/theming';
 import { addons } from 'storybook/manager-api';
 
-const THEME = {
+const MANAGER_THEME = {
   BACKGROUND: '#121212',
   SECTION: '#181818',
   CONTENT: '#FFFFFF',
 } as const;
+
+addons.register('theme-storage', () => {
+  const channel = addons.getChannel();
+  channel.on('updateGlobals', (globals) => {
+    if (globals.globals?.backgrounds?.value) {
+      localStorage.setItem('theme', globals.globals.backgrounds.value);
+    }
+  });
+});
 
 const link = document.createElement('link');
 link.setAttribute('rel', 'shortcut icon');
@@ -19,19 +28,19 @@ addons.setConfig({
     brandUrl: 'https://github.com/vitor-albergaria/shiba-ui',
 
     base: 'dark',
-    appBg: THEME.BACKGROUND,
-    textColor: THEME.CONTENT,
-    appBorderColor: THEME.SECTION,
+    appBg: MANAGER_THEME.BACKGROUND,
+    textColor: MANAGER_THEME.CONTENT,
+    appBorderColor: MANAGER_THEME.SECTION,
     appBorderRadius: 4,
 
-    barBg: THEME.SECTION,
-    barTextColor: THEME.CONTENT,
-    barSelectedColor: THEME.CONTENT,
-    barHoverColor: THEME.CONTENT,
+    barBg: MANAGER_THEME.SECTION,
+    barTextColor: MANAGER_THEME.CONTENT,
+    barSelectedColor: MANAGER_THEME.CONTENT,
+    barHoverColor: MANAGER_THEME.CONTENT,
 
-    inputBg: THEME.SECTION,
-    inputBorder: THEME.SECTION,
-    inputTextColor: THEME.CONTENT,
+    inputBg: MANAGER_THEME.SECTION,
+    inputBorder: MANAGER_THEME.SECTION,
+    inputTextColor: MANAGER_THEME.CONTENT,
     inputBorderRadius: 4,
   }),
 });
