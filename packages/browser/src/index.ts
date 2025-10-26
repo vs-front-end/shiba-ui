@@ -6,4 +6,6 @@ export { Spinner } from "./components/Spinner";
 export { Checkbox } from "./components/Checkbox";
 export { Radio } from "./components/Radio";
 export { Switch } from "./components/Switch";
+export { Column } from "./components/Column";
+export { Row } from "./components/Row";
 export { ThemeProvider } from "./theme/ThemeProvider";

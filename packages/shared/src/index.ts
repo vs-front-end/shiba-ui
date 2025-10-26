@@ -11,3 +11,5 @@ export * from "./types/components/spinner";
 export * from "./types/components/checkbox";
 export * from "./types/components/radio";
 export * from "./types/components/switch";
+export * from "./types/components/column";
+export * from "./types/components/row";
