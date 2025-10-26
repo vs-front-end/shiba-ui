@@ -4,16 +4,9 @@ import { ITextLink } from "@shiba-ui/shared";
 export const TextLink = ({
   text,
   href,
-  fontSize,
-  fontWeight,
-  color,
-  hoverColor,
-  textAlign,
-  textDecoration,
-  lineHeight,
-  letterSpacing,
   isHidden,
   isExternal,
+  ...props
 }: ITextLink) => {
   if (isHidden) return null;
 
@@ -26,14 +19,7 @@ export const TextLink = ({
       aria-label={text}
       aria-hidden={isHidden}
       data-testid="text-link"
-      fontSize={fontSize}
-      fontWeight={fontWeight}
-      color={color}
-      hoverColor={hoverColor}
-      textAlign={textAlign}
-      textDecoration={textDecoration}
-      lineHeight={lineHeight}
-      letterSpacing={letterSpacing}
+      {...props}
     >
       {text || "-"}
     </S.Container>
