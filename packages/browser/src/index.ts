@@ -10,4 +10,5 @@ export { Column } from "./components/Column";
 export { Row } from "./components/Row";
 export { Separator } from "./components/Separator";
 export { Drawer } from "./components/Drawer";
+export { Skeleton } from "./components/Skeleton";
 export { ThemeProvider } from "./theme/ThemeProvider";
