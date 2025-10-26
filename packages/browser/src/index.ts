@@ -11,4 +11,5 @@ export { Row } from "./components/Row";
 export { Separator } from "./components/Separator";
 export { Drawer } from "./components/Drawer";
 export { Skeleton } from "./components/Skeleton";
+export { Avatar } from "./components/Avatar";
 export { ThemeProvider } from "./theme/ThemeProvider";

@@ -16,3 +16,4 @@ export * from "./types/components/row";
 export * from "./types/components/separator";
 export * from "./types/components/drawer";
 export * from "./types/components/skeleton";
+export * from "./types/components/avatar";
