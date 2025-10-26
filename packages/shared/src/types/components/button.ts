@@ -16,6 +16,7 @@ export interface IButton {
   width?: number;
   height?: number;
   textColor?: ColorKeys;
+  fontSize?: number;
   background?: ColorKeys;
   borderColor?: ColorKeys;
   borderWidth?: number;

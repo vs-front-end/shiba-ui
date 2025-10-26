@@ -4,7 +4,7 @@ import { IButton } from "@shiba-ui/shared";
 export const Container = styled.button<IButton>`
   ${({
     theme,
-    height = 40,
+    height = 35,
     width = 200,
     background = "primary",
     borderColor = "primary",

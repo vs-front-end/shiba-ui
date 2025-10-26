@@ -16,6 +16,7 @@ export const Button = ({
   iconSize = 18,
   textColor,
   height,
+  fontSize = 14,
   ...props
 }: IButton) => {
   if (isHidden) return null;
@@ -37,14 +38,21 @@ export const Button = ({
       {...props}
     >
       {isLoading ? (
-        <Spinner size={height ? height / 3 : 12} color={textColor || "paper"} />
+        <Spinner size={height ? height / 3 : 10} color={textColor || "paper"} />
       ) : (
         <>
           {leftIcon && (
             <Icon icon={leftIcon} color={iconColor} size={iconSize} />
           )}
 
-          {text && <TextDisplay text={text} color={textColor} />}
+          {text && (
+            <TextDisplay
+              text={text}
+              color={textColor}
+              fontSize={fontSize}
+              fontWeight="semibold"
+            />
+          )}
 
           {rightIcon && (
             <Icon icon={rightIcon} color={iconColor} size={iconSize} />
