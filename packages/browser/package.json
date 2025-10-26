@@ -17,6 +17,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.4.0",
     "@shiba-ui/shared": "*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

@@ -1,5 +1,9 @@
 import { ReactNode, useMemo } from "react";
-import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import {
+  ThemeProvider as StyledThemeProvider,
+  StyleSheetManager,
+} from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
 import {
   LIGHT_THEME,
@@ -34,5 +38,9 @@ export const ThemeProvider = ({
     return { colors, fontWeight: FONT_WEIGHT } as Theme;
   }, [selectedTheme]);
 
-  return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
+  return (
+    <StyleSheetManager shouldForwardProp={isPropValid}>
+      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
+    </StyleSheetManager>
+  );
 };
