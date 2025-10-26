@@ -1,4 +1,4 @@
-export * from "./theme/theme";
+export * from "./theme";
 
 export * from "./constants/colors";
 export * from "./constants/fontWeight";
@@ -13,3 +13,4 @@ export * from "./types/components/radio";
 export * from "./types/components/switch";
 export * from "./types/components/column";
 export * from "./types/components/row";
+export * from "./types/components/separator";

@@ -8,4 +8,5 @@ export { Radio } from "./components/Radio";
 export { Switch } from "./components/Switch";
 export { Column } from "./components/Column";
 export { Row } from "./components/Row";
+export { Separator } from "./components/Separator";
 export { ThemeProvider } from "./theme/ThemeProvider";
