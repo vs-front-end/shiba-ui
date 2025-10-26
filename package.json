@@ -1,0 +1,21 @@
+{
+  "name": "shiba-ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo UI library for React.js and React Native",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "build:shared": "npm run build --workspace=@shiba-ui/shared",
+    "build:browser": "npm run build --workspace=@shiba-ui/browser",
+    "build:app": "npm run build --workspace=@shiba-ui/app",
+    "start": "npm run dev --workspace=@shiba-ui/docs",
+    "build-storybook": "npm run build --workspace=@shiba-ui/docs",
+    "storybook": "npm run start --workspace=@shiba-ui/docs"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
