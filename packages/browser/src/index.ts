@@ -9,4 +9,5 @@ export { Switch } from "./components/Switch";
 export { Column } from "./components/Column";
 export { Row } from "./components/Row";
 export { Separator } from "./components/Separator";
+export { Drawer } from "./components/Drawer";
 export { ThemeProvider } from "./theme/ThemeProvider";
