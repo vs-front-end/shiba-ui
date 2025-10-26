@@ -6,4 +6,4 @@ export const FONT_WEIGHT = {
   bold: "700",
   extrabold: "800",
   black: "900",
-} as const;
+};
