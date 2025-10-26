@@ -1,0 +1,56 @@
+import * as S from "./styles";
+import { IButton } from "@shiba-ui/shared";
+import { Icon } from "../Icon";
+import { TextDisplay } from "../TextDisplay";
+import { Spinner } from "../Spinner";
+
+export const Button = ({
+  text,
+  onClick,
+  isLoading,
+  isHidden,
+  isDisabled,
+  leftIcon,
+  rightIcon,
+  iconColor,
+  iconSize = 18,
+  textColor,
+  height,
+  ...props
+}: IButton) => {
+  if (isHidden) return null;
+
+  const handleClick = () => {
+    if (!isDisabled && !isLoading && onClick) onClick();
+  };
+
+  return (
+    <S.Container
+      role="button"
+      type="button"
+      aria-label={text}
+      aria-disabled={isDisabled}
+      aria-busy={isLoading}
+      data-testid="button"
+      onClick={handleClick}
+      disabled={isDisabled}
+      {...props}
+    >
+      {isLoading ? (
+        <Spinner size={height ? height / 3 : 12} color={textColor || "paper"} />
+      ) : (
+        <>
+          {leftIcon && (
+            <Icon icon={leftIcon} color={iconColor} size={iconSize} />
+          )}
+
+          {text && <TextDisplay text={text} color={textColor} />}
+
+          {rightIcon && (
+            <Icon icon={rightIcon} color={iconColor} size={iconSize} />
+          )}
+        </>
+      )}
+    </S.Container>
+  );
+};
