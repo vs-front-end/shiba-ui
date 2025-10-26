@@ -8,3 +8,4 @@ export * from "./types/components/textDisplay";
 export * from "./types/components/textLink";
 export * from "./types/components/button";
 export * from "./types/components/spinner";
+export * from "./types/components/checkbox";
