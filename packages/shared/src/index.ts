@@ -4,3 +4,4 @@ export * from "./constants/colors";
 export * from "./constants/fontWeight";
 
 export * from "./types/components/icon";
+export * from "./types/components/textDisplay";
