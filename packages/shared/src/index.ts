@@ -10,3 +10,4 @@ export * from "./types/components/button";
 export * from "./types/components/spinner";
 export * from "./types/components/checkbox";
 export * from "./types/components/radio";
+export * from "./types/components/switch";

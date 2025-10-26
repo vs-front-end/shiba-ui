@@ -5,4 +5,5 @@ export { Button } from "./components/Button";
 export { Spinner } from "./components/Spinner";
 export { Checkbox } from "./components/Checkbox";
 export { Radio } from "./components/Radio";
+export { Switch } from "./components/Switch";
 export { ThemeProvider } from "./theme/ThemeProvider";
