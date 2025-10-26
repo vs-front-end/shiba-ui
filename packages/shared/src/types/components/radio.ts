@@ -1,4 +1,4 @@
-import { ColorKeys } from "../../theme/theme";
+import { ColorKeys } from "../../theme";
 
 export interface IRadio {
   isSelected?: boolean;

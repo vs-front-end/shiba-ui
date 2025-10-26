@@ -1,4 +1,4 @@
-import { ColorKeys } from "../../theme/theme";
+import { ColorKeys } from "../../theme";
 import { IconKeys } from "./icon";
 
 export interface ICheckbox {

@@ -1,4 +1,4 @@
-import { ColorKeys } from "../../theme/theme";
+import { ColorKeys } from "../../theme";
 import { ITextDisplay } from "./textDisplay";
 
 export interface ITextLink extends ITextDisplay {

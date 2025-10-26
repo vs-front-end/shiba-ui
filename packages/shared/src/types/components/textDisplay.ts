@@ -1,4 +1,4 @@
-import { ColorKeys, FontKeys } from "../../theme/theme";
+import { ColorKeys, FontKeys } from "../../theme";
 
 export type TextAlignmentType =
   | "left"
