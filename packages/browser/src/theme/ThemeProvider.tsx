@@ -15,14 +15,18 @@ import {
   FONT_WEIGHT,
 } from "@shiba-ui/shared";
 
+import { GlobalStyles } from "./globalStyles";
+
 interface ThemeProviderProps {
   children: ReactNode;
   selectedTheme?: ThemeVariant;
+  fontFamily?: string;
 }
 
 export const ThemeProvider = ({
   children,
   selectedTheme = "light",
+  fontFamily = "Poppins",
 }: ThemeProviderProps) => {
   const theme = useMemo(() => {
     let baseColorTheme = LIGHT_THEME;
@@ -35,12 +39,15 @@ export const ThemeProvider = ({
       ...COMMON_COLORS,
     };
 
-    return { colors, fontWeight: FONT_WEIGHT } as Theme;
+    return { colors, fontWeight: FONT_WEIGHT, fontFamily } as Theme;
   }, [selectedTheme]);
 
   return (
     <StyleSheetManager shouldForwardProp={isPropValid}>
-      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
+      <StyledThemeProvider theme={theme}>
+        <GlobalStyles />
+        {children}
+      </StyledThemeProvider>
     </StyleSheetManager>
   );
 };

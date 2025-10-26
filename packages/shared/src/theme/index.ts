@@ -9,6 +9,7 @@ export type FontKeys = keyof typeof FONT_WEIGHT;
 export interface Theme {
   colors: typeof COMMON_COLORS & typeof LIGHT_THEME;
   fontWeight: typeof FONT_WEIGHT;
+  fontFamily: string;
 }
 
 export interface ThemeContextType {

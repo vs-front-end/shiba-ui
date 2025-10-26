@@ -22,6 +22,8 @@ export const Container = styled.span<ITextDisplay>`
     line-height: ${lineHeight};
     letter-spacing: ${`${letterSpacing}px`};
 
+    font-family: ${theme.fontFamily};
+
     word-break: break-word;
     overflow-wrap: anywhere;
   `}

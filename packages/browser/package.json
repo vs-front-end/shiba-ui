@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
+    "@fontsource/poppins": "^5.2.7",
     "@shiba-ui/shared": "*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
