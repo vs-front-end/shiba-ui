@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ISteps, IStep, ColorKeys } from '@shiba-ui/shared';
+import { ColorKeys } from '@shiba-ui/shared';
 
 export const Container = styled.div`
   display: flex;

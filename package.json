@@ -13,9 +13,20 @@
     "build:app": "npm run build --workspace=@shiba-ui/app",
     "start": "npm run dev --workspace=@shiba-ui/docs",
     "build-storybook": "npm run build --workspace=@shiba-ui/docs",
-    "storybook": "npm run start --workspace=@shiba-ui/docs"
+    "storybook": "npm run start --workspace=@shiba-ui/docs",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\""
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.2.5",
     "typescript": "^5.7.2"
   }
 }

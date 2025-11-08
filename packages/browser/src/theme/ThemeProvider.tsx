@@ -40,7 +40,7 @@ export const ThemeProvider = ({
     };
 
     return { colors, fontWeight: FONT_WEIGHT, fontFamily } as Theme;
-  }, [selectedTheme]);
+  }, [selectedTheme, fontFamily]);
 
   return (
     <StyleSheetManager shouldForwardProp={isPropValid}>

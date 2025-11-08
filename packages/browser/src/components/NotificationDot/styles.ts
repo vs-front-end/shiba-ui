@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ColorKeys, INotificationDot } from '@shiba-ui/shared';
+import { ColorKeys } from '@shiba-ui/shared';
 
 export const Container = styled.div`
   position: relative;
