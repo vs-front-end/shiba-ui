@@ -1,11 +1,7 @@
-import React from 'react';
 import { ISkeleton } from '@shiba-ui/shared';
 import * as S from './styles';
 
-export const Skeleton: React.FC<ISkeleton> = ({
-  isHidden = false,
-  ...props
-}) => {
+export const Skeleton = ({ isHidden = false, ...props }: ISkeleton) => {
   if (isHidden) return null;
 
   return (

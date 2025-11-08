@@ -1,8 +1,7 @@
-import React from 'react';
 import { IColumn } from '@shiba-ui/shared';
 import * as S from './styles';
 
-export const Column: React.FC<IColumn> = ({ children, isHidden, ...props }) => {
+export const Column = ({ children, isHidden, ...props }: IColumn) => {
   if (isHidden) return null;
 
   return (

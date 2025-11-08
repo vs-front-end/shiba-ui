@@ -1,8 +1,7 @@
-import React from 'react';
 import { ISeparator } from '@shiba-ui/shared';
 import * as S from './styles';
 
-export const Separator: React.FC<ISeparator> = ({ isHidden, ...props }) => {
+export const Separator = ({ isHidden, ...props }: ISeparator) => {
   if (isHidden) return null;
 
   return (

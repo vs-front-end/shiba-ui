@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { IAvatar } from '@shiba-ui/shared';
-import { TextDisplay, Skeleton } from '@shiba-ui/browser';
+import { TextDisplay } from '../TextDisplay';
+import { Skeleton } from '../Skeleton';
 import * as S from './styles';
 
-export const Avatar: React.FC<IAvatar> = ({
+export const Avatar = ({
   isHidden = false,
   username,
   image,
   size,
   textColor,
   ...props
-}) => {
+}: IAvatar) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const getNameInitials = (name: string = 'User') => {

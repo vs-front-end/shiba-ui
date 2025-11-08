@@ -1,7 +1,7 @@
 import * as S from './styles';
 import { ITextInput } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const TextInput = ({
   value,
@@ -45,6 +45,12 @@ export const TextInput = ({
     if (isFocused) return 'primary';
     return borderColor;
   };
+
+  useEffect(() => {
+    if (value !== undefined) {
+      setInputValue(value);
+    }
+  }, [value]);
 
   if (isHidden) return null;
 

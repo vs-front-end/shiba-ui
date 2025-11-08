@@ -1,13 +1,12 @@
-import React from 'react';
 import { IDrawer } from '@shiba-ui/shared';
 import * as S from './styles';
 
-export const Drawer: React.FC<IDrawer> = ({
+export const Drawer = ({
   children,
   isOpen = false,
   onClose,
   ...props
-}) => {
+}: IDrawer) => {
   const handleBackdropClick = () => {
     if (onClose) onClose();
   };
