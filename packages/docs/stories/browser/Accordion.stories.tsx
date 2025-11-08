@@ -14,7 +14,6 @@ export const Default: Story = {
   args: {
     title: 'Bug Fix Implemented - Ticket N° 5878',
     icon: 'info',
-    width: 500,
     children: (
       <TextDisplay
         text="We have resolved a previously reported issue. This fix improves stability and ensures smoother performance going forward."
