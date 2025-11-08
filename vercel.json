@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build --workspace=@shiba-ui/docs",
-  "outputDirectory": "packages/docs/storybook-static",
+  "outputDirectory": "storybook-static",
   "installCommand": "npm install",
   "framework": null
 }
