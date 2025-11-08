@@ -1,0 +1,38 @@
+import * as S from './styles';
+import { IBanner } from '@shiba-ui/shared';
+import { Icon } from '../Icon';
+import { useState } from 'react';
+
+export const Banner = ({
+  children,
+  showCloseButton = true,
+  onClose,
+  isHidden,
+  ...props
+}: IBanner) => {
+  const [isClosed, setIsClosed] = useState(false);
+
+  const handleClose = () => {
+    setIsClosed(true);
+    onClose?.();
+  };
+
+  if (isHidden || isClosed) return null;
+
+  return (
+    <S.Container role="banner" data-testid="banner" {...props}>
+      <S.Content>{children}</S.Content>
+
+      {showCloseButton && (
+        <S.CloseButton
+          type="button"
+          onClick={handleClose}
+          data-testid="banner-close"
+          aria-label="Close banner"
+        >
+          <Icon icon="x" size={16} color="highlight" />
+        </S.CloseButton>
+      )}
+    </S.Container>
+  );
+};
