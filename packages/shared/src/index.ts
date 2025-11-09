@@ -32,3 +32,4 @@ export * from './types/components/notificationDot';
 export * from './types/components/pagination';
 export * from './types/components/steps';
 export * from './types/components/otpInput';
+export * from './types/components/counterInput';
