@@ -33,7 +33,8 @@ export const SegmentedButton = ({
   return (
     <S.Container
       data-testid="segmented-button"
-      role="tablist"
+      accessibilityRole="tablist"
+      accessibilityLabel="Segmented button"
       background={background}
       borderColor={borderColor}
       borderWidth={borderWidth}
@@ -48,50 +49,53 @@ export const SegmentedButton = ({
         return (
           <S.Option
             key={option.value}
-            type="button"
-            role="tab"
-            aria-selected={isActive}
-            aria-label={option.label}
-            onClick={() => handleOptionClick(option.value)}
+            accessibilityRole="tab"
+            accessibilityState={{ selected: isActive }}
+            accessibilityLabel={option.label}
             isActive={isActive}
             activeBackground={option.activeBackground}
             background={background}
             borderRadius={borderRadius}
             data-testid={`segmented-button-option-${option.value}`}
           >
-            {option.leftIcon && (
-              <Icon
-                icon={option.leftIcon}
+            <S.OptionTouchable
+              onPress={() => handleOptionClick(option.value)}
+              activeOpacity={0.8}
+            >
+              {option.leftIcon && (
+                <Icon
+                  icon={option.leftIcon}
+                  color={
+                    isActive
+                      ? option.activeColor || 'paper'
+                      : option.iconColor || 'content'
+                  }
+                  size={option.iconSize || 14}
+                />
+              )}
+
+              <TextDisplay
+                text={option.label}
                 color={
                   isActive
                     ? option.activeColor || 'paper'
-                    : option.iconColor || 'content'
+                    : option.textColor || 'content'
                 }
-                size={option.iconSize || 14}
+                fontSize={option.fontSize || 14}
               />
-            )}
 
-            <TextDisplay
-              text={option.label}
-              color={
-                isActive
-                  ? option.activeColor || 'paper'
-                  : option.textColor || 'content'
-              }
-              fontSize={option.fontSize || 14}
-            />
-
-            {option.rightIcon && (
-              <Icon
-                icon={option.rightIcon}
-                color={
-                  isActive
-                    ? option.activeColor || 'paper'
-                    : option.iconColor || 'content'
-                }
-                size={option.iconSize || 14}
-              />
-            )}
+              {option.rightIcon && (
+                <Icon
+                  icon={option.rightIcon}
+                  color={
+                    isActive
+                      ? option.activeColor || 'paper'
+                      : option.iconColor || 'content'
+                  }
+                  size={option.iconSize || 14}
+                />
+              )}
+            </S.OptionTouchable>
           </S.Option>
         );
       })}

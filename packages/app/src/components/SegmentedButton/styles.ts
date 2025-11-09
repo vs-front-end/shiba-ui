@@ -1,7 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/native';
 import { ColorKeys } from '@shiba-ui/shared';
+import { TouchableOpacity } from 'react-native';
 
-export const Container = styled.div<{
+export const Container = styled.View<{
   background?: ColorKeys;
   borderColor?: ColorKeys;
   borderWidth?: number;
@@ -19,6 +20,7 @@ export const Container = styled.div<{
     height,
   }) => css`
     display: flex;
+    flex-direction: row;
     background: ${(background && theme.colors[background]) ||
     theme.colors.section};
     border-radius: ${`${borderRadius}px`};
@@ -27,11 +29,11 @@ export const Container = styled.div<{
     border: ${`${borderWidth}px`} solid ${theme.colors[borderColor]};
 
     width: ${width && width > 0 ? `${width}px` : '100%'};
-    height: ${height && height > 0 ? `${height}px` : 'fit-content'};
+    height: ${height && height > 0 ? `${height}px` : 'auto'};
   `}
 `;
 
-export const Option = styled.button<{
+export const Option = styled.View<{
   isActive?: boolean;
   activeBackground?: ColorKeys;
   background?: ColorKeys;
@@ -44,23 +46,26 @@ export const Option = styled.button<{
     background = 'section',
     borderRadius = 8,
   }) => css`
-    cursor: pointer;
+    flex: 1;
+    padding: 8px 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
-    gap: 8px;
-    border: none;
-    padding: 8px 16px;
-    transition: all 0.2s ease;
+    min-height: 40px;
     background: ${isActive
       ? (activeBackground && theme.colors[activeBackground]) ||
         theme.colors.primary
       : 'transparent'};
     border-radius: ${`${borderRadius}px`};
-
-    &:hover:not(:disabled) {
-      filter: brightness(0.85);
-    }
   `}
+`;
+
+export const OptionTouchable = styled(TouchableOpacity)`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 `;
