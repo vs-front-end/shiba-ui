@@ -5,7 +5,11 @@ export const Column = ({ children, isHidden, ...props }: IColumn) => {
   if (isHidden) return null;
 
   return (
-    <S.Container data-testid="column" aria-label="column" {...props}>
+    <S.Container
+      data-testid="column"
+      accessibilityRole="none"
+      {...props}
+    >
       {children}
     </S.Container>
   );

@@ -30,9 +30,9 @@ export const Avatar = ({
   if (!image) {
     return (
       <S.Container
-        role="img"
-        aria-label={username || 'User avatar'}
         data-testid="avatar-text"
+        accessibilityRole="image"
+        accessibilityLabel={username || 'User avatar'}
         size={size}
         textColor={textColor}
         {...props}
@@ -56,9 +56,9 @@ export const Avatar = ({
       )}
 
       <S.Image
-        role="img"
         data-testid="avatar-image"
         source={{ uri: image }}
+        accessibilityRole="image"
         accessibilityLabel={username || 'User avatar'}
         onLoad={() => setIsLoading(false)}
         size={size}

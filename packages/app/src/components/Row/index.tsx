@@ -5,7 +5,11 @@ export const Row = ({ children, isHidden, ...props }: IRow) => {
   if (isHidden) return null;
 
   return (
-    <S.Container data-testid="row" aria-label="row" {...props}>
+    <S.Container
+      data-testid="row"
+      accessibilityRole="none"
+      {...props}
+    >
       {children}
     </S.Container>
   );

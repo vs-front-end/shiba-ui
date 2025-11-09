@@ -75,8 +75,9 @@ export const Accordion = ({
     >
       <S.Header
         data-testid="accordion-header"
-        aria-expanded={isOpen}
-        aria-label={`${isOpen ? 'Collapse' : 'Expand'} ${title}`}
+        accessibilityRole="button"
+        accessibilityState={{ expanded: isOpen }}
+        accessibilityLabel={`${isOpen ? 'Collapse' : 'Expand'} ${title}`}
         onPress={handleToggle}
       >
         <S.TitleContainer>

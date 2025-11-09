@@ -19,7 +19,12 @@ export const Badge = ({
   if (isHidden) return null;
 
   const content = (
-    <S.Container role="status" data-testid="badge" aria-label={text} {...props}>
+    <S.Container
+      data-testid="badge"
+      accessibilityRole="text"
+      accessibilityLabel={text}
+      {...props}
+    >
       {leftIcon && <Icon icon={leftIcon} color={iconColor} size={iconSize} />}
       <TextDisplay text={text} color={textColor} fontSize={textSize} />
       {rightIcon && <Icon icon={rightIcon} color={iconColor} size={iconSize} />}

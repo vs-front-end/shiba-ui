@@ -21,14 +21,19 @@ export const Banner = ({
   if (isHidden || isClosed) return null;
 
   return (
-    <S.Container role="banner" data-testid="banner" {...props}>
+    <S.Container
+      data-testid="banner"
+      accessibilityRole="banner"
+      {...props}
+    >
       <S.Content>{children}</S.Content>
 
       {showCloseButton && (
         <Pressable onPress={handleClose}>
           <S.CloseButton
             data-testid="banner-close"
-            aria-label="Close banner"
+            accessibilityRole="button"
+            accessibilityLabel="Close banner"
           >
             <Icon icon="x" size={16} color="highlight" />
           </S.CloseButton>
