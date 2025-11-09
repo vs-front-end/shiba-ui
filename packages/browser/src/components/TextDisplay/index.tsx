@@ -1,7 +1,21 @@
 import * as S from './styles';
 import { ITextDisplay } from '@shiba-ui/shared';
 
-export const TextDisplay = ({ text, isHidden, ...props }: ITextDisplay) => {
+export type TextDecorationType =
+  | 'none'
+  | 'underline'
+  | 'line-through'
+  | 'overline';
+
+interface ITextDisplayBrowser extends ITextDisplay {
+  textDecoration?: TextDecorationType;
+}
+
+export const TextDisplay = ({
+  text,
+  isHidden,
+  ...props
+}: ITextDisplayBrowser) => {
   if (isHidden) return null;
 
   return (
