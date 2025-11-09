@@ -23,4 +23,5 @@ export * from './components/Separator';
 export * from './components/Skeleton';
 export * from './components/Avatar';
 export * from './components/Badge';
+export * from './components/OtpInput';
 export * from './theme/ThemeProvider';

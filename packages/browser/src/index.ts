@@ -26,4 +26,5 @@ export * from './components/NotificationDot';
 export * from './components/Accordion';
 export * from './components/Pagination';
 export * from './components/Steps';
+export * from './components/OtpInput';
 export * from './theme/ThemeProvider';

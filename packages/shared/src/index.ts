@@ -31,3 +31,4 @@ export * from './types/components/banner';
 export * from './types/components/notificationDot';
 export * from './types/components/pagination';
 export * from './types/components/steps';
+export * from './types/components/otpInput';
