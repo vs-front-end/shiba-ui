@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IToast, ToastType, ColorKeys, IconKeys } from '@shiba-ui/shared';
+import { IToast, ColorKeys, IconKeys } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { useState, useEffect } from 'react';
@@ -53,8 +53,6 @@ export const toast = {
     toastManager.addToast({ message, variant: 'warning', ...options }),
 };
 
-interface ToastMessageProps extends IToast {}
-
 const ToastMessage = ({
   id,
   message,
@@ -66,7 +64,7 @@ const ToastMessage = ({
   width,
   icon,
   borderRadius,
-}: ToastMessageProps) => {
+}: IToast) => {
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {

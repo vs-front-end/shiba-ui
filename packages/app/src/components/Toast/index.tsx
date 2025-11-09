@@ -3,7 +3,7 @@ import { IToast, ColorKeys, IconKeys } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { useState, useEffect, useRef } from 'react';
-import { Animated, TouchableOpacity, Dimensions } from 'react-native';
+import { Animated, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { nanoid } from 'nanoid';
 
@@ -55,8 +55,6 @@ export const toast = {
     toastManager.addToast({ message, variant: 'warning', ...options }),
 };
 
-interface ToastMessageProps extends IToast {}
-
 const ToastMessage = ({
   id,
   message,
@@ -68,7 +66,7 @@ const ToastMessage = ({
   width,
   icon,
   borderRadius,
-}: ToastMessageProps) => {
+}: IToast) => {
   const translateY = useRef(new Animated.Value(-200)).current;
   const opacity = useRef(new Animated.Value(0)).current;
 
