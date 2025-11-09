@@ -1,8 +1,10 @@
 import * as S from './styles';
-import { IToast, ToastType, ColorKeys, IconKeys } from '@shiba-ui/shared';
+import { IToast, ColorKeys, IconKeys } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { Animated, TouchableOpacity, Dimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { nanoid } from 'nanoid';
 
 const toastManager = {
@@ -67,22 +69,47 @@ const ToastMessage = ({
   icon,
   borderRadius,
 }: ToastMessageProps) => {
-  const [isExiting, setIsExiting] = useState(false);
+  const translateY = useRef(new Animated.Value(-200)).current;
+  const opacity = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
+    translateY.setValue(-200);
+    opacity.setValue(0);
+
+    Animated.parallel([
+      Animated.timing(translateY, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }),
+      Animated.timing(opacity, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }),
+    ]).start();
+
     const timer = setTimeout(() => {
-      setIsExiting(true);
-      const removeTimer = setTimeout(() => {
+      Animated.parallel([
+        Animated.timing(translateY, {
+          toValue: -200,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+        Animated.timing(opacity, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+      ]).start(() => {
         if (id) {
           toastManager.removeToast(id);
         }
-      }, 300);
-
-      return () => clearTimeout(removeTimer);
+      });
     }, timeout || 3000);
 
     return () => clearTimeout(timer);
-  }, [id, timeout]);
+  }, [id, timeout, translateY, opacity]);
 
   const getBackgroundColor = (): ColorKeys => {
     if (background && background !== 'section') return background;
@@ -112,43 +139,58 @@ const ToastMessage = ({
   };
 
   return (
-    <S.ToastItem
-      role="alert"
-      aria-live="polite"
-      data-testid="toast"
-      isExiting={isExiting}
-      variant={variant}
-      background={getBackgroundColor()}
-      height={height}
-      width={width}
-      borderRadius={borderRadius}
+    <Animated.View
+      style={{
+        transform: [{ translateY }],
+        opacity,
+        width: '100%',
+      }}
     >
-      <S.ContentWrapper>
-        <S.IconWrapper>
-          <Icon icon={getIcon()} size={20} color={getIconColor()} />
-        </S.IconWrapper>
-
-        <TextDisplay
-          text={message || ''}
-          fontSize={14}
-          fontWeight="medium"
-          color={getTextColor()}
-        />
-      </S.ContentWrapper>
-
-      <S.CloseIcon
-        onClick={() => id && toastManager.removeToast(id)}
-        role="button"
-        aria-label="Close notification"
-        data-testid="toast-close-button"
+      <S.ToastItem
+        accessibilityRole="alert"
+        accessibilityLiveRegion="polite"
+        data-testid="toast"
+        variant={variant}
+        background={getBackgroundColor()}
+        height={height}
+        width={width}
+        borderRadius={borderRadius}
       >
-        <Icon icon="x" size={16} color={getIconColor()} />
-      </S.CloseIcon>
-    </S.ToastItem>
+        <S.ContentWrapper>
+          <S.IconWrapper>
+            <Icon icon={getIcon()} size={20} color={getIconColor()} />
+          </S.IconWrapper>
+
+          <TextDisplay
+            text={message || ''}
+            fontSize={14}
+            fontWeight="medium"
+            color={getTextColor()}
+          />
+        </S.ContentWrapper>
+
+        <TouchableOpacity
+          onPress={() => id && toastManager.removeToast(id)}
+          accessibilityRole="button"
+          accessibilityLabel="Close notification"
+          data-testid="toast-close-button"
+          activeOpacity={0.8}
+        >
+          <S.CloseIcon>
+            <Icon icon="x" size={16} color={getIconColor()} />
+          </S.CloseIcon>
+        </TouchableOpacity>
+      </S.ToastItem>
+    </Animated.View>
   );
 };
 
 export const ToastContainer = () => {
+  const insets = useSafeAreaInsets();
+  const topOffset = insets.top + 8;
+  const leftPadding = Math.max(insets.left, 8);
+  const rightPadding = Math.max(insets.right, 8);
+
   const [toasts, setToasts] = useState<IToast[]>([]);
 
   useEffect(() => {
@@ -163,9 +205,13 @@ export const ToastContainer = () => {
 
   return (
     <S.Container
-      role="region"
-      aria-label="Notifications"
+      accessibilityRole="none"
+      accessibilityLabel="Notifications"
       data-testid="toast-container"
+      pointerEvents="box-none"
+      topOffset={topOffset}
+      leftPadding={leftPadding}
+      rightPadding={rightPadding}
     >
       {toasts.map((toastItem) => (
         <ToastMessage key={toastItem?.id} {...toastItem} />

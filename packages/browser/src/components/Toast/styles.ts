@@ -44,8 +44,17 @@ export const ToastItem = styled.div<{
   background?: ColorKeys;
   width?: number;
   height?: number;
+  borderRadius?: number;
 }>`
-  ${({ theme, isExiting, variant, background = 'section', width, height }) => {
+  ${({
+    theme,
+    isExiting,
+    variant,
+    background = 'section',
+    width,
+    height,
+    borderRadius = 4,
+  }) => {
     const getBackgroundColor = (): string => {
       if (background && background !== 'section')
         return theme.colors[background];
@@ -66,7 +75,7 @@ export const ToastItem = styled.div<{
       max-width: calc(100vw - 32px);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       background: ${getBackgroundColor()};
-      border-radius: 4px;
+      border-radius: ${borderRadius}px;
       animation: ${isExiting ? slideOut : slideIn} 0.3s ease-out forwards;
       pointer-events: auto;
 

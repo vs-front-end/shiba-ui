@@ -11,8 +11,8 @@ export interface IToast {
   icon?: IconKeys;
   background?: ColorKeys;
   color?: ColorKeys;
-  borderColor?: ColorKeys;
   width?: number;
   height?: number;
+  borderRadius?: number;
   isHidden?: boolean;
 }

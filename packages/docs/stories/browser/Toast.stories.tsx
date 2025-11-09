@@ -47,6 +47,7 @@ export const Default: Story = {
                 icon: 'bookmark',
                 color: 'paper',
                 timeout: 5000,
+                borderRadius: 32,
               })
             }
             background="primary"

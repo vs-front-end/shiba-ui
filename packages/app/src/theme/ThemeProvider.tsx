@@ -1,5 +1,6 @@
 import { ReactNode, useMemo } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import {
   LIGHT_THEME,
@@ -34,5 +35,9 @@ export const ThemeProvider = ({
     return { colors, fontWeight: FONT_WEIGHT } as Theme;
   }, [selectedTheme]);
 
-  return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
+  return (
+    <SafeAreaProvider>
+      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
+    </SafeAreaProvider>
+  );
 };
