@@ -14,6 +14,7 @@ interface ITextDisplayBrowser extends ITextDisplay {
 export const TextDisplay = ({
   text,
   isHidden,
+  textDecoration,
   ...props
 }: ITextDisplayBrowser) => {
   if (isHidden) return null;
@@ -24,6 +25,7 @@ export const TextDisplay = ({
       aria-label={text}
       aria-hidden={isHidden}
       data-testid="text-display"
+      textDecoration={textDecoration || 'none'}
       {...props}
     >
       {text || '-'}

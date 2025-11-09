@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components';
 import { ITextDisplay } from '@shiba-ui/shared';
 
-export const Container = styled.span<ITextDisplay>`
+export const Container = styled.span<
+  ITextDisplay & { textDecoration: string }
+>`
   ${({
     theme,
     color = 'content',
@@ -13,7 +15,7 @@ export const Container = styled.span<ITextDisplay>`
     letterSpacing = 'normal',
   }) => css`
     color: ${theme.colors[color]};
-    font-size: ${`${fontSize}px`};
+    font-size: ${`${fontSize / 10}rem`};
     font-weight: ${theme.fontWeight[fontWeight]};
 
     text-align: ${textAlign};
