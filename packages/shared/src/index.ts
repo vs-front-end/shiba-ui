@@ -35,3 +35,4 @@ export * from './types/components/otpInput';
 export * from './types/components/counterInput';
 export * from './types/components/segmentedButton';
 export * from './types/components/tab';
+export * from './types/components/stackedChart';
