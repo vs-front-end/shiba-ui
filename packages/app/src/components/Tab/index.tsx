@@ -3,6 +3,7 @@ import { ITab } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { useState, useEffect } from 'react';
+import { TouchableOpacity } from 'react-native';
 
 export const Tab = ({
   options,
@@ -33,7 +34,8 @@ export const Tab = ({
   return (
     <S.Container
       data-testid="tab"
-      role="tablist"
+      accessibilityRole="tablist"
+      accessibilityLabel="Tab navigation"
       width={width}
       height={height}
       {...props}
@@ -44,37 +46,40 @@ export const Tab = ({
         return (
           <S.Option
             key={option.value}
-            type="button"
-            role="tab"
-            aria-selected={isActive}
-            aria-label={option.label}
-            onClick={() => handleOptionClick(option.value)}
+            accessibilityRole="tab"
+            accessibilityState={{ selected: isActive }}
+            accessibilityLabel={option.label}
             isActive={isActive}
             activeColor={option.activeColor}
             borderColor={borderColor}
             data-testid={`tab-option-${option.value}`}
           >
-            {option.leftIcon && (
-              <Icon
-                icon={option.leftIcon}
-                color={option.iconColor || 'content'}
-                size={option.iconSize || iconSize || 14}
-              />
-            )}
+            <S.OptionTouchable
+              onPress={() => handleOptionClick(option.value)}
+              activeOpacity={0.8}
+            >
+              {option.leftIcon && (
+                <Icon
+                  icon={option.leftIcon}
+                  color={option.iconColor || 'content'}
+                  size={option.iconSize || iconSize || 14}
+                />
+              )}
 
-            <TextDisplay
-              text={option.label}
-              color={textColor || 'content'}
-              fontSize={fontSize || 14}
-            />
-
-            {option.rightIcon && (
-              <Icon
-                icon={option.rightIcon}
-                color={option.iconColor || 'content'}
-                size={option.iconSize || iconSize || 14}
+              <TextDisplay
+                text={option.label}
+                color={textColor || 'content'}
+                fontSize={fontSize || 14}
               />
-            )}
+
+              {option.rightIcon && (
+                <Icon
+                  icon={option.rightIcon}
+                  color={option.iconColor || 'content'}
+                  size={option.iconSize || iconSize || 14}
+                />
+              )}
+            </S.OptionTouchable>
           </S.Option>
         );
       })}

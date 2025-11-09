@@ -18,6 +18,7 @@ export interface ITab {
   borderColor?: ColorKeys;
   textColor?: ColorKeys;
   fontSize?: number;
+  iconSize?: number;
   width?: number;
   height?: number;
   isHidden?: boolean;

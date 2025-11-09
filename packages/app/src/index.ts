@@ -26,4 +26,5 @@ export * from './components/Badge';
 export * from './components/OtpInput';
 export * from './components/CounterInput';
 export * from './components/SegmentedButton';
+export * from './components/Tab';
 export * from './theme/ThemeProvider';
