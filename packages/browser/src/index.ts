@@ -35,4 +35,5 @@ export * from './components/PieChart';
 export * from './components/DonutChart';
 export * from './components/Breadcrumb';
 export * from './components/Timeline';
+export * from './components/Toast';
 export * from './theme/ThemeProvider';

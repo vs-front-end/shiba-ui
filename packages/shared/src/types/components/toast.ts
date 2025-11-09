@@ -1,0 +1,18 @@
+import { ColorKeys } from '../../theme';
+import { IconKeys } from './icon';
+
+export type ToastType = 'success' | 'error' | 'warning';
+
+export interface IToast {
+  id?: string;
+  message?: string;
+  timeout?: number;
+  variant?: ToastType;
+  icon?: IconKeys;
+  background?: ColorKeys;
+  color?: ColorKeys;
+  borderColor?: ColorKeys;
+  width?: number;
+  height?: number;
+  isHidden?: boolean;
+}
