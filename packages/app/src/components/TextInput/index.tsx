@@ -2,7 +2,6 @@ import * as S from './styles';
 import { ITextInput } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 import { useState } from 'react';
-import { TextInput as RNTextInput } from 'react-native';
 import { useTheme } from 'styled-components/native';
 
 export const TextInput = ({

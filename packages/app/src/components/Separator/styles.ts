@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { ColorKeys, ISeparator } from '@shiba-ui/shared';
+import { ISeparator } from '@shiba-ui/shared';
 
 export const Container = styled.View<ISeparator>`
   ${({

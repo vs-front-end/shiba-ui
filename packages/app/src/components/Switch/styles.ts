@@ -1,8 +1,10 @@
 import styled, { css } from 'styled-components/native';
 import { Animated } from 'react-native';
-import { ISwitch, ColorKeys } from '@shiba-ui/shared';
+import { ISwitch } from '@shiba-ui/shared';
 
-export const Container = styled.View<ISwitch & { isChecked: boolean; isDisabled?: boolean }>`
+export const Container = styled.View<
+  ISwitch & { isChecked: boolean; isDisabled?: boolean }
+>`
   ${({ theme, size = 28, background = 'primary', isChecked, isDisabled }) => {
     const backgroundColor = isChecked
       ? (background && theme.colors[background]) || theme.colors.primary
@@ -34,4 +36,3 @@ export const Circle = styled(Animated.View)<{ size?: number }>`
     top: 4px;
   `}
 `;
-

@@ -1,6 +1,5 @@
 import { ColorKeys } from '../../theme';
 import { IconKeys } from './icon';
-import React from 'react';
 
 export type StepStatus =
   | 'success'

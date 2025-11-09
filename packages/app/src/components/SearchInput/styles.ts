@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { ISearchInput, ColorKeys } from '@shiba-ui/shared';
+import { ColorKeys } from '@shiba-ui/shared';
 import { TextInput as RNTextInput } from 'react-native';
 
 export const Container = styled.View`

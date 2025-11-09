@@ -16,7 +16,6 @@ export const Container = styled.View<
   ${({
     theme,
     height = 40,
-    width,
     background = 'primary',
     borderColor = 'primary',
     borderRadius = 8,

@@ -43,7 +43,6 @@ export const Option = styled.View<{
     theme,
     isActive,
     activeBackground = 'primary',
-    background = 'section',
     borderRadius = 8,
   }) => css`
     flex: 1;

@@ -74,7 +74,7 @@ export const OtpInput = ({
   );
 
   const handleKeyPress = useCallback(
-    (index: number) => (event: any) => {
+    (index: number) => (event: { nativeEvent: { key: string } }) => {
       if (
         event.nativeEvent.key === 'Backspace' &&
         !inputValues[index] &&

@@ -41,7 +41,6 @@ export const Option = styled.button<{
     theme,
     isActive,
     activeBackground = 'primary',
-    background = 'section',
     borderRadius = 8,
   }) => css`
     cursor: pointer;

@@ -6,8 +6,6 @@ import { PanResponder } from 'react-native';
 export const Range = ({
   value,
   handleChange,
-  min,
-  max,
   background,
   height,
   width,
@@ -26,12 +24,14 @@ export const Range = ({
 
   const percentage = ((rangeValue - minValue) / (maxValue - minValue)) * 100;
 
-  const handleLayout = (event: any) => {
+  const handleLayout = (event: {
+    nativeEvent: { layout: { width: number } };
+  }) => {
     const { width: w } = event.nativeEvent.layout;
     if (w > 0) setContainerWidth(w);
   };
 
-  const handleMove = (evt: any) => {
+  const handleMove = (evt: { nativeEvent: { locationX: number } }) => {
     if (containerWidth === 0) return;
 
     const { locationX } = evt.nativeEvent;

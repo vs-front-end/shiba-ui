@@ -11,7 +11,7 @@ const meta: Meta<typeof OtpInput> = {
 export default meta;
 type Story = StoryObj<typeof OtpInput>;
 
-const OtpTemplate = (args: any) => {
+const OtpTemplate = (args: Parameters<typeof OtpInput>[0]) => {
   const [value, setValue] = useState(args.value || '');
 
   const handleChange = (newValue: string) => {

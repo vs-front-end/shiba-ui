@@ -1,4 +1,3 @@
-import React from 'react';
 import { StackedChart } from '@shiba-ui/browser';
 import type { Meta, StoryObj } from '@storybook/react';
 

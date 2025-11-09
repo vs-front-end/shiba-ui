@@ -73,7 +73,6 @@ export const PieChart = ({
               'Z',
             ].join(' ');
 
-            const currentStartAngle = startAngle;
             startAngle += (percent * 2 * Math.PI) / 100;
 
             return (

@@ -3,7 +3,6 @@ import { ICounterInput } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { useState, useEffect } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { TextInput as RNTextInput } from 'react-native';
 
 export const CounterInput = ({
   value = 50,

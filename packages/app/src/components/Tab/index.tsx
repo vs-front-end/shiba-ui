@@ -3,7 +3,6 @@ import { ITab } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { useState, useEffect } from 'react';
-import { TouchableOpacity } from 'react-native';
 
 export const Tab = ({
   options,

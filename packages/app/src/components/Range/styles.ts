@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { IRange, ColorKeys } from '@shiba-ui/shared';
+import { ColorKeys } from '@shiba-ui/shared';
 
 export const Container = styled.View<{ width?: number; height?: number }>`
   ${({ width, height = 8 }) => css`
@@ -17,7 +17,7 @@ export const Track = styled.View<{
   height?: number;
   width?: number;
 }>`
-  ${({ theme, background = 'primary', height = 8, width }) => css`
+  ${({ theme, height = 8, width }) => css`
     position: absolute;
     width: ${width ? `${width}px` : '100%'};
     height: ${`${height}px`};
