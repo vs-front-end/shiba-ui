@@ -32,4 +32,7 @@ export * from './components/SegmentedButton';
 export * from './components/Tab';
 export * from './components/StackedChart';
 export * from './components/PieChart';
+export * from './components/DonutChart';
+export * from './components/Breadcrumb';
+export * from './components/Timeline';
 export * from './theme/ThemeProvider';

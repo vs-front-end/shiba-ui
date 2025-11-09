@@ -37,3 +37,6 @@ export * from './types/components/segmentedButton';
 export * from './types/components/tab';
 export * from './types/components/stackedChart';
 export * from './types/components/pieChart';
+export * from './types/components/donutChart';
+export * from './types/components/breadcrumb';
+export * from './types/components/timeline';
