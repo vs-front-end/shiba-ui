@@ -28,4 +28,5 @@ export * from './components/Pagination';
 export * from './components/Steps';
 export * from './components/OtpInput';
 export * from './components/CounterInput';
+export * from './components/SegmentedButton';
 export * from './theme/ThemeProvider';
