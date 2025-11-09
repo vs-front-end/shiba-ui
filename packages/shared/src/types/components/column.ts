@@ -14,6 +14,7 @@ export interface IColumn {
   gap?: number;
   align?: AlignType;
   justify?: JustifyType;
+  flex?: number;
   isHidden?: boolean;
   children: ReactNode;
 }
