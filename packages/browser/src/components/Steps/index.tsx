@@ -20,7 +20,7 @@ export const Steps = ({
 }: ISteps) => {
   const getStepIcon = (status?: string) => {
     if (status === 'success') return 'check';
-    if (status === 'error') return 'x-circle';
+    if (status === 'error') return 'x';
     if (status === 'pending') return 'info';
     return 'check-circle';
   };
@@ -89,6 +89,7 @@ export const Steps = ({
                     fontSize={(stepSize || 32) / 2.5}
                     text={String(step?.content || index + 1)}
                     color={step?.textColor || 'content'}
+                    fontWeight="medium"
                   />
                 )}
 
