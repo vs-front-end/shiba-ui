@@ -31,4 +31,5 @@ export * from './components/CounterInput';
 export * from './components/SegmentedButton';
 export * from './components/Tab';
 export * from './components/StackedChart';
+export * from './components/PieChart';
 export * from './theme/ThemeProvider';
