@@ -1,3 +1,5 @@
+import './types/styled-native';
+
 export * from './components/Icon';
 export * from './components/Spinner';
 export * from './components/TextDisplay';

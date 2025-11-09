@@ -1,3 +1,5 @@
+import './types/styled';
+
 export * from './components/Icon';
 export * from './components/TextDisplay';
 export * from './components/TextLink';
