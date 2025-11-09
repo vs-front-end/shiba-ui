@@ -1,8 +1,6 @@
 import { ColorKeys } from '../../theme';
-import React from 'react';
 
-export interface ISearchInput
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface ISearchInput {
   value?: string;
   handleChange?: (value: string) => void;
   placeholder?: string;

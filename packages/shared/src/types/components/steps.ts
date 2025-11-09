@@ -20,7 +20,7 @@ export interface IStep {
   textColor?: ColorKeys;
 }
 
-export interface ISteps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ISteps {
   steps?: IStep[];
   isHidden?: boolean;
 

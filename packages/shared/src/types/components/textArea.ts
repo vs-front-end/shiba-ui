@@ -1,8 +1,6 @@
 import { ColorKeys } from '../../theme';
-import React from 'react';
 
-export interface ITextArea
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface ITextArea {
   value?: string;
   handleChange?: (value: string) => void;
   placeholder?: string;

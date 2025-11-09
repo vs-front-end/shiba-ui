@@ -1,8 +1,6 @@
 import { ColorKeys } from '../../theme';
-import React from 'react';
 
-export interface IPasswordInput
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface IPasswordInput {
   value?: string;
   handleChange?: (value: string) => void;
   placeholder?: string;

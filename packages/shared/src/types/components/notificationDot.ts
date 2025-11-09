@@ -1,8 +1,7 @@
 import { ColorKeys } from '../../theme';
 import { IconKeys } from './icon';
-import React from 'react';
 
-export interface INotificationDot extends React.HTMLAttributes<HTMLDivElement> {
+export interface INotificationDot {
   icon?: IconKeys;
   count?: number;
   iconColor?: ColorKeys;
