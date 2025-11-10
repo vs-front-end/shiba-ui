@@ -1,6 +1,14 @@
 import * as S from './styles';
-import type { IStackedChart } from '@shiba-ui/shared';
+import type { IStackedChart, IStackedData } from '@shiba-ui/shared';
 import { useMemo, useState } from 'react';
+
+interface IStackedDataWithPress extends IStackedData {
+  onPress?: () => void;
+}
+
+interface IStackedChartProps extends Omit<IStackedChart, 'data'> {
+  data: IStackedDataWithPress[];
+}
 
 export const StackedChart = ({
   data = [],
@@ -9,7 +17,7 @@ export const StackedChart = ({
   borderRadius = 8,
   isHidden,
   ...props
-}: IStackedChart) => {
+}: IStackedChartProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const validatedData = useMemo(() => {
@@ -44,7 +52,7 @@ export const StackedChart = ({
       >
         <S.Bar>
           {validatedData.map((segment, index) => {
-            const { percent, color, onClick, label } = segment;
+            const { percent, color, onPress, label } = segment;
             const isFirst = index === 0;
             const isLast = index === validatedData.length - 1;
             const isActive = activeIndex === index;
@@ -60,11 +68,11 @@ export const StackedChart = ({
               />
             );
 
-            if (onClick) {
+            if (onPress) {
               return (
                 <S.SegmentWrapper key={index} width={percent}>
                   <S.SegmentTouchable
-                    onPress={onClick}
+                    onPress={onPress}
                     onPressIn={() => setActiveIndex(index)}
                     onPressOut={() => setActiveIndex(null)}
                     activeOpacity={0.9}

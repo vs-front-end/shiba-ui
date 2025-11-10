@@ -15,6 +15,5 @@ export interface IBadge {
   leftIcon?: IconKeys;
 
   isHidden?: boolean;
-  onClick?: () => void;
 }
 

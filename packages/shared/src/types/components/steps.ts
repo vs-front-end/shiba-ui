@@ -14,7 +14,6 @@ export interface IStep {
   status?: StepStatus;
   label?: string;
   stepColor?: ColorKeys;
-  onClick?: () => void;
   labelColor?: ColorKeys;
   textColor?: ColorKeys;
 }

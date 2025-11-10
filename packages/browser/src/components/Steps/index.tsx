@@ -1,8 +1,16 @@
 import * as S from './styles';
-import type { ISteps, IconKeys } from '@shiba-ui/shared';
+import type { ISteps, IStep, IconKeys } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { Fragment } from 'react';
+
+interface IStepWithClick extends IStep {
+  onClick?: () => void;
+}
+
+interface IStepsProps extends Omit<ISteps, 'steps'> {
+  steps?: IStepWithClick[];
+}
 
 export const Steps = ({
   steps,
@@ -17,7 +25,7 @@ export const Steps = ({
   disabledColor,
   lineColor,
   ...props
-}: ISteps) => {
+}: IStepsProps) => {
   const getStepIcon = (status?: string) => {
     if (status === 'success') return 'check';
     if (status === 'error') return 'x';

@@ -4,7 +4,6 @@ export interface IStackedData {
   percent: number;
   color: ColorKeys;
   label: string;
-  onClick?: () => void;
 }
 
 export interface IStackedChart {

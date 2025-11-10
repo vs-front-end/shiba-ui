@@ -4,6 +4,10 @@ import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { Spinner } from '../Spinner';
 
+interface IButtonProps extends IButton {
+  onClick: () => void;
+}
+
 export const Button = ({
   text,
   onClick,
@@ -19,7 +23,7 @@ export const Button = ({
   height,
   fontSize = 14,
   ...props
-}: IButton) => {
+}: IButtonProps) => {
   if (isHidden) return null;
 
   const handleClick = () => {

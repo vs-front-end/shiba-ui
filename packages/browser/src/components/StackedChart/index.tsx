@@ -1,6 +1,14 @@
 import * as S from './styles';
-import type { IStackedChart } from '@shiba-ui/shared';
+import type { IStackedChart, IStackedData } from '@shiba-ui/shared';
 import { useMemo, useState } from 'react';
+
+interface IStackedDataWithClick extends IStackedData {
+  onClick?: () => void;
+}
+
+interface IStackedChartProps extends Omit<IStackedChart, 'data'> {
+  data: IStackedDataWithClick[];
+}
 
 export const StackedChart = ({
   data = [],
@@ -9,7 +17,7 @@ export const StackedChart = ({
   borderRadius = 8,
   isHidden,
   ...props
-}: IStackedChart) => {
+}: IStackedChartProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const validatedData = useMemo(() => {

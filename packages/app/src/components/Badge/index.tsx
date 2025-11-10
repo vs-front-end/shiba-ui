@@ -4,6 +4,10 @@ import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { TouchableOpacity } from 'react-native';
 
+interface IBadgeProps extends IBadge {
+  onPress: () => void;
+}
+
 export const Badge = ({
   text = 'Shiba UI',
   textSize = 14,
@@ -11,11 +15,11 @@ export const Badge = ({
   leftIcon,
   rightIcon,
   isHidden,
-  onClick,
+  onPress,
   iconColor,
   iconSize = 14,
   ...props
-}: IBadge) => {
+}: IBadgeProps) => {
   if (isHidden) return null;
 
   const content = (
@@ -31,13 +35,9 @@ export const Badge = ({
     </S.Container>
   );
 
-  if (onClick) {
-    return (
-      <TouchableOpacity onPress={onClick} activeOpacity={0.8}>
-        {content}
-      </TouchableOpacity>
-    );
-  }
-
-  return content;
+  return (
+    <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
+      {content}
+    </TouchableOpacity>
+  );
 };

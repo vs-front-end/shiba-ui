@@ -3,7 +3,6 @@ import type { IconKeys } from './icon';
 
 export interface IButton {
   text?: string;
-  onClick?: () => void;
   isLoading?: boolean;
   isHidden?: boolean;
   isDisabled?: boolean;

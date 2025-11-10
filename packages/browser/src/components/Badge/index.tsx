@@ -3,6 +3,10 @@ import type { IBadge } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 
+interface IBadgeProps extends IBadge {
+  onClick: () => void;
+}
+
 export const Badge = ({
   text = 'Shiba UI',
   textSize = 14,
@@ -14,7 +18,7 @@ export const Badge = ({
   iconColor,
   iconSize = 14,
   ...props
-}: IBadge) => {
+}: IBadgeProps) => {
   if (isHidden) return null;
 
   return (

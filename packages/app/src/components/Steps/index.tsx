@@ -1,9 +1,17 @@
 import * as S from './styles';
-import type { ISteps, IconKeys } from '@shiba-ui/shared';
+import type { ISteps, IStep, IconKeys } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { Fragment } from 'react';
 import { TouchableOpacity } from 'react-native';
+
+interface IStepWithPress extends IStep {
+  onPress?: () => void;
+}
+
+interface IStepsProps extends Omit<ISteps, 'steps'> {
+  steps?: IStepWithPress[];
+}
 
 export const Steps = ({
   steps,
@@ -18,7 +26,7 @@ export const Steps = ({
   disabledColor,
   lineColor,
   ...props
-}: ISteps) => {
+}: IStepsProps) => {
   const getStepIcon = (status?: string) => {
     if (status === 'success') return 'check';
     if (status === 'error') return 'x';
@@ -107,10 +115,10 @@ export const Steps = ({
           </S.StepContainer>
         );
 
-        if (step?.onClick) {
+        if (step?.onPress) {
           return (
             <Fragment key={step.id}>
-              <TouchableOpacity onPress={step.onClick} activeOpacity={0.8}>
+              <TouchableOpacity onPress={step.onPress} activeOpacity={0.8}>
                 {stepContent}
               </TouchableOpacity>
 
