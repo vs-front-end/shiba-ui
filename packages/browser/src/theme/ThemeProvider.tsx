@@ -34,7 +34,7 @@ interface ThemeProviderProps {
 export const ThemeProvider = ({
   children,
   selectedTheme = 'light',
-  fontFamily = 'Poppins, sans-serif',
+  fontFamily = 'Georgia, sans-serif',
   customTheme,
 }: ThemeProviderProps) => {
   const theme = useMemo(() => {

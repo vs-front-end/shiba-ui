@@ -13,14 +13,24 @@ import {
 
 import type { Theme, ThemeVariant } from '@shiba-ui/shared';
 
+interface CustomTheme {
+  colors?: Partial<Theme['colors']>;
+  fontWeight?: Partial<Theme['fontWeight']>;
+  fontFamily?: string;
+}
+
 interface ThemeProviderProps {
   children: ReactNode;
   selectedTheme?: ThemeVariant;
+  fontFamily?: string;
+  customTheme?: CustomTheme;
 }
 
 export const ThemeProvider = ({
   children,
   selectedTheme = 'light',
+  fontFamily,
+  customTheme,
 }: ThemeProviderProps) => {
   const theme = useMemo(() => {
     let baseColorTheme = LIGHT_THEME;
@@ -28,13 +38,23 @@ export const ThemeProvider = ({
     if (selectedTheme === 'dark') baseColorTheme = DARK_THEME;
     if (selectedTheme === 'ocean') baseColorTheme = OCEAN_THEME;
 
-    const colors = {
+    const baseColors = {
       ...baseColorTheme,
       ...COMMON_COLORS,
     };
 
-    return { colors, fontWeight: FONT_WEIGHT } as Theme;
-  }, [selectedTheme]);
+    const colors = customTheme?.colors
+      ? { ...baseColors, ...customTheme.colors }
+      : baseColors;
+
+    const finalTheme = {
+      colors,
+      fontWeight: customTheme?.fontWeight || FONT_WEIGHT,
+      fontFamily: customTheme?.fontFamily || fontFamily || 'System',
+    };
+
+    return finalTheme as Theme;
+  }, [selectedTheme, fontFamily, customTheme]);
 
   return (
     <SafeAreaProvider>
