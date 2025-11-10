@@ -5,7 +5,10 @@ import { TextDisplay } from '../TextDisplay';
 import { useState, useEffect, useRef } from 'react';
 import { Animated, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { nanoid } from 'nanoid';
+
+const generateId = (): string => {
+  return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+};
 
 const toastManager = {
   listeners: new Set<(toasts: IToast[]) => void>(),
@@ -27,7 +30,7 @@ const toastManager = {
       }
     }
 
-    const id = nanoid();
+    const id = generateId();
     this.toasts.push({ ...toast, id });
     this.notify();
   },
