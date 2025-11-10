@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { IRow } from '@shiba-ui/shared';
+import type { IRow } from '@shiba-ui/shared';
 
 export const Container = styled.View<IRow>`
   display: flex;

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { IAvatar } from '@shiba-ui/shared';
+import type { IAvatar } from '@shiba-ui/shared';
 import { Image as RNImage } from 'react-native';
 
 export const Container = styled.View<IAvatar>`

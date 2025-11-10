@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { ICheckbox } from '@shiba-ui/shared';
+import type { ICheckbox } from '@shiba-ui/shared';
 
 export const Container = styled.View<
   ICheckbox & { isChecked: boolean; isDisabled?: boolean }

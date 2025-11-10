@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IStackedChart } from '@shiba-ui/shared';
+import type { IStackedChart } from '@shiba-ui/shared';
 import { useMemo, useState } from 'react';
 
 export const StackedChart = ({

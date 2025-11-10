@@ -1,5 +1,5 @@
-import { ColorKeys } from '../../theme';
-import { ITextDisplay } from './textDisplay';
+import type { ColorKeys } from '../../theme';
+import type { ITextDisplay } from './textDisplay';
 
 export interface ITextLink extends ITextDisplay {
   href: string;

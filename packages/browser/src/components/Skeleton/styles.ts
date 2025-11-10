@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { ColorKeys, ISkeleton } from '@shiba-ui/shared';
+import type { ColorKeys, ISkeleton } from '@shiba-ui/shared';
 
 const blink = keyframes`
   0% {

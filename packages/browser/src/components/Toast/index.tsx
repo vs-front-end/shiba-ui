@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IToast, ColorKeys, IconKeys } from '@shiba-ui/shared';
+import type { IToast, ColorKeys, IconKeys } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { useState, useEffect } from 'react';

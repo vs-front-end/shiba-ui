@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ITextInput } from '@shiba-ui/shared';
+import type { ITextInput } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 import { useState, useEffect } from 'react';
 

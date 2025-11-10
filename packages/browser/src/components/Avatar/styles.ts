@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ColorKeys, IAvatar } from '@shiba-ui/shared';
+import type { ColorKeys, IAvatar } from '@shiba-ui/shared';
 
 export const Container = styled.div<IAvatar>`
   ${({ theme, background = 'primary', size = 50 }) => css`

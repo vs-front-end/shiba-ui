@@ -1,6 +1,6 @@
 import * as S from './styles';
 import { useState } from 'react';
-import { IAvatar } from '@shiba-ui/shared';
+import type { IAvatar } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 import { Skeleton } from '../Skeleton';
 

@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { AlignType, JustifyType } from './column';
+import type { ReactNode } from 'react';
+import type { AlignType, JustifyType } from './column';
 
 export interface IRow {
   gap?: number;

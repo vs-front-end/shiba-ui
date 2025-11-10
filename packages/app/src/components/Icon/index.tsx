@@ -1,4 +1,4 @@
-import { IIcon } from '@shiba-ui/shared';
+import type { IIcon } from '@shiba-ui/shared';
 import { Feather } from '@expo/vector-icons';
 import { useTheme } from 'styled-components/native';
 

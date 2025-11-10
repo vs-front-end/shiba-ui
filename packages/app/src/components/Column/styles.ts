@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { IColumn } from '@shiba-ui/shared';
+import type { IColumn } from '@shiba-ui/shared';
 
 export const Container = styled.View<IColumn>`
   display: flex;

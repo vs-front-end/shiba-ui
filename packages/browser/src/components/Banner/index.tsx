@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IBanner } from '@shiba-ui/shared';
+import type { IBanner } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { useState } from 'react';
 

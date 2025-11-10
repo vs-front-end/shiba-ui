@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IRadio } from '@shiba-ui/shared';
+import type { IRadio } from '@shiba-ui/shared';
 import { useState, useEffect } from 'react';
 
 export const Radio = ({

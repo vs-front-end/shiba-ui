@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ICounterInput } from '@shiba-ui/shared';
+import type { ICounterInput } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { useState, useEffect } from 'react';
 import { TouchableOpacity } from 'react-native';

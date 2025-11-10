@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { ISpinner } from '@shiba-ui/shared';
+import type { ISpinner } from '@shiba-ui/shared';
 
 const spin = keyframes`
   from {

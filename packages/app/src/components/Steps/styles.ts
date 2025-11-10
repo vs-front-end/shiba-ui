@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { ColorKeys, ITextDisplay } from '@shiba-ui/shared';
+import type { ColorKeys, ITextDisplay } from '@shiba-ui/shared';
 
 export const Container = styled.View`
   display: flex;

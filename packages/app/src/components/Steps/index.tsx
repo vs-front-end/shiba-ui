@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ISteps, IconKeys } from '@shiba-ui/shared';
+import type { ISteps, IconKeys } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { Fragment } from 'react';

@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ISwitch } from '@shiba-ui/shared';
+import type { ISwitch } from '@shiba-ui/shared';
 import { useState, useEffect } from 'react';
 
 export const Switch = ({

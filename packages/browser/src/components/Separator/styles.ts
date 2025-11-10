@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ColorKeys, ISeparator } from '@shiba-ui/shared';
+import type { ColorKeys, ISeparator } from '@shiba-ui/shared';
 
 export const Container = styled.div<ISeparator>`
   display: flex;

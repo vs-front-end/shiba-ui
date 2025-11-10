@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ITimeline, ITimelineItem } from '@shiba-ui/shared';
+import type { ITimeline, ITimelineItem } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 
 export const Timeline = ({ data = [], isHidden, ...props }: ITimeline) => {

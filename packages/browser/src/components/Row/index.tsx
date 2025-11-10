@@ -1,4 +1,4 @@
-import { IRow } from '@shiba-ui/shared';
+import type { IRow } from '@shiba-ui/shared';
 import * as S from './styles';
 
 export const Row = ({ children, isHidden, ...props }: IRow) => {

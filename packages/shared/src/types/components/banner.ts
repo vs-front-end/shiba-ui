@@ -1,4 +1,4 @@
-import { ColorKeys } from '../../theme';
+import type { ColorKeys } from '../../theme';
 import React from 'react';
 
 export interface IBanner extends React.HTMLAttributes<HTMLDivElement> {

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ITextDisplay } from '@shiba-ui/shared';
+import type { ITextDisplay } from '@shiba-ui/shared';
 
 export const Container = styled.span<
   ITextDisplay & { textDecoration: string }

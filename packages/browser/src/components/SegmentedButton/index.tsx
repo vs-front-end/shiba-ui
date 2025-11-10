@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ISegmentedButton } from '@shiba-ui/shared';
+import type { ISegmentedButton } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { useState, useEffect } from 'react';

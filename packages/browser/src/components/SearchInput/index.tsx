@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ISearchInput } from '@shiba-ui/shared';
+import type { ISearchInput } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { useState } from 'react';
 

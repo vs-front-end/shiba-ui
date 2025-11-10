@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IOtpInput } from '@shiba-ui/shared';
+import type { IOtpInput } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 import { useState, useEffect, useRef, useCallback } from 'react';
 

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components/native';
 import { Animated } from 'react-native';
-import { ISwitch } from '@shiba-ui/shared';
+import type { ISwitch } from '@shiba-ui/shared';
 
 export const Container = styled.View<
   ISwitch & { isChecked: boolean; isDisabled?: boolean }

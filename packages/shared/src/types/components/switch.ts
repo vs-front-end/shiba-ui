@@ -1,4 +1,4 @@
-import { ColorKeys } from '../../theme';
+import type { ColorKeys } from '../../theme';
 
 export interface ISwitch {
   isChecked?: boolean;

@@ -1,5 +1,5 @@
-import { ColorKeys } from '../../theme';
-import { IconKeys } from './icon';
+import type { ColorKeys } from '../../theme';
+import type { IconKeys } from './icon';
 
 export interface ICheckbox {
   isChecked?: boolean;

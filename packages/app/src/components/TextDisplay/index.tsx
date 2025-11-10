@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ITextDisplay } from '@shiba-ui/shared';
+import type { ITextDisplay } from '@shiba-ui/shared';
 
 export const TextDisplay = ({ text, isHidden, ...props }: ITextDisplay) => {
   if (isHidden) return null;

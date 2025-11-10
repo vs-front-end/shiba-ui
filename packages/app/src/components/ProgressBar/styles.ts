@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { IProgressBar, ColorKeys } from '@shiba-ui/shared';
+import type { IProgressBar, ColorKeys } from '@shiba-ui/shared';
 
 export const Container = styled.View<IProgressBar>`
   display: flex;

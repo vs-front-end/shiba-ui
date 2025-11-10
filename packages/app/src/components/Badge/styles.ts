@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { IBadge } from '@shiba-ui/shared';
+import type { IBadge } from '@shiba-ui/shared';
 
 export const Container = styled.View<IBadge>`
   ${({ theme, background = 'primary', borderRadius = 8 }) => css`

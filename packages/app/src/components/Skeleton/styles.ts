@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { ISkeleton } from '@shiba-ui/shared';
+import type { ISkeleton } from '@shiba-ui/shared';
 
 export const Container = styled.View<ISkeleton>`
   ${({

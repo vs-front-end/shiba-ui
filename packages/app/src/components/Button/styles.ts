@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components/native';
 import { TouchableOpacity } from 'react-native';
-import { IButton } from '@shiba-ui/shared';
+import type { IButton } from '@shiba-ui/shared';
 
 export const PressableWrapper = styled(TouchableOpacity).attrs({
   activeOpacity: 0.8,

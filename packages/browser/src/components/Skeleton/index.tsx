@@ -1,4 +1,4 @@
-import { ISkeleton } from '@shiba-ui/shared';
+import type { ISkeleton } from '@shiba-ui/shared';
 import * as S from './styles';
 
 export const Skeleton = ({ isHidden = false, ...props }: ISkeleton) => {

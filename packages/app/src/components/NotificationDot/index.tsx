@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { INotificationDot } from '@shiba-ui/shared';
+import type { INotificationDot } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 

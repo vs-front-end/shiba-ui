@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { IRadio } from '@shiba-ui/shared';
+import type { IRadio } from '@shiba-ui/shared';
 
 const scaleIn = keyframes`
   from {

@@ -1,4 +1,4 @@
-import { IIcon } from '@shiba-ui/shared';
+import type { IIcon } from '@shiba-ui/shared';
 import { useTheme } from 'styled-components';
 import { useState, useEffect } from 'react';
 

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { ColorKeys, ToastType } from '@shiba-ui/shared';
+import type { ColorKeys, ToastType } from '@shiba-ui/shared';
 
 export const Container = styled.View<{
   topOffset?: number;

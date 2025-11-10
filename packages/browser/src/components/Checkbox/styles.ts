@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { ICheckbox } from '@shiba-ui/shared';
+import type { ICheckbox } from '@shiba-ui/shared';
 
 const scaleIn = keyframes`
   from {

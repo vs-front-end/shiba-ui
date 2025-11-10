@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IBadge } from '@shiba-ui/shared';
+import type { IBadge } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 

@@ -1,4 +1,5 @@
-import { ReactNode, useMemo } from 'react';
+import { useMemo } from 'react';
+import type { ReactNode } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -7,10 +8,10 @@ import {
   DARK_THEME,
   OCEAN_THEME,
   COMMON_COLORS,
-  Theme,
-  ThemeVariant,
   FONT_WEIGHT,
 } from '@shiba-ui/shared';
+
+import type { Theme, ThemeVariant } from '@shiba-ui/shared';
 
 interface ThemeProviderProps {
   children: ReactNode;

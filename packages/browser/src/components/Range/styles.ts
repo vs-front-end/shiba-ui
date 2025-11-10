@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { IRange, ColorKeys } from '@shiba-ui/shared';
+import type { IRange, ColorKeys } from '@shiba-ui/shared';
 
 export const Container = styled.input<IRange & { percentage: number }>`
   ${({

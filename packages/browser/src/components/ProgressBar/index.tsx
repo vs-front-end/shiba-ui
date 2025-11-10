@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IProgressBar } from '@shiba-ui/shared';
+import type { IProgressBar } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 
 export const ProgressBar = ({

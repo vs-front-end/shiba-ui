@@ -1,5 +1,10 @@
 import * as S from './styles';
-import { ITextLink } from '@shiba-ui/shared';
+import type { ITextLink } from '@shiba-ui/shared';
+import type { TextDecorationType } from '../TextDisplay';
+
+interface ITextLinkBrowser extends ITextLink {
+  textDecoration?: TextDecorationType;
+}
 
 export const TextLink = ({
   text,
@@ -7,7 +12,7 @@ export const TextLink = ({
   isHidden,
   isExternal,
   ...props
-}: ITextLink) => {
+}: ITextLinkBrowser) => {
   if (isHidden) return null;
 
   return (

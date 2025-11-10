@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { IOtpInput } from '@shiba-ui/shared';
+import type { IOtpInput } from '@shiba-ui/shared';
 
 export const Container = styled.div`
   display: flex;

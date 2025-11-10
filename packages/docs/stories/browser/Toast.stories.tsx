@@ -2,7 +2,7 @@ import React from 'react';
 import { ToastContainer, toast } from '@shiba-ui/browser';
 import { Button } from '@shiba-ui/browser';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ToastType } from '@shiba-ui/shared';
+import type { ToastType } from '@shiba-ui/shared';
 
 const meta: Meta<typeof ToastContainer> = {
   title: 'WEB - Components/Feedback/Toast',

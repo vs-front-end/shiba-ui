@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IBreadcrumb, IBreadcrumbItem } from '@shiba-ui/shared';
+import type { IBreadcrumb, IBreadcrumbItem } from '@shiba-ui/shared';
 import { useState, useRef } from 'react';
 import { TextDisplay } from '../TextDisplay';
 import { Icon } from '../Icon';

@@ -1,4 +1,4 @@
-import { ISeparator } from '@shiba-ui/shared';
+import type { ISeparator } from '@shiba-ui/shared';
 import * as S from './styles';
 
 export const Separator = ({ isHidden, ...props }: ISeparator) => {

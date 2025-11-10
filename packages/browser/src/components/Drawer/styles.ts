@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { IDrawer } from '@shiba-ui/shared';
+import type { IDrawer } from '@shiba-ui/shared';
 
 const slideIn = keyframes`
   from {

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { ColorKeys } from '@shiba-ui/shared';
+import type { ColorKeys } from '@shiba-ui/shared';
 import { TouchableOpacity } from 'react-native';
 
 export const Container = styled.View<{

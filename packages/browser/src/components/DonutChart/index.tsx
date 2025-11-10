@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IDonutChart } from '@shiba-ui/shared';
+import type { IDonutChart } from '@shiba-ui/shared';
 import { useMemo, useState } from 'react';
 import { useTheme } from 'styled-components';
 

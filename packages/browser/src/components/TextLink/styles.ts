@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
-import { ITextLink } from '@shiba-ui/shared';
+import type { ITextLink } from '@shiba-ui/shared';
+import type { TextDecorationType } from '../TextDisplay';
 
-export const Container = styled.a<ITextLink>`
+interface ITextLinkBrowser extends ITextLink {
+  textDecoration?: TextDecorationType;
+}
+
+export const Container = styled.a<ITextLinkBrowser>`
   ${({
     theme,
     color = 'content',

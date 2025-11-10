@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ITextArea, ColorKeys } from '@shiba-ui/shared';
+import type { ITextArea, ColorKeys } from '@shiba-ui/shared';
 
 export const Container = styled.div`
   display: flex;

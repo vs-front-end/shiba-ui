@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { ColorKeys, ToastType } from '@shiba-ui/shared';
+import type { ColorKeys, ToastType } from '@shiba-ui/shared';
 
 const slideIn = keyframes`
   from {

@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IPagination } from '@shiba-ui/shared';
+import type { IPagination } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 import { Icon } from '../Icon';
 import { useState, useEffect } from 'react';

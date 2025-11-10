@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IBanner } from '@shiba-ui/shared';
+import type { IBanner } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { useState } from 'react';
 import { Pressable } from 'react-native';
@@ -23,7 +23,6 @@ export const Banner = ({
   return (
     <S.Container
       data-testid="banner"
-      accessibilityRole="banner"
       {...props}
     >
       <S.Content>{children}</S.Content>

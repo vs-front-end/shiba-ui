@@ -1,4 +1,4 @@
-import { IDrawer } from '@shiba-ui/shared';
+import type { IDrawer } from '@shiba-ui/shared';
 import * as S from './styles';
 
 export const Drawer = ({

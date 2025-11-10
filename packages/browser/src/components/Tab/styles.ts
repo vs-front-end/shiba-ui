@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ColorKeys } from '@shiba-ui/shared';
+import type { ColorKeys } from '@shiba-ui/shared';
 
 export const Container = styled.div<{
   width?: number;

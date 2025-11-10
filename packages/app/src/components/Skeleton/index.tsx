@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ISkeleton } from '@shiba-ui/shared';
+import type { ISkeleton } from '@shiba-ui/shared';
 import { useEffect, useRef } from 'react';
 import { Animated, Easing } from 'react-native';
 

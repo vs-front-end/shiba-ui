@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ICheckbox } from '@shiba-ui/shared';
+import type { ICheckbox } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { useState, useEffect } from 'react';
 

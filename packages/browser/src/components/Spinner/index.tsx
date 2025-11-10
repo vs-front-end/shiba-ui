@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { ISpinner } from '@shiba-ui/shared';
+import type { ISpinner } from '@shiba-ui/shared';
 
 export const Spinner = ({ isHidden, ...props }: ISpinner) => {
   if (isHidden) return null;

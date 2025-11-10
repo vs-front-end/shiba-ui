@@ -2,7 +2,7 @@ import React from 'react';
 import { ToastContainer, toast } from '@shiba-ui/app';
 import { Button } from '@shiba-ui/app';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ToastType } from '@shiba-ui/shared';
+import type { ToastType } from '@shiba-ui/shared';
 import { View } from 'react-native';
 
 const meta: Meta<typeof ToastContainer> = {

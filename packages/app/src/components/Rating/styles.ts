@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { IRating, ColorKeys } from '@shiba-ui/shared';
+import type { IRating, ColorKeys } from '@shiba-ui/shared';
 
 export const Container = styled.View<IRating>`
   ${({ gap = 12 }) => css`

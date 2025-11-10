@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { ColorKeys } from '../../theme';
+import type { ReactNode } from 'react';
+import type { ColorKeys } from '../../theme';
 
 export interface IDrawer {
   children?: ReactNode;

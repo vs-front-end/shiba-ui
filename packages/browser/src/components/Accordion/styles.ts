@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { IAccordion } from '@shiba-ui/shared';
+import type { IAccordion } from '@shiba-ui/shared';
 
 export const Container = styled.div<IAccordion>`
   ${({

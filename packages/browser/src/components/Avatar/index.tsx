@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IAvatar } from '@shiba-ui/shared';
+import type { IAvatar } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 import { Skeleton } from '../Skeleton';
 import * as S from './styles';

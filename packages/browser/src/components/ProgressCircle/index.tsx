@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IProgressCircle } from '@shiba-ui/shared';
+import type { IProgressCircle } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 
 export const ProgressCircle = ({

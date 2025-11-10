@@ -1,4 +1,5 @@
-import { ReactNode, useMemo } from 'react';
+import { useMemo } from 'react';
+import type { ReactNode } from 'react';
 import {
   ThemeProvider as StyledThemeProvider,
   StyleSheetManager,
@@ -10,10 +11,10 @@ import {
   DARK_THEME,
   OCEAN_THEME,
   COMMON_COLORS,
-  Theme,
-  ThemeVariant,
   FONT_WEIGHT,
 } from '@shiba-ui/shared';
+
+import type { Theme, ThemeVariant } from '@shiba-ui/shared';
 
 import { GlobalStyles } from './globalStyles';
 

@@ -1,4 +1,4 @@
-import { IColumn } from '@shiba-ui/shared';
+import type { IColumn } from '@shiba-ui/shared';
 import * as S from './styles';
 
 export const Column = ({ children, isHidden, ...props }: IColumn) => {

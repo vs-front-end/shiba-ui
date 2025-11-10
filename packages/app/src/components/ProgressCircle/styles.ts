@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { IProgressCircle, ColorKeys } from '@shiba-ui/shared';
+import type { IProgressCircle, ColorKeys } from '@shiba-ui/shared';
 
 export const Container = styled.View<IProgressCircle>`
   ${({ size = 60 }) => css`

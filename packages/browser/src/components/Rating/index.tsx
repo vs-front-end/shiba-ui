@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IRating } from '@shiba-ui/shared';
+import type { IRating } from '@shiba-ui/shared';
 import { useState } from 'react';
 
 export const Rating = ({

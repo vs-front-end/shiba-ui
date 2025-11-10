@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ISwitch } from '@shiba-ui/shared';
+import type { ISwitch } from '@shiba-ui/shared';
 
 export const Container = styled.button<ISwitch>`
   ${({

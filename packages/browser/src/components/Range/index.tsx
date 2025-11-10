@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { IRange } from '@shiba-ui/shared';
+import type { IRange } from '@shiba-ui/shared';
 import { useState } from 'react';
 
 export const Range = ({

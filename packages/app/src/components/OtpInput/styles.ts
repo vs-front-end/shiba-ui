@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { IOtpInput } from '@shiba-ui/shared';
+import type { IOtpInput } from '@shiba-ui/shared';
 import { TextInput as RNTextInput } from 'react-native';
 
 export const Container = styled.View`

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { IBanner } from '@shiba-ui/shared';
+import type { IBanner } from '@shiba-ui/shared';
 
 export const Container = styled.div<IBanner>`
   ${({ theme, background, borderColor, width, height }) => css`
