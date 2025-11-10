@@ -5,7 +5,6 @@ export const Container = styled.div<IRow>`
   display: flex;
   flex-direction: row;
   flex: ${({ flex }) => flex};
-
   gap: ${({ gap = 8 }) => `${gap}px`};
 
   align-items: ${({ align = 'center' }) => {

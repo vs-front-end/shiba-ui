@@ -4,8 +4,7 @@ import type { IRow } from '@shiba-ui/shared';
 export const Container = styled.View<IRow>`
   display: flex;
   flex-direction: row;
-  flex: 1;
-
+  flex: ${({ flex }) => flex};
   gap: ${({ gap = 8 }) => `${gap}px`};
 
   align-items: ${({ align = 'center' }) => {

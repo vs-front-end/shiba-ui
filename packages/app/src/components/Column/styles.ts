@@ -4,8 +4,7 @@ import type { IColumn } from '@shiba-ui/shared';
 export const Container = styled.View<IColumn>`
   display: flex;
   flex-direction: column;
-  flex: 1;
-
+  flex: ${({ flex }) => flex};
   gap: ${({ gap = 0 }) => `${gap}px`};
 
   align-items: ${({ align = 'start' }) => {
