@@ -2,7 +2,7 @@ import { PasswordInput } from '@shiba-ui/app';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof PasswordInput> = {
-  title: 'APP - Components/Forms/PasswordInput',
+  title: 'APP - Components/Form/PasswordInput',
   component: PasswordInput,
 };
 

@@ -2,7 +2,7 @@ import { Button } from '@shiba-ui/app';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Button> = {
-  title: 'APP - Components/Forms/Button',
+  title: 'APP - Components/Form/Button',
   component: Button,
 };
 

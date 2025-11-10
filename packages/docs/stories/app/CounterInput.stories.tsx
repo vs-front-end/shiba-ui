@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
 const meta: Meta<typeof CounterInput> = {
-  title: 'APP - Components/Forms/CounterInput',
+  title: 'APP - Components/Form/CounterInput',
   component: CounterInput,
 };
 

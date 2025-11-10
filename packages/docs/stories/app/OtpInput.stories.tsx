@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
 const meta: Meta<typeof OtpInput> = {
-  title: 'APP - Components/Forms/OtpInput',
+  title: 'APP - Components/Form/OtpInput',
   component: OtpInput,
 };
 

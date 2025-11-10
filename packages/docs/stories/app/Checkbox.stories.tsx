@@ -2,7 +2,7 @@ import { Checkbox } from '@shiba-ui/app';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'APP - Components/Forms/Checkbox',
+  title: 'APP - Components/Form/Checkbox',
   component: Checkbox,
 };
 

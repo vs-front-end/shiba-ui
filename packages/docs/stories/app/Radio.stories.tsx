@@ -2,7 +2,7 @@ import { Radio } from '@shiba-ui/app';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Radio> = {
-  title: 'APP - Components/Forms/Radio',
+  title: 'APP - Components/Form/Radio',
   component: Radio,
 };
 

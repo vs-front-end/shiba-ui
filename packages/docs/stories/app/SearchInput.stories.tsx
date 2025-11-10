@@ -2,7 +2,7 @@ import { SearchInput } from '@shiba-ui/app';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof SearchInput> = {
-  title: 'APP - Components/Forms/SearchInput',
+  title: 'APP - Components/Form/SearchInput',
   component: SearchInput,
 };
 

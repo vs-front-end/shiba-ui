@@ -2,7 +2,7 @@ import { TextArea } from '@shiba-ui/app';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof TextArea> = {
-  title: 'APP - Components/Forms/TextArea',
+  title: 'APP - Components/Form/TextArea',
   component: TextArea,
 };
 

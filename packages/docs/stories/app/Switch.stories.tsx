@@ -2,7 +2,7 @@ import { Switch } from '@shiba-ui/app';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Switch> = {
-  title: 'APP - Components/Forms/Switch',
+  title: 'APP - Components/Form/Switch',
   component: Switch,
 };
 

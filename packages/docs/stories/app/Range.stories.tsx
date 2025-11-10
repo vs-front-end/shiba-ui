@@ -2,7 +2,7 @@ import { Range } from '@shiba-ui/app';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Range> = {
-  title: 'APP - Components/Forms/Range',
+  title: 'APP - Components/Form/Range',
   component: Range,
 };
 
