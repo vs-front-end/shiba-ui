@@ -1,0 +1,28 @@
+# Development files
+node_modules/
+*.log
+.DS_Store
+*.tsbuildinfo
+
+# Source maps (if generated)
+*.map
+
+# Test files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Config files
+tsconfig.json
+.eslintrc.json
+.prettierrc.json
+
+# Documentation
+README.md
+CHANGELOG.md
+
+# Git
+.git/
+.gitignore
+

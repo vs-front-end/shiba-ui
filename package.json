@@ -18,7 +18,14 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\"",
-    "link": "cd packages/shared && npm link && cd ../browser && npm link && cd ../app && npm link"
+    "link": "cd packages/shared && npm link && cd ../browser && npm link && cd ../app && npm link",
+    "publish:shared": "cd packages/shared && npm publish --access public",
+    "publish:browser": "cd packages/browser && npm publish --access public",
+    "publish:app": "cd packages/app && npm publish --access public",
+    "publish:all": "npm run publish:shared && npm run publish:browser && npm run publish:app",
+    "version:patch": "npm version patch --workspaces",
+    "version:minor": "npm version minor --workspaces",
+    "version:major": "npm version major --workspaces"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.0.0",

@@ -1,80 +1,82 @@
-# Shiba UI - Monorepo
+# Shiba UI
 
-A simple monorepo UI library supporting both React.js and React Native.
+A clean, small, and simple UI library supporting both React.js and React Native.
 
-## Structure
+## Installation
 
-```
-shiba-ui/
-├── packages/
-│   ├── shared/         # Shared types and interfaces
-│   ├── browser/        # React.js components
-│   └── mobile/         # React Native components
-```
-
-## Getting Started
-
-### Installation
+### For Web (React.js)
 
 ```bash
-# Install dependencies
-npm install
-
-# Build all packages
-npm run build
+npm install @shiba-ui/browser
 ```
 
-### Building
+### For Mobile (React Native/Expo)
 
 ```bash
-# Build all packages
-npm run build
-
-# Build specific packages
-npm run build:shared
-npm run build:browser
-npm run build:mobile
+npm install @shiba-ui/app
 ```
 
 ## Usage
 
-### Browser (React.js)
+### Web Example
 
 ```tsx
-import { Button } from '@shiba-ui/browser';
+import { ThemeProvider, Button, TextDisplay, Row } from '@shiba-ui/browser';
 
 function App() {
   return (
-    <Button 
-      text="Click me" 
-      variant="primary" 
-      onPress={() => console.log('Clicked!')} 
-    />
+    <ThemeProvider selectedTheme="dark">
+      <Row gap={12}>
+        <TextDisplay text="Hello Shiba UI" fontSize={16} />
+
+        <Button 
+          text="Click me" 
+          background="primary"
+          onClick={() => console.log('Clicked!')} 
+        />
+      </Row>
+    </ThemeProvider>
   );
 }
 ```
 
-### Mobile (React Native)
+### Mobile Example
 
 ```tsx
-import { Button } from '@shiba-ui/mobile';
+import { ThemeProvider, Button, TextDisplay, Row } from '@shiba-ui/app';
 
 function App() {
   return (
-    <Button 
-      text="Click me" 
-      variant="primary" 
-      onPress={() => console.log('Clicked!')} 
-    />
+    <ThemeProvider selectedTheme="dark">
+      <Row gap={12}>
+        <TextDisplay text="Hello Shiba UI" fontSize={16} />
+        
+        <Button 
+          text="Click me" 
+          background="primary"
+          onPress={() => console.log('Clicked!')} 
+        />
+      </Row>
+    </ThemeProvider>
   );
 }
 ```
 
 ## Features
 
-- ✅ Shared types and interfaces
-- ✅ Consistent API across platforms
+- ✅ Clean and simple API
+- ✅ Small bundle size
 - ✅ TypeScript support
-- ✅ Minimal dependencies (no build tools)
-- ✅ Simple monorepo structure
-- ✅ Ready for Storybook integration
+- ✅ Consistent API across platforms
+- ✅ Minimal dependencies
+- ✅ Theme support (light, dark, ocean)
+
+## Structure
+
+```
+shiba-ui/
+├── packages/
+│   ├── shared/    # Shared types and interfaces
+│   ├── browser/   # React.js components
+│   └── app/        # React Native components
+```

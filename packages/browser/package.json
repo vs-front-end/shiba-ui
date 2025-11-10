@@ -1,6 +1,7 @@
 {
   "name": "@shiba-ui/browser",
   "version": "1.0.0",
+  "description": "React.js UI components library - Shiba UI",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {
@@ -11,14 +12,35 @@
     }
   },
   "files": [
-    "dist"
+    "src"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
+  "keywords": [
+    "shiba-ui",
+    "react",
+    "react-components",
+    "ui-library",
+    "typescript",
+    "styled-components",
+    "component-library"
+  ],
+  "author": "Vitor Albergaria",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitor-albergaria/shiba-ui.git",
+    "directory": "packages/browser"
+  },
+  "bugs": {
+    "url": "https://github.com/vitor-albergaria/shiba-ui/issues"
+  },
+  "homepage": "https://github.com/vitor-albergaria/shiba-ui#readme",
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
-    "@shiba-ui/shared": "*",
+    "@shiba-ui/shared": "^1.0.0",
     "nanoid": "^5.1.5",
     "react-feather": "^2.0.10",
     "styled-components": "^6.1.19"
