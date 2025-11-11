@@ -1,10 +1,11 @@
 import type { ColorKeys } from '../../theme';
+import type { IBaseVisibility, IBaseLayout } from './base-props';
 
-export interface ISkeleton {
-  width?: number;
-  height?: number;
-  background?: ColorKeys;
-  borderRadius?: number;
+export interface ISkeleton extends IBaseVisibility, IBaseLayout {
+  /** Takes full width and height of parent */
   isFullSize?: boolean;
-  isHidden?: boolean;
+  /** Background color from theme */
+  background?: ColorKeys;
+  /** Border radius in pixels */
+  borderRadius?: number;
 }

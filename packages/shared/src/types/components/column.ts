@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { IBaseVisibility } from './base-props';
 
 export type AlignType = 'start' | 'end' | 'center';
 
@@ -10,11 +11,15 @@ export type JustifyType =
   | 'around'
   | 'evenly';
 
-export interface IColumn {
+export interface IColumn extends IBaseVisibility {
+  /** Gap between children in pixels */
   gap?: number;
+  /** Alignment of children */
   align?: AlignType;
+  /** Justification of children */
   justify?: JustifyType;
+  /** Flex grow value */
   flex?: number;
-  isHidden?: boolean;
+  /** Column children */
   children: ReactNode;
 }

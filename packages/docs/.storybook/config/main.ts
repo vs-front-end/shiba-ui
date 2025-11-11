@@ -58,6 +58,12 @@ const config: StorybookConfig = {
   framework: { name: '@storybook/react-webpack5', options: {} },
   staticDirs: ['../assets'],
   webpackFinal: webpackFinalFn,
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+    },
+  },
 };
 
 export default config;

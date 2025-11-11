@@ -1,10 +1,13 @@
 import type { ColorKeys } from '../../theme';
+import type { IBaseVisibility } from './base-props';
 
-export interface IIcon {
+export interface IIcon extends IBaseVisibility {
+  /** Icon name from available icon set */
   icon: IconKeys;
+  /** Icon size in pixels */
   size?: number;
+  /** Icon color from theme */
   color?: ColorKeys;
-  isHidden?: boolean;
 }
 
 export type IconKeys =
