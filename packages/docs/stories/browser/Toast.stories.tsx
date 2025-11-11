@@ -7,6 +7,74 @@ import type { ToastType } from '@shiba-ui/shared';
 const meta: Meta<typeof ToastContainer> = {
   title: 'WEB - Components/Feedback/Toast',
   component: ToastContainer,
+  parameters: {
+    docs: {
+      description: {
+        component: `
+The \`ToastContainer\` component is used to display toast notifications in your React application.
+
+## Setup
+
+Add the \`ToastContainer\` to your app root:
+
+\`\`\`tsx
+import { ToastContainer, toast } from '@shiba-ui/browser';
+
+function App() {
+  return (
+    <>
+      {/* Your app content */}
+      <ToastContainer />
+    </>
+  );
+}
+\`\`\`
+
+## Usage
+
+Use the toast functions to display messages:
+
+\`\`\`tsx
+import { toast } from '@shiba-ui/browser';
+
+// Success toast
+toast.success('Operation completed successfully');
+
+// Error toast
+toast.error('Something went wrong');
+
+// Warning toast
+toast.warning('Please check your input');
+\`\`\`
+
+## Customization
+
+You can customize the toast appearance:
+
+\`\`\`tsx
+toast.success('Custom toast', {
+  background: 'primary',
+  color: 'paper',
+  icon: 'check-circle',
+  timeout: 5000,
+  borderRadius: 32,
+  width: 400,
+});
+\`\`\`
+
+## Props
+
+- **message**: The message text to display
+- **timeout**: Auto-close timeout in milliseconds (default: 3000)
+- **background**: Background color from theme
+- **color**: Text color from theme
+- **icon**: Icon to display (optional)
+- **borderRadius**: Border radius in pixels
+- **width**: Toast width in pixels
+        `,
+      },
+    },
+  },
 };
 
 export default meta;

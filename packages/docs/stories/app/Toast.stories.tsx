@@ -8,6 +8,72 @@ import { View } from 'react-native';
 const meta: Meta<typeof ToastContainer> = {
   title: 'APP - Components/Feedback/Toast',
   component: ToastContainer,
+  parameters: {
+    docs: {
+      description: {
+        component: `
+The \`ToastContainer\` component is used to display toast notifications in your React Native application.
+
+## Setup
+
+Add the \`ToastContainer\` to your app root:
+
+\`\`\`tsx
+import { ToastContainer, toast } from '@shiba-ui/app';
+
+function App() {
+  return (
+    <>
+      {/* Your app content */}
+      <ToastContainer />
+    </>
+  );
+}
+\`\`\`
+
+## Usage
+
+Use the toast functions to display messages:
+
+\`\`\`tsx
+import { toast } from '@shiba-ui/app';
+
+// Success toast
+toast.success('Operation completed successfully');
+
+// Error toast
+toast.error('Something went wrong');
+
+// Warning toast
+toast.warning('Please check your input');
+\`\`\`
+
+## Customization
+
+You can customize the toast appearance:
+
+\`\`\`tsx
+toast.success('Custom toast', {
+  background: 'primary',
+  color: 'paper',
+  icon: 'check-circle',
+  timeout: 5000,
+  borderRadius: 32,
+});
+\`\`\`
+
+## Props
+
+- **message**: The message text to display
+- **timeout**: Auto-close timeout in milliseconds (default: 3000)
+- **background**: Background color from theme
+- **color**: Text color from theme
+- **icon**: Icon to display (optional)
+- **borderRadius**: Border radius in pixels
+        `,
+      },
+    },
+  },
 };
 
 export default meta;
@@ -32,25 +98,25 @@ export const Default: Story = {
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
             <Button
               text="Success"
-              onClick={() => showToast('Shiba UI - Toast Success', 'success')}
+              onPress={() => showToast('Shiba UI - Toast Success', 'success')}
               background="success"
               width={100}
             />
             <Button
               text="Warning"
-              onClick={() => showToast('Shiba UI - Toast Warning', 'warning')}
+              onPress={() => showToast('Shiba UI - Toast Warning', 'warning')}
               background="warning"
               width={100}
             />
             <Button
               text="Error"
-              onClick={() => showToast('Shiba UI - Toast Error', 'error')}
+              onPress={() => showToast('Shiba UI - Toast Error', 'error')}
               background="error"
               width={100}
             />
             <Button
               text="Custom"
-              onClick={() =>
+              onPress={() =>
                 toast.success('Shiba UI - Toast Custom', {
                   background: 'primary',
                   icon: 'bookmark',
