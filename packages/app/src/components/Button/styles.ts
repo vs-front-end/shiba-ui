@@ -58,6 +58,7 @@ export const Container = styled.View<
       height: ${`${height}px`};
       width: 100%;
       background: ${getBackground()};
+      font-family: ${theme.fontFamily};
 
       overflow: hidden;
       opacity: ${isDisabled ? 0.5 : 1};

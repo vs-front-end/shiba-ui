@@ -32,6 +32,7 @@ export const TextArea = styled(RNTextInput)<{
     min-height: ${`${height}px`};
     padding: 8px 16px;
     font-size: 16px;
+    font-family: ${theme.fontFamily};
     border-width: 0;
     outline-style: none;
     border-style: solid;

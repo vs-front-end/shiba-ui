@@ -9,10 +9,12 @@ export const Container = styled.Text<ITextDisplay>`
     fontWeight = 'regular',
     textAlign = 'left',
     lineHeight,
+    letterSpacing,
   }) => css`
     color: ${theme.colors[color]};
     font-size: ${`${fontSize}px`};
     font-weight: ${theme.fontWeight[fontWeight]};
+    font-family: ${theme.fontFamily};
 
     text-align: ${textAlign};
     ${lineHeight ? `line-height: ${lineHeight}px;` : ''}

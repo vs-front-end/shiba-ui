@@ -82,6 +82,7 @@ export const Container = styled.button<IButton>`
       height: ${`${height}px`};
       width: ${width ? `${width}px` : '100%'};
       background: ${getBackground()};
+      font-family: ${theme.fontFamily};
 
       cursor: pointer;
       overflow: hidden;

@@ -21,6 +21,7 @@ export const Container = styled.a<ITextLinkBrowser>`
     color: ${theme.colors[color]};
     font-size: ${`${fontSize}px`};
     font-weight: ${theme.fontWeight[fontWeight]};
+    font-family: ${theme.fontFamily};
 
     text-align: ${textAlign};
     text-decoration: ${textDecoration};

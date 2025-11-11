@@ -53,6 +53,7 @@ export const Input = styled(RNTextInput)<{ textColor?: ColorKeys }>`
     min-width: 0;
     color: ${theme.colors[textColor]};
     font-size: 16px;
+    font-family: ${theme.fontFamily};
     border-width: 0;
     outline-style: none;
   `}

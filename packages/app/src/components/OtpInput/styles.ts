@@ -44,6 +44,7 @@ export const Input = styled(RNTextInput)<IOtpInput & { isDisabled?: boolean }>`
     border-radius: ${`${borderRadius}px`};
     color: ${theme.colors[textColor]};
     font-size: 16px;
+    font-family: ${theme.fontFamily};
 
     outline-style: none;
     opacity: ${isDisabled ? 0.5 : 1};

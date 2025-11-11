@@ -17,5 +17,6 @@ export const Container = styled.div<IBadge>`
 
     background: ${theme.colors[background]};
     border-radius: ${`${borderRadius}px`};
+    font-family: ${theme.fontFamily};
   `}
 `;
