@@ -1,0 +1,143 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design System/Font Family" />
+
+# Font Family
+
+Learn how to use custom fonts in your Shiba UI application for both web and mobile platforms.
+
+## Web (React)
+
+### Using Google Fonts
+
+1. Import the font in your HTML or CSS:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+```
+
+2. Use the font family in your ThemeProvider:
+
+```tsx
+import { ThemeProvider } from '@shiba-ui/browser';
+
+function App() {
+  return (
+    <ThemeProvider fontFamily="Poppins, sans-serif" selectedTheme="light">
+      {/* Your components */}
+    </ThemeProvider>
+  );
+}
+```
+
+### Using Local Fonts
+
+```tsx
+import { ThemeProvider } from '@shiba-ui/browser';
+
+function App() {
+  return (
+    <ThemeProvider fontFamily="'Custom Font', sans-serif" selectedTheme="light">
+      {/* Your components */}
+    </ThemeProvider>
+  );
+}
+```
+
+## Mobile (React Native)
+
+### Using Expo Fonts
+
+1. Install `expo-font`:
+
+```bash
+npx expo install expo-font
+```
+
+2. Load your fonts:
+
+```tsx
+import { useFonts } from 'expo-font';
+import { ThemeProvider } from '@shiba-ui/app';
+
+const fonts = {
+  'Poppins-Light': require('./assets/fonts/Poppins-Light.ttf'),
+  'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
+  'Poppins-Medium': require('./assets/fonts/Poppins-Medium.ttf'),
+  'Poppins-SemiBold': require('./assets/fonts/Poppins-SemiBold.ttf'),
+  'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
+  'Poppins-ExtraBold': require('./assets/fonts/Poppins-ExtraBold.ttf'),
+  'Poppins-Black': require('./assets/fonts/Poppins-Black.ttf'),
+};
+
+function App() {
+  const [loaded] = useFonts(fonts);
+
+  if (!loaded) {
+    return null;
+  }
+
+  return (
+    <ThemeProvider fontFamily="Poppins-Regular" selectedTheme="light">
+      {/* Your components */}
+    </ThemeProvider>
+  );
+}
+```
+
+### Using Remote Fonts (URLs)
+
+```tsx
+import { useFonts } from 'expo-font';
+import { ThemeProvider } from '@shiba-ui/app';
+
+const fonts = {
+  'Poppins-Regular': 'https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Regular.ttf',
+  'Poppins-Bold': 'https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Bold.ttf',
+};
+
+function App() {
+  const [loaded] = useFonts(fonts);
+
+  if (!loaded) {
+    return null;
+  }
+
+  return (
+    <ThemeProvider fontFamily="Poppins-Regular" selectedTheme="light">
+      {/* Your components */}
+    </ThemeProvider>
+  );
+}
+```
+
+## Font Weight Mapping (Mobile)
+
+In React Native, when you set `fontFamily="Poppins-Regular"` in the ThemeProvider, the `TextDisplay` component automatically maps `fontWeight` to the correct font family:
+
+- `fontWeight="regular"` → Uses `Poppins-Regular`
+- `fontWeight="bold"` → Uses `Poppins-Bold`
+- `fontWeight="medium"` → Uses `Poppins-Medium`
+- `fontWeight="semibold"` → Uses `Poppins-SemiBold`
+- And so on...
+
+This happens automatically - you just need to ensure all font weights are loaded with `useFonts`.
+
+## Example Usage
+
+```tsx
+import { TextDisplay } from '@shiba-ui/app';
+
+function MyComponent() {
+  return (
+    <>
+      <TextDisplay text="Regular text" fontWeight="regular" />
+      <TextDisplay text="Bold text" fontWeight="bold" />
+      <TextDisplay text="Medium text" fontWeight="medium" />
+    </>
+  );
+}
+```
+

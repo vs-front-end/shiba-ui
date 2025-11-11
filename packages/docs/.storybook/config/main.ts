@@ -47,7 +47,10 @@ const webpackFinalFn = async (config: Configuration) => {
 };
 
 const config: StorybookConfig = {
-  stories: ['../../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: [
+    '../../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../../stories/**/*.mdx',
+  ],
   addons: [
     '@storybook/addon-docs',
     {

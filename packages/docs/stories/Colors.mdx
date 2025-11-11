@@ -1,0 +1,98 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+import {
+  LIGHT_THEME,
+  DARK_THEME,
+  OCEAN_THEME,
+  COMMON_COLORS,
+} from '@shiba-ui/shared';
+
+<Meta title="Design System/Colors" />
+
+# Colors
+
+This section presents the color palette used in the Shiba UI design system. Each color is defined by its hex code and is used to ensure a consistent and cohesive visual identity across the application.
+
+## Light Theme
+
+<ColorPalette>
+  {Object.entries(LIGHT_THEME).map(([key, value]) => (
+    <ColorItem
+      key={key}
+      title={`theme.colors.${key}`}
+      subtitle={key}
+      colors={{ 'Hex code:': value }}
+    />
+  ))}
+</ColorPalette>
+
+## Dark Theme
+
+<ColorPalette>
+  {Object.entries(DARK_THEME).map(([key, value]) => (
+    <ColorItem
+      key={key}
+      title={`theme.colors.${key}`}
+      subtitle={key}
+      colors={{ 'Hex code:': value }}
+    />
+  ))}
+</ColorPalette>
+
+## Ocean Theme
+
+<ColorPalette>
+  {Object.entries(OCEAN_THEME).map(([key, value]) => (
+    <ColorItem
+      key={key}
+      title={`theme.colors.${key}`}
+      subtitle={key}
+      colors={{ 'Hex code:': value }}
+    />
+  ))}
+</ColorPalette>
+
+## Common Colors
+
+These colors are available across all themes:
+
+<ColorPalette>
+  {Object.entries(COMMON_COLORS).map(([key, value]) => (
+    <ColorItem
+      key={key}
+      title={`theme.colors.${key}`}
+      subtitle={key}
+      colors={{ 'Hex code:': value }}
+    />
+  ))}
+</ColorPalette>
+
+## Usage
+
+Use these colors in your components by referencing them from the theme:
+
+```tsx
+import { Button } from '@shiba-ui/browser';
+
+function MyComponent() {
+  return (
+    <>
+      <Button text="Primary" background="primary" />
+      <Button text="Success" background="success" />
+      <Button text="Warning" background="warning" />
+      <Button text="Error" background="error" />
+    </>
+  );
+}
+```
+
+Or in styled components:
+
+```tsx
+import styled from 'styled-components';
+
+const CustomDiv = styled.div`
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.paper};
+`;
+```
+

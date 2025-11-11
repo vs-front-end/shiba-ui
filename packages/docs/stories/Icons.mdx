@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { IconGallery } from '../components/IconGallery';
+
+<Meta title="Design System/Icons" />
+
+# Icons
+
+This section showcases the icons available in the Shiba UI design system. Icons are provided by [react-feather](https://feathericons.com/) and are a crucial part of the UI, providing visual cues that enhance the user experience.
+
+## Search Icons
+
+Use the search box below to filter icons by name. Click on any icon to copy its name to your clipboard.
+
+<IconGallery />
+
+## Usage
+
+Use icons in your components:
+
+```tsx
+import { Icon } from '@shiba-ui/browser';
+
+function MyComponent() {
+  return (
+    <>
+      <Icon icon="heart" size={24} color="primary" />
+      <Icon icon="star" size={32} color="warning" />
+      <Icon icon="check-circle" size={20} color="success" />
+    </>
+  );
+}
+```

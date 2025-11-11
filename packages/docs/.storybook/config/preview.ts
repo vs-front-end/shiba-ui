@@ -28,6 +28,16 @@ const preview: Preview = {
   parameters: {
     layout: 'fullscreen',
     backgrounds: { disable: true },
+    options: {
+      storySort: {
+        order: [
+          'Quick Start',
+          'Design System',
+          'WEB - Components',
+          'APP - Components',
+        ],
+      },
+    },
   },
   initialGlobals: { theme: theme || 'dark' },
 };

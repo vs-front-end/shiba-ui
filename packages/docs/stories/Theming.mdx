@@ -1,0 +1,165 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Quick Start/Theming" />
+
+# Theming
+
+Learn how to customize colors, themes, and styling in your Shiba UI application.
+
+## Choosing a Theme
+
+Choose between the default themes: `light`, `dark`, or `ocean` using the `selectedTheme` property:
+
+```tsx
+import { ThemeProvider } from '@shiba-ui/browser';
+
+function App() {
+  return (
+    <ThemeProvider selectedTheme="dark">
+      {/* Your components */}
+    </ThemeProvider>
+  );
+}
+```
+
+## Custom Colors
+
+You can customize colors by passing a `customTheme` object:
+
+```tsx
+import { ThemeProvider } from '@shiba-ui/browser';
+
+const customTheme = {
+  colors: {
+    primary: '#FF5733',
+    secondary: '#33FF57',
+    success: '#3357FF',
+  },
+};
+
+function App() {
+  return (
+    <ThemeProvider selectedTheme="light" customTheme={customTheme}>
+      {/* Your components */}
+    </ThemeProvider>
+  );
+}
+```
+
+## Custom Font Weight
+
+You can also customize font weights:
+
+```tsx
+import { ThemeProvider } from '@shiba-ui/browser';
+
+const customTheme = {
+  fontWeight: {
+    light: '200',
+    regular: '400',
+    bold: '800',
+  },
+};
+
+function App() {
+  return (
+    <ThemeProvider selectedTheme="light" customTheme={customTheme}>
+      {/* Your components */}
+    </ThemeProvider>
+  );
+}
+```
+
+## Custom Font Family
+
+Override the default font family:
+
+```tsx
+import { ThemeProvider } from '@shiba-ui/browser';
+
+const customTheme = {
+  fontFamily: 'Roboto, sans-serif',
+};
+
+function App() {
+  return (
+    <ThemeProvider selectedTheme="light" customTheme={customTheme}>
+      {/* Your components */}
+    </ThemeProvider>
+  );
+}
+```
+
+Or use the `fontFamily` prop directly:
+
+```tsx
+import { ThemeProvider } from '@shiba-ui/browser';
+
+function App() {
+  return (
+    <ThemeProvider selectedTheme="light" fontFamily="Inter, sans-serif">
+      {/* Your components */}
+    </ThemeProvider>
+  );
+}
+```
+
+## Using Theme in Custom Components
+
+To use the theme in your custom styled components:
+
+### Web (React)
+
+```tsx
+import styled from 'styled-components';
+import { useTheme } from 'styled-components';
+
+const CustomButton = styled.button`
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.paper};
+  font-family: ${({ theme }) => theme.fontFamily};
+  padding: 12px 24px;
+  border-radius: 8px;
+`;
+
+function MyComponent() {
+  const theme = useTheme();
+  
+  return <CustomButton>Custom Button</CustomButton>;
+}
+```
+
+### Mobile (React Native)
+
+```tsx
+import styled from 'styled-components/native';
+import { useTheme } from 'styled-components/native';
+
+const CustomButton = styled.TouchableOpacity`
+  background-color: ${({ theme }) => theme.colors.primary};
+  padding: 12px 24px;
+  border-radius: 8px;
+`;
+
+const ButtonText = styled.Text`
+  color: ${({ theme }) => theme.colors.paper};
+  font-family: ${({ theme }) => theme.fontFamily};
+`;
+
+function MyComponent() {
+  return (
+    <CustomButton>
+      <ButtonText>Custom Button</ButtonText>
+    </CustomButton>
+  );
+}
+```
+
+## Available Color Keys
+
+You can use these color keys in your components:
+
+- **Theme Colors**: `background`, `section`, `highlight`, `accent`, `content`
+- **Common Colors**: `primary`, `secondary`, `alternative`, `success`, `warning`, `error`, `danger`, `paper`, `ink`
+
+
