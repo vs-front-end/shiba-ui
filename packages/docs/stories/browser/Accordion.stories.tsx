@@ -5,6 +5,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta: Meta<typeof Accordion> = {
   title: 'WEB - Components/Viewers/Accordion',
   component: Accordion,
+  parameters: {
+    controls: {
+      exclude: 'children',
+    },
+  },
 };
 
 export default meta;

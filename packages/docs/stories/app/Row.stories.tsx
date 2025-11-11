@@ -5,6 +5,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta: Meta<typeof Row> = {
   title: 'APP - Components/Layout/Row',
   component: Row,
+  parameters: {
+    controls: {
+      exclude: 'children',
+    },
+  },
 };
 
 export default meta;

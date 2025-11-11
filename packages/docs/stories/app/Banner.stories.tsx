@@ -5,6 +5,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta: Meta<typeof Banner> = {
   title: 'APP - Components/Feedback/Banner',
   component: Banner,
+  parameters: {
+    controls: {
+      exclude: 'children',
+    },
+  },
 };
 
 export default meta;

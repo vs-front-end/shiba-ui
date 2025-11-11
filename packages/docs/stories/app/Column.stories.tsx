@@ -5,6 +5,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta: Meta<typeof Column> = {
   title: 'APP - Components/Layout/Column',
   component: Column,
+  parameters: {
+    controls: {
+      exclude: 'children',
+    },
+  },
 };
 
 export default meta;
