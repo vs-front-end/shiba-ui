@@ -1,10 +1,10 @@
 import type { Preview } from '@storybook/react-webpack5';
-import { themeDecorator } from '../decorators/ThemeDecorator';
+import { themeWrapper } from '../../components/ThemeWrapper';
 
 const theme =
   typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
 
-export const decorators = [themeDecorator];
+export const decorators = [themeWrapper];
 
 export const globalTypes = {
   theme: {
