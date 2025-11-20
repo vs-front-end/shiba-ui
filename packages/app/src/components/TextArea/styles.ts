@@ -30,7 +30,7 @@ export const TextArea = styled(RNTextInput)<{
   }) => css`
     width: ${width ? `${width}px` : '100%'};
     min-height: ${`${height}px`};
-    padding: 8px 16px;
+    padding: 8px 12px;
     font-size: 16px;
     font-family: ${theme.fontFamily};
     border-width: 0;

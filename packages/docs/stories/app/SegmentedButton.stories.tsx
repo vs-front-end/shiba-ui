@@ -54,19 +54,11 @@ export const WithIcons: Story = {
         activeBackground: 'primary',
       },
       {
-        value: 'contact',
-        label: 'Contact',
+        value: 'contacts',
+        label: 'Contacts',
         leftIcon: 'phone',
         activeBackground: 'secondary',
       },
-      {
-        value: 'message',
-        label: 'Message',
-        leftIcon: 'message-circle',
-        activeBackground: 'error',
-      },
     ],
-    background: undefined,
-    borderColor: 'highlight',
   },
 };

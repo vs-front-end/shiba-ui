@@ -25,8 +25,7 @@ export const WithIcons: Story = {
     steps: [
       { id: 1, status: 'success', content: 'package', label: 'Order' },
       { id: 2, status: 'active', content: 'dollar-sign', label: 'Payment' },
-      { id: 3, status: 'disabled', content: 'truck', label: 'Delivery' },
-      { id: 4, status: 'disabled', content: 'check', label: 'Completed' },
+      { id: 3, status: 'disabled', content: 'check', label: 'Finished' },
     ],
   },
 };

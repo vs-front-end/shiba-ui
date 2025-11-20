@@ -35,7 +35,7 @@ export const InputContainer = styled.View<{
 
     width: ${width ? `${width}px` : '100%'};
     height: ${`${height}px`};
-    padding: 8px 16px;
+    padding: 0px 12px;
     background: ${(background && theme.colors[background]) || 'transparent'};
     border-style: solid;
     border-color: ${theme.colors[borderColor]};

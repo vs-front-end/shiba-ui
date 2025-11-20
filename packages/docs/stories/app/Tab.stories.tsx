@@ -37,9 +37,9 @@ export const Default: Story = {
     options: [
       { value: 'posts', label: 'Posts' },
       { value: 'friends', label: 'Friends' },
-      { value: 'messages', label: 'Messages' },
+      { value: 'settings', label: 'Settings' },
     ],
-    activeValue: 'messages',
+    activeValue: 'settings',
   },
 };
 
@@ -48,14 +48,14 @@ export const WithIcons: Story = {
   args: {
     options: [
       {
-        value: 'profile',
-        label: 'Profile',
+        value: 'user',
+        label: 'User',
         leftIcon: 'user',
         activeColor: 'primary',
       },
       {
-        value: 'notifications',
-        label: 'Notifications',
+        value: 'friends',
+        label: 'Friends',
         leftIcon: 'bell',
         activeColor: 'secondary',
       },
@@ -66,7 +66,6 @@ export const WithIcons: Story = {
         activeColor: 'success',
       },
     ],
-    activeValue: 'profile',
-    borderColor: 'highlight',
+    activeValue: 'settings',
   },
 };

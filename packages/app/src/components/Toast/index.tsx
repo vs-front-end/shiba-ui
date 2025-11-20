@@ -159,7 +159,7 @@ const ToastMessage = ({
       >
         <S.ContentWrapper>
           <S.IconWrapper>
-            <Icon icon={getIcon()} size={20} color={getIconColor()} />
+            <Icon icon={getIcon()} size={16} color={getIconColor()} />
           </S.IconWrapper>
 
           <TextDisplay
@@ -178,7 +178,7 @@ const ToastMessage = ({
           activeOpacity={0.8}
         >
           <S.CloseIcon>
-            <Icon icon="x" size={16} color={getIconColor()} />
+            <Icon icon="x" size={14} color={getIconColor()} />
           </S.CloseIcon>
         </TouchableOpacity>
       </S.ToastItem>

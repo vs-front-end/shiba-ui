@@ -75,7 +75,7 @@ export const ContentWrapper = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   flex: 1;
 `;
 

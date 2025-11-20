@@ -100,19 +100,16 @@ export const Default: Story = {
               text="Success"
               onPress={() => showToast('Shiba UI - Toast Success', 'success')}
               background="success"
-              width={100}
             />
             <Button
               text="Warning"
               onPress={() => showToast('Shiba UI - Toast Warning', 'warning')}
               background="warning"
-              width={100}
             />
             <Button
               text="Error"
               onPress={() => showToast('Shiba UI - Toast Error', 'error')}
               background="error"
-              width={100}
             />
             <Button
               text="Custom"
@@ -126,7 +123,6 @@ export const Default: Story = {
                 })
               }
               background="primary"
-              width={100}
             />
           </View>
         </View>

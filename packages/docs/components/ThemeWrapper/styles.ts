@@ -39,4 +39,5 @@ export const ContentWrapper = styledNative.View`
   
   width: 100%;
   padding: 16px;
+  padding-top: 0;
 `;
