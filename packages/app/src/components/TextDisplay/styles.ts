@@ -14,5 +14,8 @@ export const Container = styled.Text<ITextDisplay>`
 
     text-align: ${textAlign};
     ${lineHeight ? `line-height: ${lineHeight}px;` : ''}
+
+    flex-shrink: 1;
+    max-width: 100%;
   `}
 `;

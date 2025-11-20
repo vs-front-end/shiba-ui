@@ -1,12 +1,7 @@
 import type { ColorKeys, FontKeys } from '../../theme';
 import type { IBaseVisibility } from './base-props';
 
-export type TextAlignmentType =
-  | 'left'
-  | 'center'
-  | 'right'
-  | 'justify'
-  | 'inherit';
+export type TextAlignmentType = 'left' | 'center' | 'right';
 
 export interface ITextDisplay extends IBaseVisibility {
   /** Text content to display */

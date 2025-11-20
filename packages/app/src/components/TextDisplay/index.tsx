@@ -51,7 +51,7 @@ export const TextDisplay = ({
     <S.Container
       data-testid="text-display"
       letterSpacing={letterSpacing}
-      style={{ fontFamily }}
+      style={{ fontFamily, letterSpacing }}
       {...props}
     >
       {text || '-'}

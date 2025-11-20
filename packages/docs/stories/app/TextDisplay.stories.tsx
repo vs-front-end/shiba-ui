@@ -11,6 +11,6 @@ type Story = StoryObj<typeof TextDisplay>;
 
 export const Default: Story = {
   args: {
-    text: 'Text Display',
+    text: 'Hello World!',
   },
 };

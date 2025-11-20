@@ -12,10 +12,5 @@ type Story = StoryObj<typeof TextDisplay>;
 export const Default: Story = {
   args: {
     text: 'Hello World!',
-    fontSize: 18,
-    fontWeight: 'regular',
-    color: 'content',
-    textAlign: 'left',
-    textDecoration: 'none',
   },
 };
