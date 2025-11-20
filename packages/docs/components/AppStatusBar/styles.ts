@@ -5,9 +5,8 @@ export const Container = styled.View`
   justify-content: space-between;
   align-items: center;
 
-  height: 50px;
   width: 100%;
-  padding: 0 16px;
+  padding: 8px 16px 4px 16px;
 `;
 
 export const Icons = styled.View`
