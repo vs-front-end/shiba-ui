@@ -24,12 +24,17 @@ export const OCEAN_THEME = {
 
 export const COMMON_COLORS = {
   primary: '#7F2BFF',
+  primary_light: '#E5D5FF',
   secondary: '#486DF7',
-  alternative: '#ED4968',
+  secondary_light: '#DAE2FD',
+  alternative: '#E0851B',
+  alternative_light: '#fcdec7',
   success: '#0EB75A',
-  warning: '#CC9D1D',
+  success_light: '#CDF1DE',
+  warning: '#DBA510',
+  warning_light: '#fff5cf',
   error: '#C33336',
-  danger: '#FDA43D',
+  error_light: '#F3D6D7',
   paper: '#FFFFFF',
   ink: '#000000',
 };

@@ -1,10 +1,5 @@
-import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
-import {
-  LIGHT_THEME,
-  DARK_THEME,
-  OCEAN_THEME,
-  COMMON_COLORS,
-} from '@shiba-ui/shared';
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ColorsGallery } from '../../components/ColorsGallery';
 
 <Meta title="Design System/Colors" />
 
@@ -12,59 +7,11 @@ import {
 
 This section presents the color palette used in the Shiba UI design system. Each color is defined by its hex code and is used to ensure a consistent and cohesive visual identity across the application.
 
-## Light Theme
+## Browse Colors
 
-<ColorPalette>
-  {Object.entries(LIGHT_THEME).map(([key, value]) => (
-    <ColorItem
-      key={key}
-      title={`theme.colors.${key}`}
-      subtitle={key}
-      colors={{ 'Hex code:': value }}
-    />
-  ))}
-</ColorPalette>
+Use the search box below to filter colors by name or hex code. Click on any color card to copy its theme reference (e.g., `theme.colors.primary`), or click on the hex code to copy the color value directly.
 
-## Dark Theme
-
-<ColorPalette>
-  {Object.entries(DARK_THEME).map(([key, value]) => (
-    <ColorItem
-      key={key}
-      title={`theme.colors.${key}`}
-      subtitle={key}
-      colors={{ 'Hex code:': value }}
-    />
-  ))}
-</ColorPalette>
-
-## Ocean Theme
-
-<ColorPalette>
-  {Object.entries(OCEAN_THEME).map(([key, value]) => (
-    <ColorItem
-      key={key}
-      title={`theme.colors.${key}`}
-      subtitle={key}
-      colors={{ 'Hex code:': value }}
-    />
-  ))}
-</ColorPalette>
-
-## Common Colors
-
-These colors are available across all themes:
-
-<ColorPalette>
-  {Object.entries(COMMON_COLORS).map(([key, value]) => (
-    <ColorItem
-      key={key}
-      title={`theme.colors.${key}`}
-      subtitle={key}
-      colors={{ 'Hex code:': value }}
-    />
-  ))}
-</ColorPalette>
+<ColorsGallery />
 
 ## Usage
 

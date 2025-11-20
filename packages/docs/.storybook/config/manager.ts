@@ -19,7 +19,7 @@ function createManagerTheme(themeName: string) {
   return create({
     brandTitle: 'Shiba UI',
     brandImage: '/logo.webp',
-    brandUrl: 'https://github.com/vitor-albergaria/shiba-ui',
+    brandUrl: 'https://github.com/vs-front-end/shiba-ui',
 
     base: themeName === 'light' ? 'light' : 'dark',
     appBg: theme.background,
@@ -27,8 +27,8 @@ function createManagerTheme(themeName: string) {
     barBg: COMMON_COLORS.paper,
     barSelectedColor: theme.accent,
     barHoverColor: theme.highlight,
-    colorSecondary: COMMON_COLORS.danger,
-    colorPrimary: COMMON_COLORS.danger,
+    colorSecondary: COMMON_COLORS.alternative,
+    colorPrimary: COMMON_COLORS.alternative,
     buttonBg: theme.background,
     buttonBorder: theme.highlight,
   });
