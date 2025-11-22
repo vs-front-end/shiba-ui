@@ -47,11 +47,6 @@ export const Input = styled.input<IOtpInput>`
       outline: none;
     }
 
-    &:focus-visible {
-      outline: 2px solid ${({ theme }) => theme.colors.primary};
-      outline-offset: 2px;
-    }
-
     &:disabled {
       cursor: not-allowed;
       opacity: 0.5;
