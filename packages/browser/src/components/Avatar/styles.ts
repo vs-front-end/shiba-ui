@@ -17,13 +17,8 @@ export const Container = styled.div<IAvatar>`
   `}
 `;
 
-export const Wrapper = styled.div<{ size?: number }>`
+export const Wrapper = styled.div`
   position: relative;
-
-  ${({ size = 50 }) => css`
-    width: ${size}px;
-    height: ${size}px;
-  `}
 `;
 
 export const Image = styled.img<IAvatar>`

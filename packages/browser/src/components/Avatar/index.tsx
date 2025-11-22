@@ -72,7 +72,7 @@ export const Avatar = ({
   }
 
   return (
-    <S.Wrapper size={avatarSize} {...props}>
+    <S.Wrapper {...props}>
       {isLoading && (
         <Skeleton width={avatarSize} height={avatarSize} borderRadius={50} />
       )}
