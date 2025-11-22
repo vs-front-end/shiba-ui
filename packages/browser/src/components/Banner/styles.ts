@@ -33,4 +33,14 @@ export const CloseButton = styled.button`
   border: none;
   background: transparent;
   margin-left: 8px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 `;

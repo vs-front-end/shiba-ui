@@ -13,14 +13,14 @@ export const Banner = ({
   const [isClosed, setIsClosed] = useState(false);
 
   const handleClose = () => {
-    setIsClosed(true);
     onClose?.();
+    setIsClosed(true);
   };
 
   if (isHidden || isClosed) return null;
 
   return (
-    <S.Container role="banner" data-testid="banner" {...props}>
+    <S.Container role="region" data-testid="banner" {...props}>
       <S.Content>{children}</S.Content>
 
       {showCloseButton && (
