@@ -2,7 +2,7 @@ import * as S from './styles';
 import type { IAccordion } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
-import { useState } from 'react';
+import { useState, useId } from 'react';
 
 export const Accordion = ({
   title,
@@ -19,11 +19,14 @@ export const Accordion = ({
   isHidden,
   ...props
 }: IAccordion) => {
+  const contentId = useId();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
+    const newIsOpen = !isOpen;
+    setIsOpen(newIsOpen);
+
     onToggle?.();
-    setIsOpen(!isOpen);
   };
 
   if (isHidden) return null;
@@ -41,31 +44,42 @@ export const Accordion = ({
         onClick={handleToggle}
         data-testid="accordion-header"
         aria-expanded={isOpen}
-        aria-label={`${isOpen ? 'Collapse' : 'Expand'} ${title}`}
+        aria-controls={contentId}
+        aria-label={
+          title ? `${isOpen ? 'Collapse' : 'Expand'} ${title}` : undefined
+        }
       >
         <S.TitleContainer>
           {icon && (
             <Icon
               icon={icon}
               color={iconColor || 'content'}
-              size={iconSize || 18}
+              size={iconSize || 16}
             />
           )}
 
-          <TextDisplay text={title} color={titleColor} fontSize={titleSize} />
+          <TextDisplay
+            text={title}
+            color={titleColor}
+            fontSize={titleSize || 14}
+          />
         </S.TitleContainer>
 
         <S.IconContainer isOpen={isOpen}>
           <Icon
             icon={isOpen ? 'minus' : 'plus'}
             color={iconColor || 'content'}
-            size={18}
+            size={16}
           />
         </S.IconContainer>
       </S.Header>
 
       <S.ContentWrapper isOpen={isOpen}>
-        <S.Content hasIcon={!!icon} data-testid="accordion-content">
+        <S.Content
+          id={contentId}
+          hasIcon={!!icon}
+          data-testid="accordion-content"
+        >
           {children}
         </S.Content>
       </S.ContentWrapper>
