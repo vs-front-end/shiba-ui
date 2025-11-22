@@ -5,7 +5,7 @@ export const Container = styled.div<IRating>`
   ${({ gap = 12 }) => css`
     display: flex;
     align-items: center;
-    gap: ${`${gap}px`};
+    gap: ${gap}px;
   `}
 `;
 
@@ -17,7 +17,7 @@ export const StarContainer = styled.div<{
     position: relative;
     display: inline-block;
 
-    font-size: ${`${size}px`};
+    font-size: ${size}px;
     cursor: ${readonly ? 'default' : 'pointer'};
   `}
 `;
@@ -35,7 +35,7 @@ export const ClickArea = styled.div`
 export const StarBase = styled.div<{ size?: number }>`
   ${({ theme, size = 30 }) => css`
     color: ${theme.colors.highlight};
-    font-size: ${`${size}px`};
+    font-size: ${size}px;
   `}
 `;
 
@@ -50,8 +50,8 @@ export const StarFill = styled.div<{
     left: 0;
     overflow: hidden;
 
-    width: ${`${fillPercentage}%`};
+    width: ${fillPercentage}%;
     color: ${theme.colors[background]};
-    font-size: ${`${size}px`};
+    font-size: ${size}px;
   `}
 `;

@@ -21,10 +21,10 @@ export const Container = styled.div<{
     display: flex;
     background: ${(background && theme.colors[background]) ||
     theme.colors.section};
-    border-radius: ${`${borderRadius}px`};
+    border-radius: ${borderRadius}px;
     padding: 4px;
     gap: 8px;
-    border: ${`${borderWidth}px`} solid ${theme.colors[borderColor]};
+    border: ${borderWidth}px solid ${theme.colors[borderColor]};
 
     width: ${width && width > 0 ? `${width}px` : '100%'};
     height: ${height && height > 0 ? `${height}px` : 'fit-content'};
@@ -56,10 +56,15 @@ export const Option = styled.button<{
       ? (activeBackground && theme.colors[activeBackground]) ||
         theme.colors.primary
       : 'transparent'};
-    border-radius: ${`${borderRadius}px`};
+    border-radius: ${borderRadius}px;
 
     &:hover:not(:disabled) {
       filter: brightness(0.85);
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
     }
   `}
 `;

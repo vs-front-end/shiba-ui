@@ -8,8 +8,8 @@ export const Container = styled.div<IProgressCircle>`
     align-items: center;
     justify-content: center;
 
-    height: ${`${size}px`};
-    width: ${`${size}px`};
+    height: ${size}px;
+    width: ${size}px;
   `}
 `;
 

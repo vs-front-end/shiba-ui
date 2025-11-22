@@ -14,10 +14,10 @@ export const Container = styled.div<{
     position: relative;
     overflow: hidden;
 
-    width: ${`${width}px`};
-    height: ${`${height}px`};
+    width: ${width}px;
+    height: ${height}px;
     background: ${(background && theme.colors[background]) || 'transparent'};
-    border-radius: ${`${borderRadius}px`};
+    border-radius: ${borderRadius}px;
   `}
 `;
 
@@ -33,7 +33,7 @@ export const Button = styled.button<{
     border: none;
     padding: 0;
     width: 40px;
-    height: ${`${height}px`};
+    height: ${height}px;
     border-radius: 0;
     position: relative;
     overflow: hidden;
@@ -52,6 +52,11 @@ export const Button = styled.button<{
       cursor: not-allowed;
       opacity: 0.5;
     }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
+    }
   `}
 `;
 
@@ -65,7 +70,7 @@ export const ValueContainer = styled.div<{
     justify-content: center;
     flex: 1;
     text-align: center;
-    height: ${`${height}px`};
+    height: ${height}px;
     border: 1px solid ${theme.colors[borderColor]};
     transition: border-color 0.3s ease;
 

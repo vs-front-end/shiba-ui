@@ -18,8 +18,8 @@ export const Container = styled.button<ICheckbox>`
     align-items: center;
     justify-content: center;
 
-    width: ${`${size}px`};
-    height: ${`${size}px`};
+    width: ${size}px;
+    height: ${size}px;
     background: ${isChecked ? theme.colors[background] : 'transparent'};
 
     border: 2px solid;
@@ -35,6 +35,11 @@ export const Container = styled.button<ICheckbox>`
     &:disabled {
       cursor: not-allowed;
       opacity: 0.5;
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
     }
   `}
 `;

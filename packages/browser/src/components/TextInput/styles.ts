@@ -29,12 +29,17 @@ export const Input = styled.input<ITextInput>`
       ? theme.colors[background as ColorKeys]
       : 'transparent'};
     border-color: ${theme.colors[borderColor]};
-    border-width: ${`${borderWidth}px`};
-    border-radius: ${`${borderRadius}px`};
+    border-width: ${borderWidth}px;
+    border-radius: ${borderRadius}px;
     color: ${theme.colors[textColor]};
 
     &:focus {
       outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
     }
 
     &:disabled {

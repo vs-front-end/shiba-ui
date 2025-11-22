@@ -14,8 +14,8 @@ export const ChartContainer = styled.div<{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: ${`${size}px`};
-    height: ${`${size}px`};
+    width: ${size}px;
+    height: ${size}px;
   `}
 `;
 

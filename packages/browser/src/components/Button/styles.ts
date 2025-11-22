@@ -76,10 +76,10 @@ export const Container = styled.button<IButton>`
       border-style: solid;
       border-width: ${getBorderWidth()};
       border-color: ${theme.colors[borderColor]};
-      border-radius: ${`${borderRadius}px`};
+      border-radius: ${borderRadius}px;
 
       padding: 8px 16px;
-      height: ${`${height}px`};
+      height: ${height}px;
       width: ${width ? `${width}px` : '100%'};
       background: ${getBackground()};
       font-family: ${theme.fontFamily};
@@ -99,6 +99,11 @@ export const Container = styled.button<IButton>`
       &:disabled {
         cursor: not-allowed;
         opacity: 0.5;
+      }
+
+      &:focus-visible {
+        outline: 2px solid ${({ theme }) => theme.colors.primary};
+        outline-offset: 2px;
       }
     `;
   }}

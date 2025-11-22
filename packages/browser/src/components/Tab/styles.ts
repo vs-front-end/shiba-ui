@@ -41,5 +41,10 @@ export const Option = styled.button<{
     &:hover:not(:disabled) {
       filter: brightness(0.85);
     }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
+    }
   `}
 `;

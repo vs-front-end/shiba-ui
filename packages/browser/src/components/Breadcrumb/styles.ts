@@ -26,6 +26,12 @@ export const Item = styled.div<{
     &:hover {
       opacity: ${isActive ? 1 : 0.8};
     }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
   `}
 `;
 
@@ -68,6 +74,11 @@ export const HiddenItem = styled.div`
 
     &:hover {
       background: ${theme.colors.highlight || '#f5f5f5'};
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
     }
   `}
 `;

@@ -19,7 +19,7 @@ export const Container = styled.a<ITextLinkBrowser>`
     letterSpacing = 'normal',
   }) => css`
     color: ${theme.colors[color]};
-    font-size: ${`${fontSize}px`};
+    font-size: ${fontSize}px;
     font-weight: ${theme.fontWeight[fontWeight]};
     font-family: ${theme.fontFamily};
 
@@ -27,7 +27,7 @@ export const Container = styled.a<ITextLinkBrowser>`
     text-decoration: ${textDecoration};
 
     line-height: ${lineHeight};
-    letter-spacing: ${`${letterSpacing}px`};
+    letter-spacing: ${letterSpacing}px;
 
     word-break: break-word;
     overflow-wrap: anywhere;
@@ -38,6 +38,12 @@ export const Container = styled.a<ITextLinkBrowser>`
     &:hover {
       color: ${theme.colors[hoverColor]};
       text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
+      border-radius: 2px;
     }
   `}
 `;

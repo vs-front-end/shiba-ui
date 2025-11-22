@@ -18,8 +18,8 @@ export const Container = styled.button<IRadio>`
     align-items: center;
     justify-content: center;
 
-    width: ${`${size}px`};
-    height: ${`${size}px`};
+    width: ${size}px;
+    height: ${size}px;
     background: none;
 
     border: 2px solid;
@@ -37,13 +37,18 @@ export const Container = styled.button<IRadio>`
       cursor: not-allowed;
       opacity: 0.5;
     }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
+    }
   `}
 `;
 
 export const Inner = styled.div<IRadio>`
   ${({ theme, size = 28, background = 'primary', isSelected }) => css`
-    width: ${`${size * 0.5}px`};
-    height: ${`${size * 0.5}px`};
+    width: ${size * 0.5}px;
+    height: ${size * 0.5}px;
 
     border-radius: 50%;
     background: ${isSelected

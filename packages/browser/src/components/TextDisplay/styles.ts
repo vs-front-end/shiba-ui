@@ -15,14 +15,14 @@ export const Container = styled.span<
     letterSpacing = 'normal',
   }) => css`
     color: ${theme.colors[color]};
-    font-size: ${`${fontSize / 10}rem`};
+    font-size: ${fontSize / 10}rem;
     font-weight: ${theme.fontWeight[fontWeight]};
 
     text-align: ${textAlign};
     text-decoration: ${textDecoration};
 
     line-height: ${lineHeight};
-    letter-spacing: ${`${letterSpacing}px`};
+    letter-spacing: ${letterSpacing}px;
 
     font-family: ${theme.fontFamily};
 

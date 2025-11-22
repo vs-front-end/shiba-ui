@@ -5,7 +5,7 @@ import { TextDisplay } from '../TextDisplay';
 import { Spinner } from '../Spinner';
 
 interface IButtonProps extends IButton {
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export const Button = ({

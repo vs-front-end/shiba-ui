@@ -28,8 +28,8 @@ export const Step = styled.div<{
     align-items: center;
     justify-content: center;
 
-    width: ${`${stepSize}px`};
-    height: ${`${stepSize}px`};
+    width: ${stepSize}px;
+    height: ${stepSize}px;
     background: ${theme.colors[background]};
     border-radius: 50%;
     position: relative;
@@ -40,6 +40,11 @@ export const Step = styled.div<{
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
     }
   `}
 `;
@@ -60,7 +65,7 @@ export const Connector = styled.div<{
   ${({ theme, lineHeight = 2, lineColor = 'highlight' }) => css`
     flex: 1;
     min-width: 0;
-    height: ${`${lineHeight}px`};
+    height: ${lineHeight}px;
     background: ${theme.colors[lineColor]};
     margin: 0 8px;
     transition: all 0.3s ease;

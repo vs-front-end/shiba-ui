@@ -13,9 +13,9 @@ export const Container = styled.button<ISwitch>`
     display: flex;
     align-items: center;
 
-    height: ${`${size}px`};
-    width: ${`${size * 2}px`};
-    border-radius: ${`${size / 2}px`};
+    height: ${size}px;
+    width: ${size * 2}px;
+    border-radius: ${size / 2}px;
     border: none;
 
     background: ${isChecked
@@ -25,6 +25,11 @@ export const Container = styled.button<ISwitch>`
     cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
     opacity: ${isDisabled ? 0.5 : 1};
     transition: all 0.3s ease-in-out;
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
+    }
   `}
 `;
 

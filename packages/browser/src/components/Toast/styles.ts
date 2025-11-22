@@ -110,4 +110,10 @@ export const CloseIcon = styled.div`
   &:hover {
     filter: brightness(1.2);
   }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 `;

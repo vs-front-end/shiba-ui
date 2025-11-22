@@ -40,6 +40,11 @@ export const ButtonControl = styled.button<{ isSelected?: boolean }>`
     &:disabled:hover {
       background-color: transparent;
     }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
+    }
   `}
 `;
 
@@ -68,6 +73,11 @@ export const PageInput = styled.input`
       outline: none;
       border-color: ${theme.colors.primary};
       transition: border-color 0.2s ease-in-out;
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
     }
   `}
 `;

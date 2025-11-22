@@ -19,7 +19,7 @@ export const ChartContainer = styled.div<{
   ${({ height = 12 }) => css`
     display: flex;
     width: 100%;
-    height: ${`${height}px`};
+    height: ${height}px;
   `}
 `;
 
@@ -49,7 +49,7 @@ export const Segment = styled.div<{
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     height: 100%;
-    width: ${`${width}%`};
+    width: ${width}%;
     background: ${theme.colors[background]};
     border-radius: ${isFirst
       ? `${borderRadius}px 0 0 ${borderRadius}px`
@@ -64,6 +64,11 @@ export const Segment = styled.div<{
 
     &:active {
       filter: brightness(0.95);
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
     }
   `}
 `;

@@ -10,7 +10,7 @@ export const Container = styled.input<IRange & { percentage: number }>`
     percentage,
   }) => css`
     width: ${width ? `${width}px` : '100%'};
-    height: ${`${height}px`};
+    height: ${height}px;
     -webkit-appearance: none;
     appearance: none;
     background: linear-gradient(
@@ -18,23 +18,23 @@ export const Container = styled.input<IRange & { percentage: number }>`
       ${theme.colors[background as ColorKeys]} ${percentage}%,
       ${theme.colors.highlight} ${percentage}%
     );
-    border-radius: ${`${height / 2}px`};
+    border-radius: ${height / 2}px;
     outline: none;
     cursor: pointer;
 
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: ${`${height * 1.5}px`};
-      height: ${`${height * 1.5}px`};
+      width: ${height * 1.5}px;
+      height: ${height * 1.5}px;
       background: ${theme.colors[background as ColorKeys]};
       border-radius: 50%;
       cursor: pointer;
     }
 
     &::-moz-range-thumb {
-      width: ${`${height * 1.5}px`};
-      height: ${`${height * 1.5}px`};
+      width: ${height * 1.5}px;
+      height: ${height * 1.5}px;
       background: ${theme.colors[background as ColorKeys]};
       border-radius: 50%;
       cursor: pointer;
@@ -43,6 +43,11 @@ export const Container = styled.input<IRange & { percentage: number }>`
 
     &:focus {
       outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.colors.primary};
+      outline-offset: 2px;
     }
   `}
 `;

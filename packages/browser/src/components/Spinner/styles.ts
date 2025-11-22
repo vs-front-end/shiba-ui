@@ -12,12 +12,12 @@ const spin = keyframes`
 
 export const Container = styled.div<ISpinner>`
   ${({ theme, size = 20, color = 'primary' }) => css`
-    width: ${`${size}px`};
-    height: ${`${size}px`};
+    width: ${size}px;
+    height: ${size}px;
 
     border-radius: 50%;
     border-style: solid;
-    border-width: ${`${size / 5}px`};
+    border-width: ${size / 5}px;
     border-color: transparent;
     border-top-color: ${theme.colors[color]};
     border-right-color: ${theme.colors[color]};

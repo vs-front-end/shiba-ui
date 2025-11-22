@@ -14,10 +14,10 @@ export const BarOuter = styled.div<IProgressBar>`
   ${({ theme, height = 8 }) => css`
     flex: 1;
 
-    height: ${`${height}px`};
+    height: ${height}px;
     margin-bottom: 4px;
     background: ${theme.colors.highlight};
-    border-radius: ${`${height / 2}px`};
+    border-radius: ${height / 2}px;
     overflow: hidden;
     min-width: 0;
   `}
@@ -29,10 +29,10 @@ export const BarInner = styled.div<{
   height?: number;
 }>`
   ${({ theme, progressValue, background = 'primary', height = 8 }) => css`
-    width: ${`${progressValue}%`};
-    height: ${`${height}px`};
+    width: ${progressValue}%;
+    height: ${height}px;
     background: ${theme.colors[background]};
-    border-radius: ${`${height / 2}px`};
+    border-radius: ${height / 2}px;
 
     transition: width 0.3s ease-in-out;
   `}
