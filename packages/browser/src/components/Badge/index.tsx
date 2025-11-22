@@ -4,7 +4,7 @@ import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 
 interface IBadgeProps extends IBadge {
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export const Badge = ({
@@ -21,16 +21,35 @@ export const Badge = ({
 }: IBadgeProps) => {
   if (isHidden) return null;
 
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (onClick && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      onClick();
+    }
+  };
+
+  const isInteractive = !!onClick;
+
   return (
     <S.Container
-      role="status"
+      role={isInteractive ? 'button' : 'text'}
       data-testid="badge"
       aria-label={text}
       onClick={onClick}
+      onKeyDown={handleKeyDown}
+      tabIndex={isInteractive ? 0 : undefined}
+      isInteractive={isInteractive}
       {...props}
     >
       {leftIcon && <Icon icon={leftIcon} color={iconColor} size={iconSize} />}
-      <TextDisplay text={text} color={textColor} fontSize={textSize} />
+
+      <TextDisplay
+        text={text}
+        color={textColor}
+        fontSize={textSize}
+        fontWeight="medium"
+      />
+      
       {rightIcon && <Icon icon={rightIcon} color={iconColor} size={iconSize} />}
     </S.Container>
   );

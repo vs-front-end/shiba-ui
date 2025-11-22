@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 import type { IBadge } from '@shiba-ui/shared';
 
-export const Container = styled.div<IBadge>`
-  ${({ theme, background = 'primary', borderRadius = 8, onClick }) => css`
-    cursor: ${onClick ? 'pointer' : 'default'};
+export const Container = styled.div<IBadge & { isInteractive?: boolean }>`
+  ${({ theme, background = 'primary', borderRadius = 8, isInteractive }) => css`
+    cursor: ${isInteractive ? 'pointer' : 'default'};
 
     display: flex;
     align-items: center;
@@ -16,7 +16,15 @@ export const Container = styled.div<IBadge>`
     column-gap: 8px;
 
     background: ${theme.colors[background]};
-    border-radius: ${`${borderRadius}px`};
+    border-radius: ${borderRadius}px;
     font-family: ${theme.fontFamily};
+
+    ${isInteractive &&
+    css`
+      &:focus-visible {
+        outline: 2px solid ${theme.colors.primary};
+        outline-offset: 2px;
+      }
+    `}
   `}
 `;
