@@ -41,3 +41,5 @@ export * from './types/components/donutChart';
 export * from './types/components/breadcrumb';
 export * from './types/components/timeline';
 export * from './types/components/toast';
+export * from './types/components/drawer';
+export * from './types/components/bottomDrawer';

@@ -30,4 +30,5 @@ export * from './components/SegmentedButton';
 export * from './components/Tab';
 export * from './components/StackedChart';
 export * from './components/Toast';
+export * from './components/BottomDrawer';
 export * from './theme/ThemeProvider';
