@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { IAvatar } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 import { Skeleton } from '../Skeleton';
 import * as S from './styles';
+
+const FONT_SIZE_DIVISOR = 2.25;
 
 export const Avatar = ({
   isHidden = false,
@@ -12,35 +14,57 @@ export const Avatar = ({
   textColor,
   ...props
 }: IAvatar) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!!image);
+  const [hasError, setHasError] = useState(false);
 
-  const getNameInitials = (name: string = 'User') => {
-    const [first = '', second = ''] = name.trim().split(' ');
-    return (first[0] || '') + (second[0] || '')?.toUpperCase();
+  const getNameInitials = (name?: string) => {
+    if (!name || !name.trim()) return 'U';
+
+    const parts = name.trim().split(' ').filter(Boolean);
+    const first = parts[0]?.[0]?.toUpperCase() || '';
+    const second = parts[1]?.[0]?.toUpperCase() || '';
+
+    return first + second;
   };
 
-  const getFontSize = (size: number) => {
-    return size / 2.25;
+  const getFontSize = (avatarSize: number) => {
+    return avatarSize / FONT_SIZE_DIVISOR;
+  };
+
+  const handleImageError = () => {
+    setHasError(true);
+    setIsLoading(false);
   };
 
   const formattedUserName = getNameInitials(username);
+  const shouldShowText = !image || hasError;
+  const avatarSize = size || 50;
+
+  useEffect(() => {
+    if (image) {
+      setIsLoading(true);
+      setHasError(false);
+    } else {
+      setIsLoading(false);
+    }
+  }, [image]);
 
   if (isHidden) return null;
 
-  if (!image) {
+  if (shouldShowText) {
     return (
       <S.Container
         role="img"
-        aria-label={username || 'User avatar'}
+        aria-label={username ? `${username} avatar` : 'User avatar'}
         data-testid="avatar-text"
-        size={size}
+        size={avatarSize}
         textColor={textColor}
         {...props}
       >
         <TextDisplay
           text={formattedUserName}
           color={textColor || 'paper'}
-          fontSize={getFontSize(size || 50)}
+          fontSize={getFontSize(avatarSize)}
           fontWeight="medium"
         />
       </S.Container>
@@ -48,17 +72,20 @@ export const Avatar = ({
   }
 
   return (
-    <S.Wrapper {...props}>
-      {isLoading && <Skeleton width={size} height={size} borderRadius={50} />}
+    <S.Wrapper size={avatarSize} {...props}>
+      {isLoading && (
+        <Skeleton width={avatarSize} height={avatarSize} borderRadius={50} />
+      )}
 
       <S.Image
         role="img"
         data-testid="avatar-image"
         src={image}
-        alt={username || 'User avatar'}
+        alt={username ? `${username} avatar` : 'User avatar'}
         aria-hidden={isLoading}
         onLoad={() => setIsLoading(false)}
-        size={size}
+        onError={handleImageError}
+        size={avatarSize}
       />
     </S.Wrapper>
   );
