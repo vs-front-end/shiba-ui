@@ -123,7 +123,7 @@ const ToastMessage = ({
     >
       <S.ContentWrapper>
         <S.IconWrapper>
-          <Icon icon={getIcon()} size={20} color={getIconColor()} />
+          <Icon icon={getIcon()} size={16} color={getIconColor()} />
         </S.IconWrapper>
 
         <TextDisplay

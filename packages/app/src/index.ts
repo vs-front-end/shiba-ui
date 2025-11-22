@@ -16,7 +16,6 @@ export * from './components/ProgressBar';
 export * from './components/ProgressCircle';
 export * from './components/Rating';
 export * from './components/Steps';
-export * from './components/Accordion';
 export * from './components/Banner';
 export * from './components/NotificationDot';
 export * from './components/Column';

@@ -88,7 +88,7 @@ export const ToastItem = styled.div<{
 export const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   flex: 1;
 `;
 
