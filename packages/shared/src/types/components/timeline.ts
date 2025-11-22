@@ -1,4 +1,5 @@
 import type { IBaseVisibility } from './base-props';
+import type { ColorKeys } from '../../theme';
 
 export interface ITimelineItem {
   /** Item unique identifier */
@@ -14,4 +15,6 @@ export interface ITimelineItem {
 export interface ITimeline extends IBaseVisibility {
   /** Timeline items data */
   data: ITimelineItem[];
+  /** Marker and line color from theme */
+  markerColor?: ColorKeys;
 }

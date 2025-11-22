@@ -1,44 +1,46 @@
 import * as S from './styles';
-import type { ITimeline, ITimelineItem } from '@shiba-ui/shared';
+import type { ITimeline } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 
-export const Timeline = ({ data = [], isHidden, ...props }: ITimeline) => {
-  if (isHidden || !data || data.length === 0) return null;
+export const Timeline = ({
+  data = [],
+  isHidden,
+  markerColor = 'primary',
+  ...props
+}: ITimeline) => {
+  if (isHidden || data.length === 0) return null;
 
   return (
-    <S.Container
-      role="list"
-      aria-label="Timeline"
-      data-testid="timeline"
-      {...props}
-    >
-      {data.map((item: ITimelineItem, index: number) => (
+    <S.Container role="list" data-testid="timeline" {...props}>
+      {data.map((item, index) => (
         <S.Item key={item?.id || index} role="listitem">
           <S.Marker aria-hidden="true">
-            <S.Circle />
-            {index < data.length - 1 && <S.Line />}
+            <S.Circle markerColor={markerColor} />
+            <S.Line markerColor={markerColor} />
           </S.Marker>
 
           <S.Content>
             <S.Header>
-              <TextDisplay text={item?.title} fontWeight="bold" />
+              <TextDisplay text={item.title} fontWeight="bold" />
 
               <TextDisplay
-                text={item?.subtitle}
+                text={item.subtitle}
                 fontSize={14}
                 color="accent"
                 fontWeight="medium"
               />
             </S.Header>
 
-            <S.Details role="list" aria-label="Details">
-              {item?.details?.map((topic: string, detailIndex: number) => (
-                <S.DetailItem key={detailIndex} role="listitem">
-                  <TextDisplay text="•" aria-hidden="true" />
-                  <TextDisplay text={topic} />
-                </S.DetailItem>
-              ))}
-            </S.Details>
+            {item.details && item.details.length > 0 && (
+              <S.Details>
+                {item.details.map((topic, detailIndex) => (
+                  <S.DetailItem key={`${item?.id || index}-${detailIndex}`}>
+                    <S.Bullet aria-hidden="true" />
+                    <TextDisplay text={topic} fontSize={14} />
+                  </S.DetailItem>
+                ))}
+              </S.Details>
+            )}
           </S.Content>
         </S.Item>
       ))}
