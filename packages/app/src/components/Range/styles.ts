@@ -4,7 +4,7 @@ import type { ColorKeys } from '@shiba-ui/shared';
 export const Container = styled.View<{ width?: number; height?: number }>`
   ${({ width, height = 8 }) => css`
     position: relative;
-    width: ${width ? width : '100%'}px;
+    width: ${width ? `${width}px` : '100%'};
     height: ${height * 1.5}px;
     display: flex;
     align-items: center;
@@ -19,7 +19,7 @@ export const Track = styled.View<{
 }>`
   ${({ theme, height = 8, width }) => css`
     position: absolute;
-    width: ${width ? width : '100%'}px;
+    width: ${width ? `${width}px` : '100%'};
     height: ${height}px;
     background: ${theme.colors.highlight};
     border-radius: ${height / 2}px;

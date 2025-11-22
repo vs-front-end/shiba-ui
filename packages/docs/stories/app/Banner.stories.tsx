@@ -19,7 +19,7 @@ export const Default: Story = {
   args: {
     children: (
       <TextDisplay
-        text="The integration with the new API is now live. You can start using it in your projects."
+        text="The new API is now live."
         fontSize={14}
         fontWeight="medium"
         color="paper"
