@@ -4,7 +4,10 @@ import React from 'react';
 import { Text } from 'react-native';
 import { Decorator } from '@storybook/react';
 import { ThemeProvider as BrowserThemeProvider } from '@shiba-ui/browser';
-import { ThemeProvider as AppThemeProvider } from '@shiba-ui/app';
+import {
+  ThemeProvider as AppThemeProvider,
+  UIOverlayProvider,
+} from '@shiba-ui/app';
 import { AppStatusBar } from '../AppStatusBar';
 
 import {
@@ -69,7 +72,9 @@ function AppWrapper({
         <AppStatusBar />
 
         <S.ContentWrapper>
-          {!fontsLoaded ? <Text>Carregando fontes...</Text> : <Story />}
+          <UIOverlayProvider>
+            {!fontsLoaded ? <Text>Carregando fontes...</Text> : <Story />}
+          </UIOverlayProvider>
         </S.ContentWrapper>
       </S.NativeContainer>
     </AppThemeProvider>
