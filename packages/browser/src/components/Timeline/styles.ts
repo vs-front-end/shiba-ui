@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Item = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: flex-start;
   position: relative;
 `;
@@ -24,7 +24,7 @@ export const Marker = styled.div`
   align-self: stretch;
 
   width: 24px;
-  padding-top: 4px;
+  padding-top: 8px;
 `;
 
 export const Circle = styled.div<{ markerColor?: ColorKeys }>`
@@ -62,7 +62,7 @@ export const Content = styled.div`
   flex-direction: column;
   flex: 1;
 
-  row-gap: 12px;
+  row-gap: 8px;
   padding-bottom: 8px;
 `;
 

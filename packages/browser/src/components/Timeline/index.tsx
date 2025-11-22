@@ -27,7 +27,6 @@ export const Timeline = ({
                 text={item.subtitle}
                 fontSize={14}
                 color="accent"
-                fontWeight="medium"
               />
             </S.Header>
 
