@@ -14,8 +14,8 @@ export const Container = styled.View<
       align-items: center;
       justify-content: center;
 
-      width: ${`${size}px`};
-      height: ${`${size}px`};
+      width: ${size}px;
+      height: ${size}px;
       background: transparent;
 
       border: 2px solid;
@@ -34,8 +34,8 @@ export const Inner = styled.View<IRadio & { isSelected: boolean }>`
       : theme.colors.highlight;
 
     return css`
-      width: ${`${size * 0.5}px`};
-      height: ${`${size * 0.5}px`};
+      width: ${size * 0.5}px;
+      height: ${size * 0.5}px;
 
       border-radius: 50%;
       background: ${backgroundColor};

@@ -50,12 +50,12 @@ export const Container = styled.View<
       gap: ${gap};
 
       border-style: solid;
-      border-width: ${`${getBorderWidth()}px`};
+      border-width: ${getBorderWidth()}px;
       border-color: ${theme.colors[borderColor]};
-      border-radius: ${`${borderRadius}px`};
+      border-radius: ${borderRadius}px;
 
       padding: 8px 16px;
-      height: ${`${height}px`};
+      height: ${height}px;
       width: 100%;
       background: ${getBackground()};
       font-family: ${theme.fontFamily};

@@ -33,15 +33,15 @@ export const InputContainer = styled.View<{
     flex-direction: row;
     align-items: center;
 
-    width: ${width ? `${width}px` : '100%'};
-    height: ${`${height}px`};
+    width: ${width ? width : '100%'}px;
+    height: ${height}px;
     padding: 0px 12px;
     padding-right: 40px;
     background: ${(background && theme.colors[background]) || 'transparent'};
     border-style: solid;
     border-color: ${theme.colors[borderColor]};
-    border-width: ${`${borderWidth}px`};
-    border-radius: ${`${borderRadius}px`};
+    border-width: ${borderWidth}px;
+    border-radius: ${borderRadius}px;
 
     opacity: ${isDisabled ? 0.5 : 1};
   `}

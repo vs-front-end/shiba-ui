@@ -13,7 +13,7 @@ export const InputsContainer = styled.View<{ gap?: number }>`
     display: flex;
     flex-direction: row;
     width: 100%;
-    gap: ${`${gap}px`};
+    gap: ${gap}px;
   `}
 `;
 
@@ -36,12 +36,12 @@ export const Input = styled(RNTextInput)<IOtpInput & { isDisabled?: boolean }>`
     padding: 8px;
     border-style: solid;
 
-    width: ${`${width}px`};
-    height: ${`${height}px`};
+    width: ${width}px;
+    height: ${height}px;
     background: ${(background && theme.colors[background]) || 'transparent'};
     border-color: ${theme.colors[borderColor]};
-    border-width: ${`${borderWidth}px`};
-    border-radius: ${`${borderRadius}px`};
+    border-width: ${borderWidth}px;
+    border-radius: ${borderRadius}px;
     color: ${theme.colors[textColor]};
     font-size: 16px;
     font-family: ${theme.fontFamily};

@@ -10,7 +10,7 @@ export const Container = styled.View<ISkeleton>`
     height = 50,
     isFullSize = false,
   }) => css`
-    border-radius: ${`${borderRadius}px`};
+    border-radius: ${borderRadius}px;
     background: ${(background && theme.colors[background]) ||
     theme.colors.highlight};
 
@@ -20,8 +20,8 @@ export const Container = styled.View<ISkeleton>`
           height: 100%;
         `
       : css`
-          width: ${`${width}px`};
-          height: ${`${height}px`};
+          width: ${width}px;
+          height: ${height}px;
         `}
   `}
 `;

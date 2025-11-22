@@ -18,8 +18,8 @@ export const Container = styled.View<
       align-items: center;
       justify-content: center;
 
-      width: ${`${size}px`};
-      height: ${`${size}px`};
+      width: ${size}px;
+      height: ${size}px;
       background: ${backgroundColor};
 
       border: 2px solid;

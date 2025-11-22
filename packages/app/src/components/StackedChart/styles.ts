@@ -20,7 +20,7 @@ export const ChartContainer = styled.View<{
   ${({ height = 12 }) => css`
     display: flex;
     width: 100%;
-    height: ${`${height}px`};
+    height: ${height}px;
   `}
 `;
 
@@ -36,7 +36,7 @@ export const SegmentWrapper = styled.View<{
 }>`
   ${({ width }) => css`
     height: 100%;
-    width: ${`${width}%`};
+    width: ${width}%;
   `}
 `;
 
@@ -58,10 +58,10 @@ export const Segment = styled.View<{
       height: 100%;
       width: 100%;
       background: ${backgroundColor};
-      border-top-left-radius: ${isFirst ? `${borderRadius}px` : '0px'};
-      border-bottom-left-radius: ${isFirst ? `${borderRadius}px` : '0px'};
-      border-top-right-radius: ${isLast ? `${borderRadius}px` : '0px'};
-      border-bottom-right-radius: ${isLast ? `${borderRadius}px` : '0px'};
+      border-top-left-radius: ${isFirst ? borderRadius : 0}px;
+      border-bottom-left-radius: ${isFirst ? borderRadius : 0}px;
+      border-top-right-radius: ${isLast ? borderRadius : 0}px;
+      border-bottom-right-radius: ${isLast ? borderRadius : 0}px;
       opacity: ${isActive ? 0.9 : 1};
     `;
   }}

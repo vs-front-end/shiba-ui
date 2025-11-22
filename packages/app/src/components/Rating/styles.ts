@@ -6,7 +6,7 @@ export const Container = styled.View<IRating>`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: ${`${gap}px`};
+    gap: ${gap}px;
   `}
 `;
 
@@ -20,14 +20,14 @@ export const StarContainer = styled.View<{
     align-items: center;
     justify-content: center;
 
-    font-size: ${`${size}px`};
+    font-size: ${size}px;
   `}
 `;
 
 export const StarBase = styled.Text<{ size?: number }>`
   ${({ theme, size = 30 }) => css`
     color: ${theme.colors.highlight};
-    font-size: ${`${size}px`};
+    font-size: ${size}px;
   `}
 `;
 
@@ -42,8 +42,8 @@ export const StarFill = styled.Text<{
     left: 0;
     overflow: hidden;
 
-    width: ${`${fillPercentage}%`};
+    width: ${fillPercentage}%;
     color: ${theme.colors[background]};
-    font-size: ${`${size}px`};
+    font-size: ${size}px;
   `}
 `;

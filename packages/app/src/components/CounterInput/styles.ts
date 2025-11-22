@@ -16,10 +16,10 @@ export const Container = styled.View<{
     position: relative;
     overflow: hidden;
 
-    width: ${`${width}px`};
-    height: ${`${height}px`};
+    width: ${width}px;
+    height: ${height}px;
     background: ${(background && theme.colors[background]) || 'transparent'};
-    border-radius: ${`${borderRadius}px`};
+    border-radius: ${borderRadius}px;
   `}
 `;
 
@@ -33,7 +33,7 @@ export const Button = styled.View<{
     align-items: center;
     justify-content: center;
     width: 40px;
-    height: ${`${height}px`};
+    height: ${height}px;
     border-radius: 0;
     position: relative;
     overflow: hidden;
@@ -52,7 +52,7 @@ export const ValueContainer = styled.View<{
     align-items: center;
     justify-content: center;
     flex: 1;
-    height: ${`${height}px`};
+    height: ${height}px;
     border: 1px solid ${theme.colors[borderColor]};
   `}
 `;

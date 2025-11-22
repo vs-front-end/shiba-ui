@@ -4,8 +4,8 @@ import type { ColorKeys } from '@shiba-ui/shared';
 export const Container = styled.View<{ width?: number; height?: number }>`
   ${({ width, height = 8 }) => css`
     position: relative;
-    width: ${width ? `${width}px` : '100%'};
-    height: ${`${height * 1.5}px`};
+    width: ${width ? width : '100%'}px;
+    height: ${height * 1.5}px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,10 +19,10 @@ export const Track = styled.View<{
 }>`
   ${({ theme, height = 8, width }) => css`
     position: absolute;
-    width: ${width ? `${width}px` : '100%'};
-    height: ${`${height}px`};
+    width: ${width ? width : '100%'}px;
+    height: ${height}px;
     background: ${theme.colors.highlight};
-    border-radius: ${`${height / 2}px`};
+    border-radius: ${height / 2}px;
   `}
 `;
 
@@ -38,10 +38,10 @@ export const Fill = styled.View<{
     return css`
       position: absolute;
       left: 0;
-      width: ${`${percentage}%`};
-      height: ${`${height}px`};
+      width: ${percentage}%;
+      height: ${height}px;
       background: ${backgroundColor};
-      border-radius: ${`${height / 2}px`};
+      border-radius: ${height / 2}px;
     `;
   }}
 `;
@@ -57,10 +57,10 @@ export const Thumb = styled.View<{
 
     return css`
       position: absolute;
-      left: ${`${percentage}%`};
-      margin-left: ${`-${(height * 1.5) / 2}px`};
-      width: ${`${height * 1.5}px`};
-      height: ${`${height * 1.5}px`};
+      left: ${percentage}%;
+      margin-left: ${-(height * 1.5) / 2}px;
+      width: ${height * 1.5}px;
+      height: ${height * 1.5}px;
       background: ${backgroundColor};
       border-radius: 50%;
     `;

@@ -10,7 +10,7 @@ export const Container = styled.Text<ITextDisplay>`
     lineHeight,
   }) => css`
     color: ${theme.colors[color]};
-    font-size: ${`${fontSize}px`};
+    font-size: ${fontSize}px;
 
     text-align: ${textAlign};
     ${lineHeight ? `line-height: ${lineHeight}px;` : ''}

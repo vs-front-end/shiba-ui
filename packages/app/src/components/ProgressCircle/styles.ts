@@ -8,17 +8,17 @@ export const Container = styled.View<IProgressCircle>`
     align-items: center;
     justify-content: center;
 
-    height: ${`${size}px`};
-    width: ${`${size}px`};
+    height: ${size}px;
+    width: ${size}px;
   `}
 `;
 
 export const CircleBase = styled.View<{ size?: number }>`
   ${({ theme, size = 60 }) => css`
     position: absolute;
-    width: ${`${size}px`};
-    height: ${`${size}px`};
-    border-radius: ${`${size / 2}px`};
+    width: ${size}px;
+    height: ${size}px;
+    border-radius: ${size / 2}px;
     border: 8px solid ${theme.colors.highlight};
   `}
 `;

@@ -28,8 +28,8 @@ export const TextArea = styled(RNTextInput)<{
     height = 100,
     width,
   }) => css`
-    width: ${width ? `${width}px` : '100%'};
-    min-height: ${`${height}px`};
+    width: ${width ? width : '100%'}px;
+    min-height: ${height}px;
     padding: 8px 12px;
     font-size: 14px;
     font-family: ${theme.fontFamily};
@@ -39,8 +39,8 @@ export const TextArea = styled(RNTextInput)<{
 
     background: ${(background && theme.colors[background]) || 'transparent'};
     border-color: ${theme.colors[borderColor]};
-    border-width: ${`${borderWidth}px`};
-    border-radius: ${`${borderRadius}px`};
+    border-width: ${borderWidth}px;
+    border-radius: ${borderRadius}px;
     color: ${theme.colors[textColor]};
   `}
 `;

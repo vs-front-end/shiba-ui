@@ -33,8 +33,8 @@ export const Step = styled.View<{
       align-items: center;
       justify-content: center;
 
-      width: ${`${stepSize}px`};
-      height: ${`${stepSize}px`};
+      width: ${stepSize}px;
+      height: ${stepSize}px;
       background: ${backgroundColor};
       border-radius: 50%;
       position: relative;
@@ -64,7 +64,7 @@ export const LabelText = styled.Text<ITextDisplay>`
     textAlign = 'center',
   }) => css`
     color: ${theme.colors[color]};
-    font-size: ${`${fontSize}px`};
+    font-size: ${fontSize}px;
     font-weight: ${theme.fontWeight[fontWeight]};
     text-align: ${textAlign};
   `}
@@ -82,7 +82,7 @@ export const Connector = styled.View<{
     return css`
       flex: 1;
       min-width: 0;
-      height: ${`${lineHeight}px`};
+      height: ${lineHeight}px;
       background: ${connectorColor};
       margin: 0 8px;
       position: relative;

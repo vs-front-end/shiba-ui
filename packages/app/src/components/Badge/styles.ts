@@ -13,7 +13,7 @@ export const Container = styled.View<IBadge>`
     padding: 4px 16px;
     column-gap: 8px;
 
-    border-radius: ${`${borderRadius}px`};
+    border-radius: ${borderRadius}px;
     background: ${(background && theme.colors[background]) || 'transparent'};
   `}
 `;
