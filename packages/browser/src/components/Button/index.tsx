@@ -3,6 +3,7 @@ import type { IButton } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { Spinner } from '../Spinner';
+import { getButtonTextColor } from '@shiba-ui/shared';
 
 interface IButtonProps extends IButton {
   onClick?: () => void;
@@ -54,7 +55,7 @@ export const Button = ({
           {text && (
             <TextDisplay
               text={text}
-              color={textColor}
+              color={getButtonTextColor(textColor, variant || 'solid')}
               fontSize={fontSize}
               fontWeight="medium"
             />
