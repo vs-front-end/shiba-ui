@@ -23,7 +23,8 @@ export const OtpInput = ({
   gap = 8,
   ...props
 }: IOtpInput) => {
-  const { colors } = useTheme();
+  const theme = useTheme();
+  
   const getInitialValues = () => {
     const values: string[] = [];
     for (let i = 0; i < length; i++) {
@@ -127,6 +128,7 @@ export const OtpInput = ({
               keyboardType="numeric"
               maxLength={1}
               placeholder="-"
+              placeholderTextColor={theme.colors.highlight}
               value={inputValues[index]}
               onChangeText={handleInputChange(index)}
               onKeyPress={handleKeyPress(index)}
@@ -141,12 +143,13 @@ export const OtpInput = ({
               textColor={textColor}
               height={height}
               width={width}
-              selectionColor={colors[textColor || 'content']}
+              selectionColor={theme.colors[textColor || 'content']}
               underlineColorAndroid="transparent"
               data-testid={`otp-input-${index}`}
               accessibilityRole="none"
               accessibilityLabel={`Digit ${index + 1}`}
               accessibilityState={{ disabled: isDisabled }}
+              textAlignVertical="center"
               {...props}
             />
           ))}

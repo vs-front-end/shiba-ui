@@ -13,7 +13,7 @@ export const Container = styled.Text<ITextDisplay>`
     font-size: ${fontSize}px;
 
     text-align: ${textAlign};
-    ${lineHeight ? `line-height: ${lineHeight}px;` : ''}
+    line-height: ${lineHeight ? lineHeight : fontSize * 1.2}px;
 
     flex-shrink: 1;
     max-width: 100%;

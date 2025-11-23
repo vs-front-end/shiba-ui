@@ -2,6 +2,7 @@ import * as S from './styles';
 import type { IBottomDrawer } from '@shiba-ui/shared';
 import { TouchableWithoutFeedback, ScrollView, useWindowDimensions, Animated, PanResponder } from 'react-native';
 import { useEffect, useRef, useState } from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export const BottomDrawer = ({
   isOpen = false,
@@ -13,9 +14,12 @@ export const BottomDrawer = ({
   isHidden,
   ...props
 }: IBottomDrawer) => {
+  const insets = useSafeAreaInsets();
   const { height } = useWindowDimensions();
+
   const maxHeight = height * 0.75;
   const translateY = useRef(new Animated.Value(height)).current;
+  
   const [visible, setVisible] = useState(false);
 
   const closeDrawer = () => {
@@ -94,6 +98,7 @@ export const BottomDrawer = ({
       <S.Container
         style={{
           transform: [{ translateY }],
+          paddingBottom: insets.bottom + 20,
         }}
         background={background}
         borderRadius={borderRadius}

@@ -1,5 +1,3 @@
-import React from 'react';
-import { useTheme } from 'styled-components/native';
 import { Icon, TextDisplay } from '@shiba-ui/app';
 import * as S from './styles';
 

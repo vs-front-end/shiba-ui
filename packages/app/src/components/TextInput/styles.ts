@@ -28,6 +28,11 @@ export const InputContainer = styled.View<{
     width,
     isDisabled,
   }) => css`
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
     width: ${width ? width : '100%'}px;
     height: ${height}px;
     padding: 0px 12px;
@@ -46,10 +51,13 @@ export const Input = styled(RNTextInput)<{ textColor?: ColorKeys }>`
   ${({ theme, textColor = 'content' }) => css`
     flex: 1;
     min-width: 0;
+    padding: 0;
+    margin: 0;
     color: ${theme.colors[textColor]};
     font-size: 14px;
     font-family: ${theme.fontFamily};
     border-width: 0;
     outline-style: none;
+    padding: 2px 0 0 0;
   `}
 `;

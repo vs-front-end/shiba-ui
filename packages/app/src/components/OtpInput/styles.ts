@@ -33,7 +33,6 @@ export const Input = styled(RNTextInput)<IOtpInput & { isDisabled?: boolean }>`
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 8px;
     border-style: solid;
 
     width: ${width}px;
@@ -48,5 +47,6 @@ export const Input = styled(RNTextInput)<IOtpInput & { isDisabled?: boolean }>`
 
     outline-style: none;
     opacity: ${isDisabled ? 0.5 : 1};
+    padding: 2px 0 0 0;
   `}
 `;

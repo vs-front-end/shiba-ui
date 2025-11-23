@@ -5,7 +5,7 @@ import { TextDisplay } from '../TextDisplay';
 import { TouchableOpacity } from 'react-native';
 
 interface IBadgeProps extends IBadge {
-  onPress: () => void;
+  onPress?: () => void;
 }
 
 export const Badge = ({

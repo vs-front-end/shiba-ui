@@ -87,6 +87,7 @@ export const PasswordInput = ({
           accessibilityLabel={placeholder || 'Password input'}
           accessibilityState={{ disabled: isDisabled }}
           placeholderTextColor={theme.colors.highlight}
+          textAlignVertical='center'
           {...props}
         />
 

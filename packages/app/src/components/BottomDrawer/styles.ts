@@ -35,7 +35,7 @@ export const Container = styled(Animated.View)<{
     border-top-left-radius: ${borderRadius}px;
     border-top-right-radius: ${borderRadius}px;
     
-    padding: 20px;
+    padding: 0 16px 16px 16px;
     max-height: ${maxHeight}px;
     width: 100%;
   `}
@@ -43,10 +43,10 @@ export const Container = styled(Animated.View)<{
 
 export const HandleContainer = styled.View`
   width: 100%;
-  padding: 8px 0;
-  margin-bottom: 8px;
+  padding: 12px 0;
   align-items: center;
   justify-content: center;
+  margin: 8px 0;
 `;
 
 export const Handle = styled.View`

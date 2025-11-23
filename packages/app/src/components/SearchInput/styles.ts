@@ -56,6 +56,7 @@ export const Input = styled(RNTextInput)<{ textColor?: ColorKeys }>`
     font-family: ${theme.fontFamily};
     border-width: 0;
     outline-style: none;
+    padding: 2px 0 0 0;
   `}
 `;
 

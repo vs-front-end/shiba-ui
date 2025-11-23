@@ -74,6 +74,7 @@ export const SearchInput = ({
           accessibilityLabel={placeholder || 'Search input'}
           accessibilityState={{ disabled: isDisabled }}
           placeholderTextColor={theme.colors.highlight}
+          textAlignVertical="center"
           {...props}
         />
 

@@ -36,11 +36,13 @@ export const TextArea = styled(RNTextInput)<{
     border-width: 0;
     outline-style: none;
     border-style: solid;
+    text-align-vertical: top;
 
     background: ${(background && theme.colors[background]) || 'transparent'};
     border-color: ${theme.colors[borderColor]};
     border-width: ${borderWidth}px;
     border-radius: ${borderRadius}px;
     color: ${theme.colors[textColor]};
+    
   `}
 `;

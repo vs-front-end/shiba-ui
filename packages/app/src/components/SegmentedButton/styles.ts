@@ -56,15 +56,19 @@ export const Option = styled.View<{
         theme.colors.primary
       : 'transparent'};
     border-radius: ${borderRadius}px;
+    overflow: hidden;
   `}
 `;
 
-export const OptionTouchable = styled(TouchableOpacity)`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+export const OptionTouchable = styled(TouchableOpacity)<{
+  borderRadius?: number;
+}>`
+  ${({ borderRadius = 8 }) => css`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: ${borderRadius}px;
+  `}
 `;

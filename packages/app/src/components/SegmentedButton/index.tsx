@@ -61,6 +61,7 @@ export const SegmentedButton = ({
             <S.OptionTouchable
               onPress={() => handleOptionClick(option.value)}
               activeOpacity={0.8}
+              borderRadius={borderRadius}
             >
               {option.leftIcon && (
                 <Icon

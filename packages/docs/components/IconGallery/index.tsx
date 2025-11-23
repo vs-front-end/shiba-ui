@@ -328,7 +328,7 @@ export function IconGallery() {
         </S.Grid>
 
         {filteredIcons.length === 0 && (
-          <S.EmptyState>No icons found matching "{searchTerm}"</S.EmptyState>
+          <S.EmptyState>No icons found matching &quot;{searchTerm}&quot;</S.EmptyState>
         )}
       </S.Container>
     </ThemeProvider>

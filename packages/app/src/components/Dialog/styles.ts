@@ -12,7 +12,6 @@ export const Wrapper = styled.View`
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 16px;
 `;
 
 export const Overlay = styled.View`
@@ -24,6 +23,7 @@ export const Overlay = styled.View`
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
+  z-index: 1;
 `;
 
 export const Container = styled.View<{
@@ -31,10 +31,11 @@ export const Container = styled.View<{
   borderRadius?: number;
 }>`
   ${({ theme, background = 'section', borderRadius = 12 }) => css`
+    position: relative;
+    z-index: 2;
     background: ${theme.colors[background]};
     border-radius: ${borderRadius}px;
     padding: 24px;
-    width: 100%;
     max-width: 400px;
     margin: 0 20px;
     shadow-color: #000;

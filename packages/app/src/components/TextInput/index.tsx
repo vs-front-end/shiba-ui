@@ -74,6 +74,7 @@ export const TextInput = ({
           accessibilityRole="none"
           accessibilityLabel={placeholder || 'Text input'}
           accessibilityState={{ disabled: isDisabled }}
+          textAlignVertical="center"
           {...props}
         />
       </S.InputContainer>

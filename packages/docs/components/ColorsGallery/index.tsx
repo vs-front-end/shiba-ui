@@ -96,7 +96,7 @@ export function ColorsGallery() {
         ))}
 
         {filteredThemes.length === 0 && (
-          <S.EmptyState>No colors found matching "{searchTerm}"</S.EmptyState>
+          <S.EmptyState>No colors found matching &quot;{searchTerm}&quot;</S.EmptyState>
         )}
       </S.Container>
     </ThemeProvider>
