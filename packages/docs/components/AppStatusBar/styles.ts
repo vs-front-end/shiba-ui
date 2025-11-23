@@ -6,7 +6,7 @@ export const Container = styled.View`
   align-items: center;
 
   width: 100%;
-  padding: 8px 16px 4px 16px;
+  padding: 12px 20px 4px 20px;
 `;
 
 export const Icons = styled.View`

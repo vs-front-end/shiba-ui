@@ -189,8 +189,8 @@ const ToastMessage = ({
 export const ToastContainer = () => {
   const insets = useSafeAreaInsets();
   const topOffset = insets.top + 8;
-  const leftPadding = Math.max(insets.left, 8);
-  const rightPadding = Math.max(insets.right, 8);
+  const leftPadding = Math.max(insets.left, 20);
+  const rightPadding = Math.max(insets.right, 20);
 
   const [toasts, setToasts] = useState<IToast[]>([]);
 

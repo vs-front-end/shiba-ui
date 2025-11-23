@@ -6,7 +6,7 @@ export const Container = styled.View<{
   leftPadding?: number;
   rightPadding?: number;
 }>`
-  ${({ topOffset = 16, leftPadding = 8, rightPadding = 8 }) => css`
+  ${({ topOffset = 16, leftPadding = 20, rightPadding = 20 }) => css`
     position: absolute;
     top: ${topOffset}px;
     left: ${leftPadding}px;

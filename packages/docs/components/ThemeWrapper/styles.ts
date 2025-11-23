@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   width: 100%;
   height: 400px;
-  padding: 16px;
+  padding: 20px;
 
   background: ${({ theme }) => theme.colors.background};
 `;
@@ -38,6 +38,6 @@ export const ContentWrapper = styledNative.View`
   align-items: center;
   
   width: 100%;
-  padding: 16px;
+  padding: 20px;
   padding-top: 0;
 `;
