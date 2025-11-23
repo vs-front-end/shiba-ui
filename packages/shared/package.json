@@ -1,6 +1,6 @@
 {
   "name": "@shiba-ui/shared",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Internal package - Shared types and interfaces for Shiba UI (not meant to be installed directly)",
   "main": "./src/index.ts",
   "types": "./src/index.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@shiba-ui/docs",
-  "version": "1.0.2",
+  "version": "1.0.6",   
   "private": true,
   "description": "Storybook for Shiba UI library",
   "scripts": {
