@@ -1,6 +1,6 @@
 {
   "name": "@shiba-ui/app",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "React Native UI components library - Shiba UI",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -41,7 +41,7 @@
   "homepage": "https://github.com/vitor-albergaria/shiba-ui#readme",
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
-    "@shiba-ui/shared": "^1.0.7",
+    "@shiba-ui/shared": "^1.0.8",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {

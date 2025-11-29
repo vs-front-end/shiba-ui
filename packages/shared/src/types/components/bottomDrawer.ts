@@ -1,4 +1,4 @@
-import type { IBaseVisibility, IBaseStyling } from './base-props';
+import type { IBaseStyling } from './base-props';
 import type { ReactNode } from 'react';
 
 export interface IBottomDrawer extends IBaseStyling {
