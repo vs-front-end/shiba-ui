@@ -15,6 +15,8 @@ export interface ITextArea
   value?: string;
   /** Callback when value changes */
   handleChange?: (value: string) => void;
+  /** Label text */
+  label?: string;
   /** Placeholder text */
   placeholder?: string;
   /** Shows error state */

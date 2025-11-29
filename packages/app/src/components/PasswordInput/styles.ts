@@ -9,6 +9,11 @@ export const Container = styled.View`
   width: 100%;
 `;
 
+export const LabelWrapper = styled.View`
+  width: 100%;
+  margin-bottom: 8px;
+`;
+
 export const InputContainer = styled.View<{
   background?: ColorKeys;
   borderColor?: ColorKeys;

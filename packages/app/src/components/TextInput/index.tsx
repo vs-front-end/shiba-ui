@@ -19,6 +19,8 @@ export const TextInput = ({
   textColor,
   height,
   width,
+  keyboardType,
+  label,
   ...props
 }: ITextInput) => {
   const theme = useTheme();
@@ -51,6 +53,12 @@ export const TextInput = ({
 
   return (
     <S.Container>
+      {label && (
+        <S.LabelWrapper>
+          <TextDisplay text={label} fontSize={14} fontWeight="medium" />
+        </S.LabelWrapper>
+      )}
+
       <S.InputContainer
         accessibilityRole="none"
         background={background}
@@ -75,6 +83,7 @@ export const TextInput = ({
           accessibilityLabel={placeholder || 'Text input'}
           accessibilityState={{ disabled: isDisabled }}
           textAlignVertical="center"
+          keyboardType={keyboardType || 'default'}
           {...props}
         />
       </S.InputContainer>

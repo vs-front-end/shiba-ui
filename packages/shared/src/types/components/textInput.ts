@@ -15,6 +15,8 @@ export interface ITextInput
   value?: string;
   /** Callback when value changes */
   handleChange?: (value: string) => void;
+  /** Label text */
+  label?: string;
   /** Placeholder text */
   placeholder?: string;
   /** Shows error state */
@@ -23,4 +25,20 @@ export interface ITextInput
   errorMessage?: string;
   /** Text color from theme */
   textColor?: ColorKeys;
+  /** Keyboard type */
+  keyboardType?:
+    | 'default'
+    | 'email-address'
+    | 'numeric'
+    | 'phone-pad'
+    | 'url'
+    | 'ascii-capable'
+    | 'numbers-and-punctuation'
+    | 'url'
+    | 'number-pad'
+    | 'name-phone-pad'
+    | 'decimal-pad'
+    | 'twitter'
+    | 'web-search'
+    | 'visible-password';
 }
