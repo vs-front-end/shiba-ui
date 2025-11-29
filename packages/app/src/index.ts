@@ -1,6 +1,7 @@
 import './types/styled-native';
 
 export * from './components/Icon';
+export * from './components/IconButton';
 export * from './components/Spinner';
 export * from './components/TextDisplay';
 export * from './components/Button';

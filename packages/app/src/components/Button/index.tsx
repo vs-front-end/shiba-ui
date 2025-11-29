@@ -18,7 +18,7 @@ export const Button = ({
   variant,
   leftIcon,
   rightIcon,
-  iconColor,
+  iconColor = 'paper',
   iconSize = 18,
   textColor,
   height,
