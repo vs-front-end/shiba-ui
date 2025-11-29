@@ -45,24 +45,14 @@ Use the \`useUIOverlay\` hook to open drawers from anywhere in your app:
 import { useUIOverlay, Column, TextDisplay, Button } from '@shiba-ui/app';
 
 function MyComponent() {
-  const { openDrawer } = useUIOverlay();
+  const { openBottomDrawer, closeBottomDrawer } = useUIOverlay();
 
   const handleOpenForm = () => {
-    openDrawer(
-      // Drawer props
-      {
-        showHandle: true,
-        borderRadius: 25,
-        background: 'section',
-        onClose: () => {
-          console.log('Drawer closed');
-        },
-      },
-      // Drawer content (children)
+    openBottomDrawer(
       <Column gap={16}>
         <TextDisplay text="Form Title" fontWeight="bold" />
         <TextInput placeholder="Enter name" />
-        <Button text="Submit" onPress={() => {}} />
+        <Button text="Submit" onPress={closeBottomDrawer} />
       </Column>
     );
   };
@@ -71,37 +61,31 @@ function MyComponent() {
 }
 \`\`\`
 
-## Features
-
-- **Auto-sizing**: Drawer height adjusts based on content, with a maximum of 75% of screen height
-- **Scrollable**: Content automatically becomes scrollable if it exceeds the maximum height
-- **Drag to close**: Users can drag the handle down to close the drawer
-- **Click outside to close**: Tapping the overlay closes the drawer
-- **Smooth animations**: Simple open/close animations
-
 ## Customization
 
-You can customize the drawer appearance:
+You can customize the drawer appearance by passing optional props:
 
 \`\`\`tsx
-openDrawer(
+openBottomDrawer(
+  <YourContent />,
   {
-    showHandle: true,        // Show drag handle (default: true)
-    borderRadius: 30,         // Border radius in pixels (default: 25)
     background: 'primary',    // Background color from theme (default: 'section')
-    onClose: () => {},       // Callback when drawer is closed
-  },
-  <YourContent />
+    borderRadius: 30,         // Border radius in pixels (default: 25)
+    showHandle: true,        // Show drag handle (default: true)
+  }
 );
 \`\`\`
 
-## Props
+## Features
 
-- **showHandle**: Show drag handle line (default: true)
-- **background**: Background color from theme (default: 'section')
-- **borderRadius**: Border radius in pixels (default: 25)
-- **onClose**: Callback when drawer is closed
-- **children**: ReactNode content to display inside the drawer
+- **Auto-sizing**: Drawer height adjusts based on content, with a maximum of 85% of screen height
+- **Scrollable**: Content automatically becomes scrollable if it exceeds the maximum height
+- **Drag to close**: Users can drag the handle down to close the drawer
+- **Click outside to close**: Tapping the overlay closes the drawer
+- **Keyboard aware**: Drawer automatically adjusts when keyboard opens, keeping inputs visible
+- **Back button support**: Android back button closes keyboard first, then drawer
+- **Smooth animations**: Simple open/close animations
+- **Performance optimized**: Component is unmounted when closed, saving memory
         `,
       },
     },
@@ -112,60 +96,58 @@ export default meta;
 type Story = StoryObj;
 
 const DefaultExample = () => {
-  const { openDrawer, closeDrawer } = useUIOverlay();
+  const { openBottomDrawer, closeBottomDrawer } = useUIOverlay();
 
-  const drawerContent = () => {
-    return (
-      <Column gap={16} align="center" justify="start">
-        <TextDisplay
-          text="Bottom Drawer"
-          fontSize={20}
-          fontWeight="bold"
-          color="content"
-        />
+  const drawerContent = (
+    <Column gap={16} align="center" justify="start">
+      <TextDisplay
+        text="Bottom Drawer"
+        fontSize={20}
+        fontWeight="bold"
+        color="content"
+      />
 
-        <TextDisplay
-          text="This is a bottom drawer component example with some content."
-          fontSize={14}
-          color="accent"
-          textAlign="center"
-        />
+      <TextDisplay
+        text="This is a bottom drawer component example with some content."
+        fontSize={14}
+        color="accent"
+        textAlign="center"
+      />
 
-        <TextInput
-          placeholder="Enter your name"
-          value="John Doe"
-          handleChange={(value) => console.log(value)}
-        />
+      <TextInput
+        placeholder="Enter your name"
+        value="John Doe"
+        handleChange={(value) => console.log(value)}
+      />
 
-        <TextInput
-          placeholder="Enter your email"
-          value="john.doe@example.com"
-          handleChange={(value) => console.log(value)}
-        />
+      <TextInput
+        placeholder="Enter your email"
+        value="john.doe@example.com"
+        handleChange={(value) => console.log(value)}
+      />
 
-        <PasswordInput
-          placeholder="Enter your password"
-          value="123456"
-          handleChange={(value) => console.log(value)}
-        />
+      <PasswordInput
+        placeholder="Enter your password"
+        value="123456"
+        handleChange={(value) => console.log(value)}
+      />
 
-        <Button text="Submit" onPress={closeDrawer} variant="solid" />
+      <Button text="Submit" onPress={closeBottomDrawer} variant="solid" />
 
-        <TextDisplay
-          text="Click outside to close"
-          fontSize={12}
-          textAlign="center"
-          color="accent"
-        />
-      </Column>
-    );
-  };
+      <TextDisplay
+        text="Click outside to close"
+        fontSize={12}
+        textAlign="center"
+        color="accent"
+      />
+    </Column>
+  );
 
   return (
     <View style={{ padding: 20, flex: 1, justifyContent: 'center' }}>
       <Button
         text="Open Drawer"
-        onPress={() => openDrawer({}, drawerContent())}
+        onPress={() => openBottomDrawer(drawerContent)}
         variant="solid"
       />
     </View>

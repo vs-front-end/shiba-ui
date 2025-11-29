@@ -1,7 +1,7 @@
 import type { IBaseVisibility, IBaseStyling } from './base-props';
 import type { ReactNode } from 'react';
 
-export interface IBottomDrawer extends IBaseVisibility, IBaseStyling {
+export interface IBottomDrawer extends IBaseStyling {
   /** Whether drawer is open */
   isOpen?: boolean;
   /** Callback when drawer is closed */
@@ -11,4 +11,3 @@ export interface IBottomDrawer extends IBaseVisibility, IBaseStyling {
   /** Show handle line */
   showHandle?: boolean;
 }
-
