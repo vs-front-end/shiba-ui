@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUIOverlay, Button, UIOverlayProvider, Column, TextInput, TextArea } from '@shiba-ui/browser';
+import { useUIOverlay, Button, UIOverlayProvider, Column, TextInput } from '@shiba-ui/browser';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
