@@ -8,6 +8,11 @@ export const Container = styled.div`
   width: 100%;
 `;
 
+export const LabelWrapper = styled.div`
+  width: 100%;
+  margin-bottom: 8px;
+`;
+
 export const Input = styled.input<ITextInput>`
   ${({
     theme,

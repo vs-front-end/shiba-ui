@@ -18,6 +18,7 @@ export const TextArea = ({
   textColor,
   height,
   width,
+  label,
   ...props
 }: ITextArea) => {
   const [inputValue, setInputValue] = useState(value || '');
@@ -50,6 +51,12 @@ export const TextArea = ({
 
   return (
     <S.Container>
+      {label && (
+        <S.LabelWrapper>
+          <TextDisplay text={label} fontSize={14} fontWeight="medium" />
+        </S.LabelWrapper>
+      )}
+
       <S.TextArea
         data-testid="textarea"
         aria-disabled={isDisabled}

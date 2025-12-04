@@ -1,10 +1,10 @@
 import type { ColorKeys } from '../theme';
 
-export const getButtonTextColor = (
-  textColor?: ColorKeys,
+export const getBtnContentColor = (
+  color?: ColorKeys,
   variant?: 'solid' | 'outlined' | 'text'
 ) => {
-  if (textColor) return textColor;
+  if (color) return color;
   if (variant === 'solid') return 'paper';
   return 'content';
 };

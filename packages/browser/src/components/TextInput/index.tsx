@@ -18,6 +18,7 @@ export const TextInput = ({
   textColor,
   height,
   width,
+  label,
   ...props
 }: ITextInput) => {
   const [inputValue, setInputValue] = useState(value || '');
@@ -56,6 +57,12 @@ export const TextInput = ({
 
   return (
     <S.Container>
+      {label && (
+        <S.LabelWrapper>
+          <TextDisplay text={label} fontSize={14} fontWeight="medium" />
+        </S.LabelWrapper>
+      )}
+
       <S.Input
         type="text"
         data-testid="text-input"

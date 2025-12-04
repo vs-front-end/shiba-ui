@@ -1,6 +1,9 @@
 import './types/styled';
 
 export * from './components/Icon';
+export * from './components/IconButton';
+export * from './components/Dialog';
+export * from './components/Modal';
 export * from './components/TextDisplay';
 export * from './components/TextLink';
 export * from './components/Button';
@@ -39,3 +42,4 @@ export * from './components/Breadcrumb';
 export * from './components/Timeline';
 export * from './components/Toast';
 export * from './theme/ThemeProvider';
+export * from './context/UIOverlayProvider';

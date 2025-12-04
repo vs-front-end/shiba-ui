@@ -3,7 +3,7 @@ import type { IButton } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 import { TextDisplay } from '../TextDisplay';
 import { Spinner } from '../Spinner';
-import { getButtonTextColor } from '@shiba-ui/shared';
+import { getBtnContentColor } from '@shiba-ui/shared';
 
 interface IButtonProps extends IButton {
   onPress: () => void;
@@ -18,7 +18,7 @@ export const Button = ({
   variant,
   leftIcon,
   rightIcon,
-  iconColor = 'paper',
+  iconColor,
   iconSize = 18,
   textColor,
   height,
@@ -59,20 +59,28 @@ export const Button = ({
         ) : (
           <>
             {leftIcon && (
-              <Icon icon={leftIcon} color={iconColor} size={iconSize} />
+              <Icon
+                icon={leftIcon}
+                color={getBtnContentColor(iconColor, variant || 'solid')}
+                size={iconSize}
+              />
             )}
 
             {text && (
               <TextDisplay
                 text={text}
-                color={getButtonTextColor(textColor, variant || 'solid')}
+                color={getBtnContentColor(textColor, variant || 'solid')}
                 fontSize={fontSize}
                 fontWeight="medium"
               />
             )}
 
             {rightIcon && (
-              <Icon icon={rightIcon} color={iconColor} size={iconSize} />
+              <Icon
+                icon={rightIcon}
+                color={getBtnContentColor(iconColor, variant || 'solid')}
+                size={iconSize}
+              />
             )}
           </>
         )}

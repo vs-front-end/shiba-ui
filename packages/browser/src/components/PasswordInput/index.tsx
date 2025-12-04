@@ -21,6 +21,7 @@ export const PasswordInput = ({
   width,
   iconColor = 'highlight',
   iconSize = 14,
+  label,
   ...props
 }: IPasswordInput) => {
   const [inputValue, setInputValue] = useState(value || '');
@@ -58,6 +59,12 @@ export const PasswordInput = ({
 
   return (
     <S.Container>
+      {label && (
+        <S.LabelWrapper>
+          <TextDisplay text={label} fontSize={14} fontWeight="medium" />
+        </S.LabelWrapper>
+      )}
+
       <S.InputContainer
         data-testid="password-input-container"
         background={background}
