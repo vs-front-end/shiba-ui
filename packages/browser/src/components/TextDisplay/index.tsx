@@ -9,6 +9,7 @@ export type TextDecorationType =
 
 interface ITextDisplayBrowser extends ITextDisplay {
   textDecoration?: TextDecorationType;
+  id?: string;
 }
 
 export const TextDisplay = ({
