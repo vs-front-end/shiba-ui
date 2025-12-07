@@ -9,7 +9,6 @@ interface IIconButtonBrowser extends IIconButton {
 export const IconButton = ({
   icon,
   onClick,
-  onPress,
   isHidden,
   isDisabled,
   size = 36,
@@ -23,9 +22,8 @@ export const IconButton = ({
   if (isHidden) return null;
 
   const handleClick = () => {
-    if (!isDisabled && (onClick || onPress)) {
+    if (!isDisabled && onClick) {
       onClick?.();
-      onPress?.();
     }
   };
 
@@ -49,4 +47,3 @@ export const IconButton = ({
     </S.Container>
   );
 };
-
