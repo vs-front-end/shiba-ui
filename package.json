@@ -1,6 +1,6 @@
 {
   "name": "shiba-ui",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": true,
   "description": "Monorepo UI library for React.js and React Native",
   "workspaces": [
