@@ -1,8 +1,29 @@
 import * as S from './styles';
 import type { ITextInput } from '@shiba-ui/shared';
+import { formatInputValue } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 import { useState } from 'react';
 import { useTheme } from 'styled-components/native';
+
+type KeyboardType =
+  | 'default'
+  | 'email-address'
+  | 'numeric'
+  | 'phone-pad'
+  | 'url'
+  | 'ascii-capable'
+  | 'numbers-and-punctuation'
+  | 'number-pad'
+  | 'name-phone-pad'
+  | 'decimal-pad'
+  | 'twitter'
+  | 'web-search'
+  | 'visible-password';
+
+interface ITextInputApp extends ITextInput {
+  /** Keyboard type (React Native only) */
+  keyboardType?: KeyboardType;
+}
 
 export const TextInput = ({
   value,
@@ -21,8 +42,10 @@ export const TextInput = ({
   width,
   keyboardType,
   label,
+  maxLength,
+  type,
   ...props
-}: ITextInput) => {
+}: ITextInputApp) => {
   const theme = useTheme();
 
   const [inputValue, setInputValue] = useState(value || '');
@@ -30,8 +53,9 @@ export const TextInput = ({
 
   const handleInputChange = (text: string) => {
     if (!isDisabled) {
-      setInputValue(text);
-      handleChange?.(text);
+      const formattedValue = type ? formatInputValue(text, type) : text;
+      setInputValue(formattedValue);
+      handleChange?.(formattedValue);
     }
   };
 
@@ -47,6 +71,26 @@ export const TextInput = ({
     if (hasError) return 'error';
     if (isFocused) return 'primary';
     return borderColor;
+  };
+
+  const getKeyboardType = () => {
+    if (keyboardType) return keyboardType;
+
+    const phoneTypes = ['phone', 'cellphone'];
+
+    const numericTypes = [
+      'cpf',
+      'cnpj',
+      'cep',
+      'date',
+      'monetary',
+      'credit-card',
+    ];
+
+    if (phoneTypes.includes(type || '')) return 'phone-pad';
+    if (numericTypes.includes(type || '')) return 'numeric';
+
+    return 'default';
   };
 
   if (isHidden) return null;
@@ -78,15 +122,17 @@ export const TextInput = ({
           placeholder={placeholder}
           placeholderTextColor={theme.colors.highlight}
           editable={!isDisabled}
+          maxLength={maxLength}
           textColor={textColor}
           accessibilityRole="none"
           accessibilityLabel={placeholder || 'Text input'}
           accessibilityState={{ disabled: isDisabled }}
           textAlignVertical="center"
-          keyboardType={keyboardType || 'default'}
+          keyboardType={getKeyboardType()}
           {...props}
         />
       </S.InputContainer>
+
       {hasError && errorMessage && (
         <TextDisplay text={errorMessage} color="error" fontSize={14} />
       )}

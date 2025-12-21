@@ -48,3 +48,4 @@ export * from './types/components/dialog';
 export * from './types/components/modal';
 
 export * from './utils/helpers';
+export * from './utils/formatters';

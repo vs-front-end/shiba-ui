@@ -6,6 +6,17 @@ import type {
   IBaseStyling,
 } from './base-props';
 
+export type InputType =
+  | 'text'
+  | 'phone'
+  | 'cellphone'
+  | 'cpf'
+  | 'cnpj'
+  | 'cep'
+  | 'monetary'
+  | 'date'
+  | 'credit-card';
+
 export interface ITextInput
   extends IBaseVisibility,
     IBaseInteraction,
@@ -25,20 +36,8 @@ export interface ITextInput
   errorMessage?: string;
   /** Text color from theme */
   textColor?: ColorKeys;
-  /** Keyboard type */
-  keyboardType?:
-    | 'default'
-    | 'email-address'
-    | 'numeric'
-    | 'phone-pad'
-    | 'url'
-    | 'ascii-capable'
-    | 'numbers-and-punctuation'
-    | 'url'
-    | 'number-pad'
-    | 'name-phone-pad'
-    | 'decimal-pad'
-    | 'twitter'
-    | 'web-search'
-    | 'visible-password';
+  /** Maximum length of input */
+  maxLength?: number;
+  /** Input type for automatic formatting */
+  type?: InputType;
 }

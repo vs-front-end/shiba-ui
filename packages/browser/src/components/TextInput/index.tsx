@@ -1,5 +1,6 @@
 import * as S from './styles';
 import type { ITextInput } from '@shiba-ui/shared';
+import { formatInputValue } from '@shiba-ui/shared';
 import { TextDisplay } from '../TextDisplay';
 import { useState, useEffect } from 'react';
 
@@ -19,17 +20,20 @@ export const TextInput = ({
   height,
   width,
   label,
+  maxLength,
+  type,
   ...props
 }: ITextInput) => {
   const [inputValue, setInputValue] = useState(value || '');
   const [isFocused, setIsFocused] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value;
+    const rawValue = event.target.value;
 
     if (!isDisabled) {
-      setInputValue(newValue);
-      handleChange?.(newValue);
+      const formattedValue = type ? formatInputValue(rawValue, type) : rawValue;
+      setInputValue(formattedValue);
+      handleChange?.(formattedValue);
     }
   };
 
@@ -49,9 +53,10 @@ export const TextInput = ({
 
   useEffect(() => {
     if (value !== undefined) {
-      setInputValue(value);
+      const formattedValue = type ? formatInputValue(value, type) : value;
+      setInputValue(formattedValue);
     }
-  }, [value]);
+  }, [value, type]);
 
   if (isHidden) return null;
 
@@ -73,6 +78,7 @@ export const TextInput = ({
         onBlur={handleBlur}
         placeholder={placeholder}
         disabled={isDisabled}
+        maxLength={maxLength}
         background={background}
         borderColor={getBorderColor()}
         borderRadius={borderRadius}
