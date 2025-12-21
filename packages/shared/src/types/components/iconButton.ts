@@ -19,7 +19,5 @@ export interface IIconButton
   iconColor?: ColorKeys;
   /** Button size (width and height) in pixels */
   size?: number;
-  /** Callback when button is pressed */
-  onPress: () => void;
 }
 

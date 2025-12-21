@@ -2,6 +2,9 @@ import * as S from './styles';
 import type { IIconButton } from '@shiba-ui/shared';
 import { Icon } from '../Icon';
 
+interface IIconButtonApp extends IIconButton {
+  onPress?: () => void;
+}
 export const IconButton = ({
   icon,
   onPress,
@@ -14,7 +17,7 @@ export const IconButton = ({
   borderRadius = 8,
   borderColor,
   borderWidth = 0,
-}: IIconButton) => {
+}: IIconButtonApp) => {
   if (isHidden) return null;
 
   const handlePress = () => {
